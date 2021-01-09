@@ -1,0 +1,308 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://placeholder_assets/google.png" type="Texture" id=1]
+[ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://GoogleTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Google.gd" type="Script" id=4]
+[ext_resource path="res://assets/HelpPage_IconPack-06.png" type="Texture" id=5]
+
+[sub_resource type="Theme" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 20.3801
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="Google" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Homepage" type="Node2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="Homepage"]
+margin_right = 1017.0
+margin_bottom = 599.0
+theme = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="Sprite" parent="Homepage"]
+position = Vector2( 496.218, 221.25 )
+scale = Vector2( 9.67857, 9.67857 )
+texture = ExtResource( 1 )
+
+[node name="Searchbar" type="LineEdit" parent="Homepage"]
+margin_left = 336.0
+margin_top = 310.0
+margin_right = 682.0
+margin_bottom = 339.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FeelingLuckyButton" type="Button" parent="Homepage"]
+margin_left = 509.445
+margin_top = 369.882
+margin_right = 670.445
+margin_bottom = 397.882
+theme = ExtResource( 3 )
+text = "I'm Feeling Lucky"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchButton" type="Button" parent="Homepage"]
+margin_left = 345.036
+margin_top = 369.891
+margin_right = 480.036
+margin_bottom = 397.891
+theme = ExtResource( 3 )
+text = "Google Search"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchResults" type="Node2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="SearchResults"]
+margin_right = 1017.0
+margin_bottom = 599.0
+theme = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HorizontalRule" type="ColorRect" parent="SearchResults"]
+margin_top = 101.0
+margin_right = 1014.0
+margin_bottom = 102.0
+color = Color( 0.819608, 0.819608, 0.819608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="Sprite" parent="SearchResults"]
+position = Vector2( 98.8453, 49.8611 )
+scale = Vector2( 4.015, 4.015 )
+texture = ExtResource( 1 )
+
+[node name="Searchbar" type="LineEdit" parent="SearchResults"]
+margin_left = 201.0
+margin_top = 39.0
+margin_right = 655.0
+margin_bottom = 68.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultCountLabel" type="Label" parent="SearchResults"]
+margin_left = 211.051
+margin_top = 119.53
+margin_right = 313.051
+margin_bottom = 139.53
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0.435294, 0.419608, 0.419608, 1 )
+text = "About 3 results"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagnifyingGlass" type="Area2D" parent="SearchResults"]
+
+[node name="Sprite" type="Sprite" parent="SearchResults/MagnifyingGlass"]
+position = Vector2( 680.31, 51.6781 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchResults/MagnifyingGlass"]
+position = Vector2( 680.31, 53.0939 )
+shape = SubResource( 7 )
+
+[node name="SearchResultsContainer" type="VBoxContainer" parent="SearchResults"]
+margin_left = 198.0
+margin_top = 159.247
+margin_right = 721.0
+margin_bottom = 578.247
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchResult0" type="Control" parent="SearchResults/SearchResultsContainer"]
+margin_right = 523.0
+
+[node name="UrlLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult0"]
+margin_left = 12.5741
+margin_top = 4.24753
+margin_right = 265.574
+margin_bottom = 18.2475
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "en.wikipedia.org › wiki › BoardGameGeek"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LinkLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult0"]
+margin_left = 11.6979
+margin_top = 18.901
+margin_right = 278.698
+margin_bottom = 46.901
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0941176, 0.207843, 0.92549, 1 )
+text = "BoardGameGeek - Wikipedia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult0"]
+margin_left = 14.282
+margin_top = 51.4207
+margin_right = 614.282
+margin_bottom = 101.421
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BoardGameGeek (BGG) is an online forum for board gaming hobbyists and a game database that holds reviews, images and videos for over 101,000 different ..."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchResult1" type="Control" parent="SearchResults/SearchResultsContainer"]
+margin_top = 4.0
+margin_right = 523.0
+margin_bottom = 4.0
+
+[node name="UrlLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult1"]
+margin_left = 12.5741
+margin_top = 99.1087
+margin_right = 265.574
+margin_bottom = 113.109
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "en.wikipedia.org › wiki › BoardGameGeek"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LinkLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult1"]
+margin_left = 11.6979
+margin_top = 113.762
+margin_right = 278.698
+margin_bottom = 141.762
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0941176, 0.207843, 0.92549, 1 )
+text = "BoardGameGeek - Wikipedia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult1"]
+margin_left = 14.282
+margin_top = 146.282
+margin_right = 614.282
+margin_bottom = 196.282
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BoardGameGeek (BGG) is an online forum for board gaming hobbyists and a game database that holds reviews, images and videos for over 101,000 different ..."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchResult2" type="Control" parent="SearchResults/SearchResultsContainer"]
+margin_top = 8.0
+margin_right = 523.0
+margin_bottom = 8.0
+
+[node name="UrlLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult2"]
+margin_left = 12.5741
+margin_top = 193.262
+margin_right = 265.574
+margin_bottom = 207.262
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "en.wikipedia.org › wiki › BoardGameGeek"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LinkLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult2"]
+margin_left = 11.6979
+margin_top = 207.915
+margin_right = 278.698
+margin_bottom = 235.915
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0941176, 0.207843, 0.92549, 1 )
+text = "BoardGameGeek - Wikipedia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult2"]
+margin_left = 14.282
+margin_top = 240.435
+margin_right = 614.282
+margin_bottom = 290.435
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BoardGameGeek (BGG) is an online forum for board gaming hobbyists and a game database that holds reviews, images and videos for over 101,000 different ..."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchResult3" type="Control" parent="SearchResults/SearchResultsContainer"]
+margin_top = 12.0
+margin_right = 523.0
+margin_bottom = 12.0
+
+[node name="UrlLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult3"]
+margin_left = 12.5741
+margin_top = 290.247
+margin_right = 265.574
+margin_bottom = 304.247
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "en.wikipedia.org › wiki › BoardGameGeek"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LinkLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult3"]
+margin_left = 11.6979
+margin_top = 304.9
+margin_right = 278.698
+margin_bottom = 332.9
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0941176, 0.207843, 0.92549, 1 )
+text = "BoardGameGeek - Wikipedia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult3"]
+margin_left = 14.282
+margin_top = 337.42
+margin_right = 614.282
+margin_bottom = 387.42
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "BoardGameGeek (BGG) is an online forum for board gaming hobbyists and a game database that holds reviews, images and videos for over 101,000 different ..."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

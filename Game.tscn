@@ -1,54 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://placeholder_assets/UI_mockup_1.png" type="Texture" id=1]
+[ext_resource path="res://Office.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Computer" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Computer"]
-position = Vector2( 24, -28 )
-polygon = PoolVector2Array( 349.35, 265.6, 415.35, 233.35, 434.35, 321.6, 385.1, 349.35, 349.35, 322.6 )
-
-[node name="Calendar" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Calendar"]
-position = Vector2( 24, -28 )
-polygon = PoolVector2Array( 284.841, 224.328, 333.631, 204.529, 333.631, 293.271, 286.255, 312.363 )
-
-[node name="Noteboard" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Noteboard"]
-position = Vector2( 24, -28 )
-polygon = PoolVector2Array( 419.5, 255.5, 452, 240, 452, 146.5, 402.5, 168.5, 403.5, 234, 416, 233 )
-
-[node name="Picture" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Picture"]
-position = Vector2( 24, -28 )
-polygon = PoolVector2Array( 736.5, 235, 782.5, 256, 781, 297, 732.5, 274 )
-
-[node name="RoomSprite" type="Sprite" parent="."]
-position = Vector2( 245.073, -2.35357 )
-texture = ExtResource( 1 )
-offset = Vector2( 299.907, 277.817 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Label" type="Label" parent="."]
-margin_left = 245.0
-margin_top = 527.0
-margin_right = 845.0
-margin_bottom = 601.0
-custom_styles/normal = SubResource( 1 )
-text = "Hello world"
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+[node name="Office" parent="." instance=ExtResource( 1 )]

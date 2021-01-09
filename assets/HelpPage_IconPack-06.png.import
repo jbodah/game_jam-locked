@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UI_mockup_1.png-176c92630f82fe373886ffb223e01588.stex"
+path="res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholder_assets/UI_mockup_1.png"
-dest_files=[ "res://.import/UI_mockup_1.png-176c92630f82fe373886ffb223e01588.stex" ]
+source_file="res://assets/HelpPage_IconPack-06.png"
+dest_files=[ "res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
