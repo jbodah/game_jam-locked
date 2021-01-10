@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://placeholder_assets/google.png" type="Texture" id=1]
 [ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://GoogleTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Google.gd" type="Script" id=4]
 [ext_resource path="res://assets/HelpPage_IconPack-06.png" type="Texture" id=5]
+[ext_resource path="res://Page.gd" type="Script" id=6]
+[ext_resource path="res://Homepage.gd" type="Script" id=7]
+[ext_resource path="res://SearchResults.gd" type="Script" id=8]
 
-[sub_resource type="Theme" id=5]
+[sub_resource type="Theme" id=1]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color( 1, 1, 1, 1 )
@@ -18,25 +21,30 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 2 )
 
-[sub_resource type="CircleShape2D" id=7]
-radius = 20.3801
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 235.047, 14.6279 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 20
+size = 28
 font_data = ExtResource( 2 )
 
 [node name="Google" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Homepage" type="Node2D" parent="."]
+script = ExtResource( 7 )
 
 [node name="Background" type="ColorRect" parent="Homepage"]
 margin_right = 1017.0
 margin_bottom = 599.0
-theme = SubResource( 5 )
+theme = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -51,8 +59,8 @@ margin_left = 336.0
 margin_top = 310.0
 margin_right = 682.0
 margin_bottom = 339.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -64,6 +72,7 @@ margin_left = 509.445
 margin_top = 369.882
 margin_right = 670.445
 margin_bottom = 397.882
+mouse_default_cursor_shape = 2
 theme = ExtResource( 3 )
 text = "I'm Feeling Lucky"
 __meta__ = {
@@ -75,6 +84,7 @@ margin_left = 345.036
 margin_top = 369.891
 margin_right = 480.036
 margin_bottom = 397.891
+mouse_default_cursor_shape = 2
 theme = ExtResource( 3 )
 text = "Google Search"
 __meta__ = {
@@ -82,11 +92,14 @@ __meta__ = {
 }
 
 [node name="SearchResults" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 8 )
 
 [node name="Background" type="ColorRect" parent="SearchResults"]
 margin_right = 1017.0
 margin_bottom = 599.0
-theme = SubResource( 5 )
+mouse_filter = 2
+theme = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -110,8 +123,8 @@ margin_left = 201.0
 margin_top = 39.0
 margin_right = 655.0
 margin_bottom = 68.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -136,9 +149,8 @@ __meta__ = {
 position = Vector2( 680.31, 51.6781 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchResults/MagnifyingGlass"]
-position = Vector2( 680.31, 53.0939 )
-shape = SubResource( 7 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SearchResults/MagnifyingGlass"]
+polygon = PoolVector2Array( 672.806, 30.5873, 699.608, 49.5926, 688.4, 73.9584, 663.06, 63.2374, 661.598, 35.4605 )
 
 [node name="SearchResultsContainer" type="VBoxContainer" parent="SearchResults"]
 margin_left = 198.0
@@ -151,6 +163,7 @@ __meta__ = {
 
 [node name="SearchResult0" type="Control" parent="SearchResults/SearchResultsContainer"]
 margin_right = 523.0
+mouse_filter = 2
 
 [node name="UrlLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult0"]
 margin_left = 12.5741
@@ -168,7 +181,9 @@ margin_left = 11.6979
 margin_top = 18.901
 margin_right = 278.698
 margin_bottom = 46.901
-custom_fonts/font = SubResource( 6 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0941176, 0.207843, 0.92549, 1 )
 text = "BoardGameGeek - Wikipedia"
 __meta__ = {
@@ -187,10 +202,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Link" type="Area2D" parent="SearchResults/SearchResultsContainer/SearchResult0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchResults/SearchResultsContainer/SearchResult0/Link"]
+position = Vector2( 246.094, 34.5994 )
+shape = SubResource( 5 )
+
 [node name="SearchResult1" type="Control" parent="SearchResults/SearchResultsContainer"]
 margin_top = 4.0
 margin_right = 523.0
 margin_bottom = 4.0
+mouse_filter = 2
 
 [node name="UrlLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult1"]
 margin_left = 12.5741
@@ -208,7 +230,9 @@ margin_left = 11.6979
 margin_top = 113.762
 margin_right = 278.698
 margin_bottom = 141.762
-custom_fonts/font = SubResource( 6 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0941176, 0.207843, 0.92549, 1 )
 text = "BoardGameGeek - Wikipedia"
 __meta__ = {
@@ -227,10 +251,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Link" type="Area2D" parent="SearchResults/SearchResultsContainer/SearchResult1"]
+position = Vector2( 0, 94.925 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchResults/SearchResultsContainer/SearchResult1/Link"]
+position = Vector2( 246.094, 34.5994 )
+shape = SubResource( 5 )
+
 [node name="SearchResult2" type="Control" parent="SearchResults/SearchResultsContainer"]
 margin_top = 8.0
 margin_right = 523.0
 margin_bottom = 8.0
+mouse_filter = 2
 
 [node name="UrlLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult2"]
 margin_left = 12.5741
@@ -248,7 +280,9 @@ margin_left = 11.6979
 margin_top = 207.915
 margin_right = 278.698
 margin_bottom = 235.915
-custom_fonts/font = SubResource( 6 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0941176, 0.207843, 0.92549, 1 )
 text = "BoardGameGeek - Wikipedia"
 __meta__ = {
@@ -267,10 +301,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Link" type="Area2D" parent="SearchResults/SearchResultsContainer/SearchResult2"]
+position = Vector2( 0, 188.388 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchResults/SearchResultsContainer/SearchResult2/Link"]
+position = Vector2( 246.094, 34.5994 )
+shape = SubResource( 5 )
+
 [node name="SearchResult3" type="Control" parent="SearchResults/SearchResultsContainer"]
 margin_top = 12.0
 margin_right = 523.0
 margin_bottom = 12.0
+mouse_filter = 2
 
 [node name="UrlLabel" type="Label" parent="SearchResults/SearchResultsContainer/SearchResult3"]
 margin_left = 12.5741
@@ -288,7 +330,9 @@ margin_left = 11.6979
 margin_top = 304.9
 margin_right = 278.698
 margin_bottom = 332.9
-custom_fonts/font = SubResource( 6 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0941176, 0.207843, 0.92549, 1 )
 text = "BoardGameGeek - Wikipedia"
 __meta__ = {
@@ -303,6 +347,74 @@ margin_bottom = 387.42
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "BoardGameGeek (BGG) is an online forum for board gaming hobbyists and a game database that holds reviews, images and videos for over 101,000 different ..."
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Link" type="Area2D" parent="SearchResults/SearchResultsContainer/SearchResult3"]
+position = Vector2( 0, 285.262 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchResults/SearchResultsContainer/SearchResult3/Link"]
+position = Vector2( 246.094, 34.5994 )
+shape = SubResource( 5 )
+
+[node name="Page" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 6 )
+
+[node name="Background" type="ColorRect" parent="Page"]
+margin_left = 0.974609
+margin_top = 0.48732
+margin_right = 1017.97
+margin_bottom = 599.487
+mouse_filter = 2
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="Label" parent="Page"]
+margin_left = 430.299
+margin_top = 51.1681
+margin_right = 589.299
+margin_bottom = 90.1681
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "This is a test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="Label" parent="Page"]
+margin_left = 106.0
+margin_top = 129.0
+margin_right = 921.0
+margin_bottom = 552.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Lorem ipsum"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BrowserControls" type="CanvasLayer" parent="."]
+
+[node name="BackButton" type="Button" parent="BrowserControls"]
+margin_left = 17.5434
+margin_top = 20.4672
+margin_right = 59.5434
+margin_bottom = 40.4672
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="BrowserControls"]
+margin_left = 963.909
+margin_top = 19.4926
+margin_right = 983.909
+margin_bottom = 39.4926
+text = "X"
 __meta__ = {
 "_edit_use_anchors_": false
 }

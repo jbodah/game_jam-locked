@@ -5,6 +5,7 @@ onready var google = $Google
 
 func _ready():
 	office.initialize(self)
+	google.initialize(self)
 	remove_child(google)
 
 func open_google():

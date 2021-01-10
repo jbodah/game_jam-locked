@@ -24,6 +24,10 @@ config/name="Locked"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PageManager="*res://PageManager.gd"
+
 [debug]
 
 settings/fps/force_fps=60
