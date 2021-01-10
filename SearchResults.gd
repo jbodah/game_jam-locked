@@ -36,7 +36,7 @@ func do_show():
 		node.get_node("LinkLabel").text = game.search_results[i].link_text
 		node.get_node("DescLabel").text = game.search_results[i].desc_text
 
-func on_SearchResults_MagnifyingGlass_input_event(event):
+func on_SearchResults_MagnifyingGlass_input_event(_camera, event, _click_pos):
 	if event is InputEventMouseButton:
 		game.search_text = $Searchbar.text
 		game.search()
