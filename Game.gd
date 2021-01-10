@@ -29,7 +29,12 @@ func _ready():
 	# $Office/OfficeScreen/Noteboard.connect("input_event", $Office.office, "on_input_event", ["noteboard"])
 	# $Office/OfficeScreen/Picture.connect("input_event", $Office.office, "on_input_event", ["picture"])
 	var config = ConfigFile.new()
-	config.load("res://data/level1.cfg")
+	var file = File.new()
+	if file.file_exists("user://level1.cfg"):
+		config.load("user://level1.cfg")
+		$PlaceholderControls/CanvasLayer/UserOverride.text = "OVERRIDE"
+	else:
+		config.load("res://data/level1.cfg")
 	next = left
 	var sections = config.get_sections()
 	for i in sections.size():

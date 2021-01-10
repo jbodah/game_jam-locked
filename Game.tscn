@@ -61,3 +61,13 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="UserOverride" type="Label" parent="PlaceholderControls/CanvasLayer"]
+margin_left = 481.392
+margin_top = 547.359
+margin_right = 548.392
+margin_bottom = 578.359
+custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

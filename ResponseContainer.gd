@@ -10,7 +10,6 @@ func render_child(spec):
 		"simple":
 			replace_child(render_simple(spec))
 
-
 func replace_child(new_child):
 	if last:
 		remove_child(last)
