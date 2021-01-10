@@ -1,11 +1,12 @@
 extends Node
 
+const Data = preload("res://Util/Data.gd")
+
 var config: ConfigFile
 var search_index = {}
 
 func _init():
-	config = ConfigFile.new()
-	config.load("res://data/pages.cfg")
+	config = Data.load_config("pages")[1]
 	var sections = config.get_sections()
 	for i in range(sections.size()):
 		var page_id = sections[i]

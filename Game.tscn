@@ -1,73 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Office.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
-[ext_resource path="res://ResponseContainer.gd" type="Script" id=3]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Office" parent="." instance=ExtResource( 1 )]
-visible = false
-
-[node name="PlaceholderControls" type="Node2D" parent="."]
-position = Vector2( 0, 5.65685 )
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PlaceholderControls"]
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="BootLoader" type="VBoxContainer" parent="."]
+margin_right = 1026.0
+margin_bottom = 603.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlaceholderControls/HBoxContainer"]
-margin_right = 510.0
-margin_bottom = 600.0
+[node name="TestUI" type="Button" parent="BootLoader"]
+margin_right = 1026.0
+margin_bottom = 299.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+text = "Test UI"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PlaceholderControls/HBoxContainer"]
-margin_left = 514.0
-margin_right = 1024.0
-margin_bottom = 600.0
+[node name="ContentPrototyping" type="Button" parent="BootLoader"]
+margin_top = 303.0
+margin_right = 1026.0
+margin_bottom = 603.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="CanvasLayer" type="CanvasLayer" parent="PlaceholderControls"]
-
-[node name="Screen" type="Control" parent="PlaceholderControls/CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ResponseContainer" type="Control" parent="PlaceholderControls/CanvasLayer/Screen"]
-margin_left = 36.0
-margin_top = 72.0
-margin_right = 990.0
-margin_bottom = 527.0
-mouse_filter = 2
-script = ExtResource( 3 )
-
-[node name="BackButton" type="Button" parent="PlaceholderControls/CanvasLayer/Screen"]
-margin_left = 8.45343
-margin_top = 11.6235
-margin_right = 79.4534
-margin_bottom = 46.6235
-text = "Back"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="UserOverride" type="Label" parent="PlaceholderControls/CanvasLayer"]
-margin_left = 481.392
-margin_top = 547.359
-margin_right = 548.392
-margin_bottom = 578.359
-custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "Load Content Prototyping Tool"

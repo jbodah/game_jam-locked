@@ -11,34 +11,34 @@ bg_color = Color( 0, 0, 0, 1 )
 [node name="Office" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="OfficeScreen" type="Node2D" parent="."]
+[node name="Room" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="Computer" type="Area2D" parent="OfficeScreen"]
+[node name="Computer" type="Area2D" parent="Room"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OfficeScreen/Computer"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/Computer"]
 position = Vector2( 24, -28 )
 polygon = PoolVector2Array( 349.35, 265.6, 415.35, 233.35, 434.35, 321.6, 385.1, 349.35, 349.35, 322.6 )
 
-[node name="Calendar" type="Area2D" parent="OfficeScreen"]
+[node name="Calendar" type="Area2D" parent="Room"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OfficeScreen/Calendar"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/Calendar"]
 position = Vector2( 24, -28 )
 polygon = PoolVector2Array( 284.841, 224.328, 333.631, 204.529, 333.631, 293.271, 286.255, 312.363 )
 
-[node name="Noteboard" type="Area2D" parent="OfficeScreen"]
+[node name="Noteboard" type="Area2D" parent="Room"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OfficeScreen/Noteboard"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/Noteboard"]
 position = Vector2( 24, -28 )
 polygon = PoolVector2Array( 419.5, 255.5, 452, 240, 452, 146.5, 402.5, 168.5, 403.5, 234, 416, 233 )
 
-[node name="Picture" type="Area2D" parent="OfficeScreen"]
+[node name="Picture" type="Area2D" parent="Room"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OfficeScreen/Picture"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/Picture"]
 position = Vector2( 24, -28 )
 polygon = PoolVector2Array( 736.5, 235, 782.5, 256, 781, 297, 732.5, 274 )
 
-[node name="RoomSprite" type="Sprite" parent="OfficeScreen"]
+[node name="RoomSprite" type="Sprite" parent="Room"]
 position = Vector2( 245.073, -2.35357 )
 texture = ExtResource( 1 )
 offset = Vector2( 299.907, 277.817 )
@@ -46,7 +46,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="OfficeScreen"]
+[node name="Label" type="Label" parent="Room"]
 margin_left = 245.0
 margin_top = 527.0
 margin_right = 845.0
