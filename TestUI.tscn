@@ -1,44 +1,43 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://placeholder_assets/UI_mockup_1.png" type="Texture" id=1]
-[ext_resource path="res://Room.gd" type="Script" id=2]
-[ext_resource path="res://Office.gd" type="Script" id=3]
+[ext_resource path="res://TestUI.gd" type="Script" id=2]
+[ext_resource path="res://BaseLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Google.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 
 [node name="Office" type="Node2D"]
-script = ExtResource( 3 )
-
-[node name="Room" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="Computer" type="Area2D" parent="Room"]
+[node name="BaseLevel" parent="." instance=ExtResource( 3 )]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/Computer"]
+[node name="Computer" type="Area2D" parent="BaseLevel"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BaseLevel/Computer"]
 position = Vector2( 24, -28 )
 polygon = PoolVector2Array( 349.35, 265.6, 415.35, 233.35, 434.35, 321.6, 385.1, 349.35, 349.35, 322.6 )
 
-[node name="Calendar" type="Area2D" parent="Room"]
+[node name="Calendar" type="Area2D" parent="BaseLevel"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/Calendar"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BaseLevel/Calendar"]
 position = Vector2( 24, -28 )
 polygon = PoolVector2Array( 284.841, 224.328, 333.631, 204.529, 333.631, 293.271, 286.255, 312.363 )
 
-[node name="Noteboard" type="Area2D" parent="Room"]
+[node name="Noteboard" type="Area2D" parent="BaseLevel"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/Noteboard"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BaseLevel/Noteboard"]
 position = Vector2( 24, -28 )
 polygon = PoolVector2Array( 419.5, 255.5, 452, 240, 452, 146.5, 402.5, 168.5, 403.5, 234, 416, 233 )
 
-[node name="Picture" type="Area2D" parent="Room"]
+[node name="Picture" type="Area2D" parent="BaseLevel"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room/Picture"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BaseLevel/Picture"]
 position = Vector2( 24, -28 )
 polygon = PoolVector2Array( 736.5, 235, 782.5, 256, 781, 297, 732.5, 274 )
 
-[node name="RoomSprite" type="Sprite" parent="Room"]
+[node name="RoomSprite" type="Sprite" parent="BaseLevel"]
 position = Vector2( 245.073, -2.35357 )
 texture = ExtResource( 1 )
 offset = Vector2( 299.907, 277.817 )
@@ -46,7 +45,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="Room"]
+[node name="Label" type="Label" parent="BaseLevel"]
 margin_left = 245.0
 margin_top = 527.0
 margin_right = 845.0
@@ -59,3 +58,4 @@ __meta__ = {
 }
 
 [node name="Google" parent="." instance=ExtResource( 4 )]
+visible = false
