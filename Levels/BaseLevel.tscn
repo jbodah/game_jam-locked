@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://BaseLevel.gd" type="Script" id=1]
+[ext_resource path="res://Levels/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://placeholder_assets/14124__adcbicycle__5.wav" type="AudioStream" id=5]
+
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource( 1 )

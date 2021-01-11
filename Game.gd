@@ -1,8 +1,8 @@
 extends Node2D
 
-const PrototypingTool = preload("res://PrototypingTool.tscn")
-const TestUI = preload("res://TestUI.tscn")
-const Level1 = preload("res://Level1.tscn")
+const PrototypingTool = preload("res://Debug/PrototypingTool.tscn")
+const TestUI = preload("res://Debug/TestUI.tscn")
+const Level1 = preload("res://Levels/Level1.tscn")
 
 func _ready():
 	add_test_ui()

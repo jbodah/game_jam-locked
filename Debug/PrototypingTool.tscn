@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ResponseContainer.tscn" type="PackedScene" id=1]
-[ext_resource path="res://PrototypingTool.gd" type="Script" id=2]
+[ext_resource path="res://Debug/PrototypingTool.gd" type="Script" id=2]
 
 [node name="PrototypingTool" type="Node2D"]
 position = Vector2( 0, 5.65685 )
