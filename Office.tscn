@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://placeholder_assets/UI_mockup_1.png" type="Texture" id=1]
-[ext_resource path="res://OfficeScreen.gd" type="Script" id=2]
+[ext_resource path="res://Room.gd" type="Script" id=2]
 [ext_resource path="res://Office.gd" type="Script" id=3]
 [ext_resource path="res://Google.tscn" type="PackedScene" id=4]
 

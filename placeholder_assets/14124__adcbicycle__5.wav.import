@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/14124__adcbicycle__5.wav-35446bbd24d9d50ea0d6c246ad21141f.sample"
+
+[deps]
+
+source_file="res://placeholder_assets/14124__adcbicycle__5.wav"
+dest_files=[ "res://.import/14124__adcbicycle__5.wav-35446bbd24d9d50ea0d6c246ad21141f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

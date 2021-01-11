@@ -1,5 +1,7 @@
 extends Node2D
 
+# @deprecated
+
 onready var room = $RoomSprite
 onready var label = $Label
 
@@ -11,6 +13,10 @@ func initialize(the_game):
 
 func _ready():
 	label.text = ""
+	$Room/Computer.connect("input_event", room, "on_input_event", ["computer"])
+	$Room/Calendar.connect("input_event", room, "on_input_event", ["calendar"])
+	$Room/Noteboard.connect("input_event", room, "on_input_event", ["noteboard"])
+	$Room/Picture.connect("input_event", room, "on_input_event", ["picture"])
 
 func on_input_event(_camera, event, _click_pos, id):
 	if event is InputEventMouseButton:

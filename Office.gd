@@ -28,10 +28,6 @@ func seed_config():
 			["password123... What could it mean??"]
 		]
 	}
-	$Room/Computer.connect("input_event", room, "on_input_event", ["computer"])
-	$Room/Calendar.connect("input_event", room, "on_input_event", ["calendar"])
-	$Room/Noteboard.connect("input_event", room, "on_input_event", ["noteboard"])
-	$Room/Picture.connect("input_event", room, "on_input_event", ["picture"])
 
 func open_google():
 	add_child(google)

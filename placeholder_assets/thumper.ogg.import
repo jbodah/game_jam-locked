@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thumper.ogg-9786a68228d43490fb6b48261fc8cce1.oggstr"
+
+[deps]
+
+source_file="res://placeholder_assets/thumper.ogg"
+dest_files=[ "res://.import/thumper.ogg-9786a68228d43490fb6b48261fc8cce1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

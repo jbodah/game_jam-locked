@@ -7,8 +7,8 @@ var next
 onready var left = $HBoxContainer/VBoxContainer
 onready var right = $HBoxContainer/VBoxContainer2
 
-func _ready():
-	var load_res = Data.load_config("level1")
+func initialize(level):
+	var load_res = Data.load_config(level)
 	if load_res[0]:
 		$CanvasLayer/UserOverride.text = "OVERRIDE"
 	var config = load_res[1]
