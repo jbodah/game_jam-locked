@@ -33,8 +33,3 @@ margin_left = 162.0
 margin_top = 387.0
 margin_right = 906.0
 margin_bottom = 556.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 532.287, 340.563 )
-current = true
-zoom = Vector2( 0.8, 0.8 )

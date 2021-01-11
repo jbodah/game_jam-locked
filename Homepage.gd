@@ -1,12 +1,13 @@
 extends Node2D
 
-var game
+var google
 
 func _ready():
-	$SearchButton.connect("pressed", self, "on_Homepage_SearchButton_pressed")
+	$SearchButton.connect("pressed", self, "on_SearchButton_pressed")
+	$FeelingLuckyButton.connect("pressed", self, "on_FeelingLuckyButton_pressed")
 
-func initialize(the_game):
-	game = the_game
+func initialize(the_google):
+	google = the_google
 
 func do_show():
 	$Searchbar.grab_focus()
@@ -15,9 +16,14 @@ func do_show():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") && visible:
-		game.search_text = $Searchbar.text
-		game.search()
+		google.search_text = $Searchbar.text
+		google.search()
 
-func on_Homepage_SearchButton_pressed():
-	game.search_text = $Searchbar.text
-	game.search()
+func on_SearchButton_pressed():
+	google.search_text = $Searchbar.text
+	google.search()
+
+func on_FeelingLuckyButton_pressed():
+	var results = google.do_search($Searchbar.text)
+	if results.size() > 0:
+		google.show_page(results[0])

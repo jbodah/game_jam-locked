@@ -1,38 +1,25 @@
 extends Node2D
 
-onready var room = $Room
+const Item = preload("res://Item.gd")
+
 onready var google = $Google
 
 func _ready():
-	seed_config()
-	room.initialize(self)
-	google.initialize(self)
+	var specs = [
+		Item.build("computer", "Computer", "Bob's Computer", [self, "open_google", []]),
+		Item.build("calendar", "Calendar", "Last year's calendar", [self, "print_text", ["I have a dentist appointment next week. Can't forget"]]),
+		Item.build("picture", "Picture", "Family photo", [self, "print_text", ["Our trip to the Bahamas was amazing"]]),
+		Item.build("noteboard", "Noteboard", "Old sticky notes", [self, "print_text", ["password123... What could it mean??"]])
+	]
+	$BaseLevel.initialize(specs)
+	google.connect("closed", self, "on_google_closed")
 	remove_child(google)
-
-func seed_config():
-	room.onclick = {
-		"computer": [
-			"delegate_game",
-			["open_google"]
-		],
-		"calendar": [
-			"print_text",
-			["I have a dentist appointment next week. Can't forget"]
-		],
-		"picture": [
-			"print_text",
-			["Our trip to the Bahamas was amazing"]
-		],
-		"noteboard": [
-			"print_text",
-			["password123... What could it mean??"]
-		]
-	}
 
 func open_google():
 	add_child(google)
-	remove_child(room)
 
-func close_google():
+func on_google_closed():
 	remove_child(google)
-	add_child(room)
+
+func print_text(text):
+	$BaseLevel/Label.text = text

@@ -130,9 +130,9 @@ texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 980, 701, 27, 26 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/Computer1"]
+[node name="Computer1" type="Area2D" parent="BaseLevel/Computer1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Computer1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Computer1/Computer1"]
 position = Vector2( 0, 0.210236 )
 shape = SubResource( 2 )
 
@@ -148,9 +148,9 @@ texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 784, 575, 24, 28 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/Computer2"]
+[node name="Computer2" type="Area2D" parent="BaseLevel/Computer2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Computer2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Computer2/Computer2"]
 shape = SubResource( 3 )
 
 [node name="Sprite7" type="Sprite" parent="BaseLevel"]
@@ -181,10 +181,10 @@ scale = Vector2( 0.809531, 1 )
 color = Color( 0.898039, 0.823529, 0.0156863, 1 )
 polygon = PoolVector2Array( 298.21, 321.755, 303.713, 324.873, 303.438, 331.332, 297.385, 328.882 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/StickyNote"]
+[node name="StickyNote" type="Area2D" parent="BaseLevel/StickyNote"]
 position = Vector2( 297.138, 330.523 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/StickyNote/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/StickyNote/StickyNote"]
 position = Vector2( 3.00577, -3.70282 )
 shape = SubResource( 4 )
 
@@ -193,11 +193,11 @@ position = Vector2( 124.102, -5.32263 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 581.582, 320.195, 593.831, 325.541, 594.277, 344.472, 584.477, 350.486, 572.004, 343.804, 571.336, 325.541 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/TrashBin"]
+[node name="TrashBin" type="Area2D" parent="BaseLevel/TrashBin"]
 position = Vector2( 578.564, 331.373 )
 scale = Vector2( 0.809531, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/TrashBin/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/TrashBin/TrashBin"]
 position = Vector2( 5.39291, 4.17569 )
 shape = SubResource( 5 )
 
@@ -205,10 +205,10 @@ shape = SubResource( 5 )
 position = Vector2( 253.728, 21.4044 )
 polygon = PoolVector2Array( 449.951, 327.991, 454.406, 330.886, 457.078, 327.545, 458.86, 331.777, 457.747, 336.677, 454.183, 335.118, 448.615, 336.9, 448.615, 332.223, 443.047, 328.436 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/CrumpledPaper"]
+[node name="CrumpledPaper" type="Area2D" parent="BaseLevel/CrumpledPaper"]
 position = Vector2( 451.007, 334.613 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/CrumpledPaper/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/CrumpledPaper/CrumpledPaper"]
 position = Vector2( 0, -1.93243 )
 shape = SubResource( 6 )
 
@@ -216,10 +216,10 @@ shape = SubResource( 6 )
 position = Vector2( 135.907, 10.4908 )
 polygon = PoolVector2Array( 284.244, 317.968, 289.812, 315.073, 297.83, 319.305, 290.926, 322.868 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/Paper"]
+[node name="Paper" type="Area2D" parent="BaseLevel/Paper"]
 position = Vector2( 294.923, 308.599 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Paper/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Paper/Paper"]
 position = Vector2( -2.5271, 9.36501 )
 shape = SubResource( 7 )
 
@@ -240,10 +240,10 @@ position = Vector2( 135.461, 4.25455 )
 color = Color( 0.796078, 0.14902, 0.14902, 1 )
 polygon = PoolVector2Array( 410.752, 235.337, 419.438, 239.792, 419.438, 249.592, 414.761, 251.819, 408.525, 246.474, 409.415, 233.556 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/Book"]
+[node name="Book" type="Area2D" parent="BaseLevel/Book"]
 position = Vector2( 298.491, 247.206 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Book/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Book/Book"]
 position = Vector2( 113.718, -2.67572 )
 shape = SubResource( 8 )
 
@@ -256,10 +256,10 @@ polygon = PoolVector2Array( 410.752, 235.337, 419.438, 239.792, 419.438, 249.592
 position = Vector2( 132.12, 2.47275 )
 polygon = PoolVector2Array( 360.639, 286.564, 364.425, 286.119, 364.648, 292.578, 361.752, 292.132, 358.189, 289.46 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/CoffeeMug"]
+[node name="CoffeeMug" type="Area2D" parent="BaseLevel/CoffeeMug"]
 position = Vector2( 360.627, 292.396 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/CoffeeMug/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/CoffeeMug/CoffeeMug"]
 position = Vector2( 1.78375, -2.67572 )
 shape = SubResource( 9 )
 
@@ -268,10 +268,10 @@ position = Vector2( 126.107, 0.468224 )
 color = Color( 0.941176, 0.909804, 0.0862745, 1 )
 polygon = PoolVector2Array( 402.288, 260.505, 401.843, 256.273, 396.275, 254.714, 393.602, 248.924, 399.838, 247.587, 406.52, 247.587, 409.861, 252.487, 405.406, 255.828, 403.402, 256.719 )
 
-[node name="Area2D" type="Area2D" parent="BaseLevel/Trophy"]
+[node name="Trophy" type="Area2D" parent="BaseLevel/Trophy"]
 position = Vector2( 401.803, 255.085 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Trophy/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Trophy/Trophy"]
 shape = SubResource( 10 )
 
 [node name="TrophyBase" type="Polygon2D" parent="BaseLevel"]
@@ -282,3 +282,8 @@ polygon = PoolVector2Array( 402.065, 258.055, 406.297, 259.837, 406.297, 263.623
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 529.764, 340.563 )
+current = true
+zoom = Vector2( 0.8, 0.8 )

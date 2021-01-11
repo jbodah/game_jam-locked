@@ -4,23 +4,27 @@ var specs_by_node = {}
 
 func initialize(specs):
 	index_specs(specs)
-	var children = get_children()
-	for i in children.size():
-		var sub_children = children[i].get_children()
-		for j in sub_children.size():
-			if sub_children[j] is Area2D:
-				sub_children[j].connect("input_event", self, "on_input_event", [format_id(children[i].get_path())])
-				sub_children[j].connect("mouse_entered", self, "on_mouse_entered", [format_id(children[i].get_path())])
-				sub_children[j].connect("mouse_exited", self, "on_mouse_exited", [format_id(children[i].get_path())])
+	var queue = get_children()
+	while queue.size() > 0:
+		var el = queue.pop_front()
+		if el is Area2D:
+			el.connect("input_event", self, "on_input_event", [format_id(el.get_path())])
+			el.connect("mouse_entered", self, "on_mouse_entered", [format_id(el.get_path())])
+			el.connect("mouse_exited", self, "on_mouse_exited", [format_id(el.get_path())])
+		else:
+			var el_children = el.get_children()
+			for i in el_children.size():
+				queue.push_back(el_children[i])
 
 func index_specs(specs):
 	for i in specs.size():
 		var spec = specs[i]
-		if spec.has("node"):
+		if spec.node != null:
 			assert(get_node(spec.node) != null)
 			if !specs_by_node.has(spec.node):
 				specs_by_node[spec.node] = spec
-			specs_by_node[spec.node]["onclick"] = [self, "play_spec", [spec]]
+			if !specs_by_node[spec.node].onclick != null:
+				specs_by_node[spec.node].onclick = [self, "play_spec", [spec]]
 		else:
 			print("Missing 'node' prop for ", spec.id)
 

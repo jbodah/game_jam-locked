@@ -1,11 +1,13 @@
 extends Node2D
 
+signal closed
+
 class_name Google
 
 var page_manager = PageManager
 var search_text: String
 var search_results: Array
-var game
+var history = []
 
 func _ready():
 	$Homepage.initialize(self)
@@ -14,37 +16,39 @@ func _ready():
 	$BrowserControls/QuitButton.connect("pressed", self, "on_quit")
 	show_homepage()
 
-func initialize(the_game):
-	game = the_game
-
 func search():
-	search_results = page_manager.search(search_text)
+	search_results = do_search(search_text)
 	show_search_results()
+
+func do_search(text):
+	return page_manager.search(text)
 
 func show_homepage():
 	$Homepage.do_show()
+	$BrowserControls/BackButton.hide()
 	$SearchResults.hide()
 	$Page.hide()
 
 func show_search_results():
+	history = ["show_homepage"]
+	$BrowserControls/BackButton.show()
 	$Homepage.hide()
 	$Page.hide()
 	$SearchResults.do_show()
 
 func show_page(page):
+	if $Homepage.visible:
+		history = ["show_homepage"]
+	else:
+		history = ["show_homepage", "show_search_results"]
+	$BrowserControls/BackButton.show()
 	$Homepage.hide()
 	$SearchResults.hide()
 	$Page.do_show()
 	$Page.initialize(self, page.header_text, page.body_text)
 
 func on_back():
-	if $SearchResults.visible:
-		show_homepage()
-	elif $Page.visible:
-		show_search_results()
+	call(history.pop_back())
 
 func on_quit():
-	if game:
-		game.close_google()
-	else:
-		get_tree().quit()
+	emit_signal("closed")

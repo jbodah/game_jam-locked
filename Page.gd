@@ -1,9 +1,9 @@
 extends Node2D
 
-var game
+var google
 
-func initialize(the_game, header_text, body_text):
-	game = the_game
+func initialize(the_google, header_text, body_text):
+	google = the_google
 	$Header.text = header_text
 	$Body.text = body_text
 

@@ -16,7 +16,7 @@ func build_specs_from_config(config):
 	return specs
 
 func build_spec(config, section):
-	var spec = {"id": section}
+	var spec = {"id": section, "onclick": null, "node": null}
 	var keys = config.get_section_keys(section)
 	for j in keys.size():
 		spec[keys[j]] = config.get_value(section, keys[j])

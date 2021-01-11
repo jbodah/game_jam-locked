@@ -58,4 +58,3 @@ __meta__ = {
 }
 
 [node name="Google" parent="." instance=ExtResource( 4 )]
-visible = false

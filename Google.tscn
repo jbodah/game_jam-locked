@@ -404,6 +404,7 @@ margin_left = 17.5434
 margin_top = 20.4672
 margin_right = 59.5434
 margin_bottom = 40.4672
+mouse_default_cursor_shape = 2
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -414,6 +415,7 @@ margin_left = 963.909
 margin_top = 19.4926
 margin_right = 983.909
 margin_bottom = 39.4926
+mouse_default_cursor_shape = 2
 text = "X"
 __meta__ = {
 "_edit_use_anchors_": false
