@@ -7,16 +7,9 @@ var state = "explore"
 var can_transition = true
 
 onready var hover = $HoverLabel
-onready var response_container = $ResponseContainer
-
-func _ready():
-	response_container.connect("close", self, "on_response_container_close")
 
 func _process(_delta):
-	if state == "response":
-		response_container.show()
-	else:
-		response_container.hide()
+	if state == "explore":
 		hover.rect_position.x = get_viewport().get_mouse_position().x + 20
 		hover.rect_position.y = get_viewport().get_mouse_position().y + 20
 		if stack.size() == 0:
@@ -24,7 +17,10 @@ func _process(_delta):
 		else:
 			hover.show()
 			hover.text = Stack.top(stack)
+	else:
+		hover.hide()
 
+# TODO: explain
 func add(name):
 	Stack.push(stack, name)
 
@@ -33,7 +29,11 @@ func remove(name):
 
 func render_spec(spec):
 	state = "response"
-	response_container.render_child(spec)
+	var child = spec.scene.instance()
+	add_child(child)
+	child.connect("close", self, "on_response_close", [child])
+	child.initialize(spec)
 
-func on_response_container_close():
+func on_response_close(child):
 	state = "explore"
+	remove_child(child)

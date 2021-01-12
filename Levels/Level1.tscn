@@ -11,37 +11,37 @@
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=12]
 [ext_resource path="res://placeholder_assets/thumper.ogg" type="AudioStream" id=13]
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 1024, 1024 )
 
-[sub_resource type="CircleShape2D" id=13]
+[sub_resource type="CircleShape2D" id=2]
 radius = 15.0119
 
-[sub_resource type="CircleShape2D" id=14]
+[sub_resource type="CircleShape2D" id=3]
 radius = 15.1954
 
-[sub_resource type="CircleShape2D" id=15]
+[sub_resource type="CircleShape2D" id=4]
 radius = 5.30481
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 14.0532, 14.6339 )
 
-[sub_resource type="CircleShape2D" id=17]
+[sub_resource type="CircleShape2D" id=6]
 radius = 9.36788
 
-[sub_resource type="CapsuleShape2D" id=18]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 9.1554
 height = 0.0
 
-[sub_resource type="CircleShape2D" id=19]
+[sub_resource type="CircleShape2D" id=8]
 radius = 9.07351
 
-[sub_resource type="CircleShape2D" id=20]
+[sub_resource type="CircleShape2D" id=9]
 radius = 4.24808
 
-[sub_resource type="CircleShape2D" id=11]
+[sub_resource type="CircleShape2D" id=10]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 12 )
@@ -108,25 +108,25 @@ tile_data = PoolIntArray( -65532, 1, 0, 262146, 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="BaseLevel"]
 position = Vector2( 542.036, 279.788 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 60, 60, 70 )
 
 [node name="Sprite2" type="Sprite" parent="BaseLevel"]
 position = Vector2( 477.392, 311.999 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 644, 416, 52, 57 )
 
 [node name="Sprite3" type="Sprite" parent="BaseLevel"]
 position = Vector2( 498.352, 326.34 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 780, 334, 33, 37 )
 
 [node name="Computer1" type="Sprite" parent="BaseLevel"]
 position = Vector2( 475.407, 287.73 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 980, 701, 27, 26 )
 
@@ -134,40 +134,40 @@ region_rect = Rect2( 980, 701, 27, 26 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Computer1/Computer1"]
 position = Vector2( 0, 0.210236 )
-shape = SubResource( 13 )
+shape = SubResource( 2 )
 
 [node name="Sprite5" type="Sprite" parent="BaseLevel"]
 position = Vector2( 680.81, 312.881 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 710, 576, 52, 60 )
 
 [node name="Computer2" type="Sprite" parent="BaseLevel"]
 position = Vector2( 685.443, 287.289 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 784, 575, 24, 28 )
 
 [node name="Computer2" type="Area2D" parent="BaseLevel/Computer2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Computer2/Computer2"]
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="Sprite7" type="Sprite" parent="BaseLevel"]
 position = Vector2( 747.218, 351.491 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 324, 674, 54, 55 )
 
 [node name="Sprite8" type="Sprite" parent="BaseLevel"]
 position = Vector2( 419.643, 345.694 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 132, 706, 54, 58 )
 
 [node name="Sprite9" type="Sprite" parent="BaseLevel"]
 position = Vector2( 656.177, 328.098 )
-texture = SubResource( 12 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 851, 462, 33, 37 )
 
@@ -186,7 +186,7 @@ position = Vector2( 297.138, 330.523 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/StickyNote/StickyNote"]
 position = Vector2( 3.00577, -3.70282 )
-shape = SubResource( 15 )
+shape = SubResource( 4 )
 
 [node name="TrashBin" type="Polygon2D" parent="BaseLevel"]
 position = Vector2( 124.102, -5.32263 )
@@ -199,7 +199,7 @@ scale = Vector2( 0.809531, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/TrashBin/TrashBin"]
 position = Vector2( 5.39291, 4.17569 )
-shape = SubResource( 16 )
+shape = SubResource( 5 )
 
 [node name="CrumpledPaper" type="Polygon2D" parent="BaseLevel"]
 position = Vector2( 253.728, 21.4044 )
@@ -210,7 +210,7 @@ position = Vector2( 451.007, 334.613 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/CrumpledPaper/CrumpledPaper"]
 position = Vector2( 0, -1.93243 )
-shape = SubResource( 17 )
+shape = SubResource( 6 )
 
 [node name="Paper" type="Polygon2D" parent="BaseLevel"]
 position = Vector2( 135.907, 10.4908 )
@@ -221,7 +221,7 @@ position = Vector2( 294.923, 308.599 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Paper/Paper"]
 position = Vector2( -2.5271, 9.36501 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="Paper2" type="Polygon2D" parent="BaseLevel"]
 position = Vector2( 136.575, 8.93179 )
@@ -245,7 +245,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Book/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 19 )
+shape = SubResource( 8 )
 
 [node name="Book2" type="Polygon2D" parent="BaseLevel"]
 position = Vector2( 132.788, 6.70453 )
@@ -261,7 +261,7 @@ position = Vector2( 360.627, 292.396 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/CoffeeMug/CoffeeMug"]
 position = Vector2( 1.78375, -2.67572 )
-shape = SubResource( 20 )
+shape = SubResource( 9 )
 
 [node name="Trophy" type="Polygon2D" parent="BaseLevel"]
 position = Vector2( 126.107, 0.468224 )
@@ -272,7 +272,7 @@ polygon = PoolVector2Array( 402.288, 260.505, 401.843, 256.273, 396.275, 254.714
 position = Vector2( 401.803, 255.085 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/Trophy/Trophy"]
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 
 [node name="TrophyBase" type="Polygon2D" parent="BaseLevel"]
 position = Vector2( 126.107, 0.468224 )
@@ -282,8 +282,3 @@ polygon = PoolVector2Array( 402.065, 258.055, 406.297, 259.837, 406.297, 263.623
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 autoplay = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 529.764, 340.563 )
-current = true
-zoom = Vector2( 0.8, 0.8 )

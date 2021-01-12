@@ -13,9 +13,27 @@ _global_script_classes=[ {
 "class": "Google",
 "language": "GDScript",
 "path": "res://Modules/SearchEngine/Google.gd"
+}, {
+"base": "Node2D",
+"class": "MultiPhaseMessage",
+"language": "GDScript",
+"path": "res://Modules/MultiPhaseMessage.gd"
+}, {
+"base": "Node2D",
+"class": "PasswordMessage",
+"language": "GDScript",
+"path": "res://Modules/PasswordMessage.gd"
+}, {
+"base": "Node2D",
+"class": "SimpleMessage",
+"language": "GDScript",
+"path": "res://Modules/SimpleMessage.gd"
 } ]
 _global_script_class_icons={
-"Google": ""
+"Google": "",
+"MultiPhaseMessage": "",
+"PasswordMessage": "",
+"SimpleMessage": ""
 }
 
 [application]

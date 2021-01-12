@@ -8,12 +8,12 @@ class Item:
 	var name
 	var onclick
 
-	static func build(id, node, name, onclick):
+	static func build(the_id, the_node, the_name, the_onclick):
 		var inst = Item.new()
-		inst.id = id
-		inst.node = node
-		inst.name = name
-		inst.onclick = onclick
+		inst.id = the_id
+		inst.node = the_node
+		inst.name = the_name
+		inst.onclick = the_onclick
 		return inst
 
 func _ready():
