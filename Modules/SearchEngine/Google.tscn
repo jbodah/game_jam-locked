@@ -86,7 +86,7 @@ margin_right = 480.036
 margin_bottom = 397.891
 mouse_default_cursor_shape = 2
 theme = ExtResource( 4 )
-text = "Google Search"
+text = "Goojle Search"
 __meta__ = {
 "_edit_use_anchors_": false
 }
