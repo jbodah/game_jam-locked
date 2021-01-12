@@ -19,7 +19,6 @@ func _process(_delta):
 
 func do_show():
 	show()
-	print($Searchbar.visible)
 	$Searchbar.caret_blink = true
 	$Searchbar.text = google.search_text
 	$Searchbar.grab_focus()
