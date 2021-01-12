@@ -3,7 +3,7 @@ extends Control
 const Path = preload("res://Util/Path.gd")
 
 var curr
-var enabled = true
+export var enabled = false
 
 func _ready():
 	if self == get_tree().current_scene:

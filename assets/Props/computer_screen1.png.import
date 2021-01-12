@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex"
+path="res://.import/computer_screen1.png-a8823300b5064b57d1b83461a6c7a592.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HelpPage_IconPack-06.png"
-dest_files=[ "res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex" ]
+source_file="res://assets/Props/computer_screen1.png"
+dest_files=[ "res://.import/computer_screen1.png-a8823300b5064b57d1b83461a6c7a592.stex" ]
 
 [params]
 

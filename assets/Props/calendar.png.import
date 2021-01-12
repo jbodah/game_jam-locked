@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex"
+path="res://.import/calendar.png-76b9e404a8acd048cce2835667ba3c15.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HelpPage_IconPack-06.png"
-dest_files=[ "res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex" ]
+source_file="res://assets/Props/calendar.png"
+dest_files=[ "res://.import/calendar.png-76b9e404a8acd048cce2835667ba3c15.stex" ]
 
 [params]
 

@@ -20,7 +20,7 @@ func index_specs(specs):
 	for i in specs.size():
 		var spec = specs[i]
 		if spec.node != null:
-			assert(get_node(spec.node) != null)
+			assert($YSort.get_node(spec.node) != null)
 			if !specs_by_node.has(spec.node):
 				specs_by_node[spec.node] = spec
 			if !specs_by_node[spec.node].onclick != null:

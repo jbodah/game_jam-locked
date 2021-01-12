@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex"
+path="res://.import/sticky note1.png-e53ee5ba900af77318fe2dc3eb236184.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HelpPage_IconPack-06.png"
-dest_files=[ "res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex" ]
+source_file="res://assets/Props/sticky note1.png"
+dest_files=[ "res://.import/sticky note1.png-e53ee5ba900af77318fe2dc3eb236184.stex" ]
 
 [params]
 

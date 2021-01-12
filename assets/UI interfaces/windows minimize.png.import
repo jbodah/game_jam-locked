@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sticky1.jpg-e48e2084771dff0659dc2222f25827ec.stex"
+path="res://.import/windows minimize.png-6029fcb69228880c3cbdb9087b5097ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sticky1.jpg"
-dest_files=[ "res://.import/sticky1.jpg-e48e2084771dff0659dc2222f25827ec.stex" ]
+source_file="res://assets/UI interfaces/windows minimize.png"
+dest_files=[ "res://.import/windows minimize.png-6029fcb69228880c3cbdb9087b5097ad.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

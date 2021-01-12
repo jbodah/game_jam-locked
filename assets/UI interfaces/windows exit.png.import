@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex"
+path="res://.import/windows exit.png-cef0d03a4beaa2fe93dce11cf9f2b141.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HelpPage_IconPack-06.png"
-dest_files=[ "res://.import/HelpPage_IconPack-06.png-a9ab83de0a1f6f649577881b0efda59a.stex" ]
+source_file="res://assets/UI interfaces/windows exit.png"
+dest_files=[ "res://.import/windows exit.png-cef0d03a4beaa2fe93dce11cf9f2b141.stex" ]
 
 [params]
 
