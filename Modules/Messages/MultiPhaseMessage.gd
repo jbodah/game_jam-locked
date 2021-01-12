@@ -8,7 +8,6 @@ func _initialize(spec):
 	$BaseMessage/Label.text = spec.messages[spec["current"]]
 	if spec.messages.size() > spec["current"]:
 		spec["current"] += 1
-	delay_input()
 
 func _process(_delta):
 	if just_clicked():

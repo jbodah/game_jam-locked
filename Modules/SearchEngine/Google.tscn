@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://placeholder_assets/google.png" type="Texture" id=2]
+[ext_resource path="res://assets/google.png" type="Texture" id=2]
 [ext_resource path="res://Modules/SearchEngine/Homepage.gd" type="Script" id=3]
 [ext_resource path="res://Modules/SearchEngine/GoogleTheme.tres" type="Theme" id=4]
 [ext_resource path="res://Modules/SearchEngine/Google.gd" type="Script" id=5]

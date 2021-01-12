@@ -13,3 +13,5 @@ static func spec_to_module(spec):
 			return MultiPhaseMessage.instance()
 		"sticky_note":
 			return StickyNote.instance()
+		_:
+			print("SpecToModule.spec_to_module: unrecognized type ", spec["type"])

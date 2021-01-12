@@ -2,12 +2,13 @@ extends Node2D
 
 signal close
 
-var ignore_input = true
+var ignore_input = false
 var timer = Timer.new()
 
 func initialize(spec):
 	if spec.has("sound_open"):
 		SoundEffect.play(spec["sound_open"])
+	delay_input()
 	_initialize(spec)
 
 func _initialize(_spec):
@@ -16,6 +17,7 @@ func _initialize(_spec):
 func delay_input():
 	timer.wait_time = 0.1
 	timer.autostart = true
+	ignore_input = true
 	add_child(timer)
 	yield(timer, "timeout")
 	ignore_input = false
