@@ -2,9 +2,9 @@ extends Node2D
 
 const Data = preload("res://Util/Data.gd")
 
-const SimpleMessage = preload("res://Modules/SimpleMessage.tscn")
-const PasswordMessage = preload("res://Modules/PasswordMessage.tscn")
-const MultiPhaseMessage = preload("res://Modules/MultiPhaseMessage.tscn")
+const SimpleMessage = preload("res://Modules/Messages/SimpleMessage.tscn")
+const PasswordMessage = preload("res://Modules/Messages/PasswordMessage.tscn")
+const MultiPhaseMessage = preload("res://Modules/Messages/MultiPhaseMessage.tscn")
 
 func _ready():
 	var config = Data.load_config("level1")[1]

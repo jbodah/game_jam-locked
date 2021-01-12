@@ -17,17 +17,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "MultiPhaseMessage",
 "language": "GDScript",
-"path": "res://Modules/MultiPhaseMessage.gd"
+"path": "res://Modules/Messages/MultiPhaseMessage.gd"
 }, {
 "base": "Node2D",
 "class": "PasswordMessage",
 "language": "GDScript",
-"path": "res://Modules/PasswordMessage.gd"
+"path": "res://Modules/Messages/PasswordMessage.gd"
 }, {
 "base": "Node2D",
 "class": "SimpleMessage",
 "language": "GDScript",
-"path": "res://Modules/SimpleMessage.gd"
+"path": "res://Modules/Messages/SimpleMessage.gd"
 } ]
 _global_script_class_icons={
 "Google": "",
