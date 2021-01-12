@@ -24,7 +24,7 @@ func _ready():
 		Item.build("noteboard", "Noteboard", "Old sticky notes", [self, "print_text", ["password123... What could it mean??"]])
 	]
 	$BaseLevel.initialize(specs)
-	google.connect("closed", self, "on_google_closed")
+	google.connect("close", self, "on_google_closed")
 	remove_child(google)
 
 func open_google():

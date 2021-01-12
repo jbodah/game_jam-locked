@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SoundEffect.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_assets/14124__adcbicycle__5.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/203512__blueneon__56k-modem.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/164689__adam-n__phone-voice-cartoon.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/483598__raclure__wrong.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/397355__plasterbrain__tada-fanfare-a.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/537244__georgehopkins__mechanical-keyboard-typing.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/442943__qubodup__level-up.wav" type="AudioStream" id=8]
 
 [node name="SoundEffect" type="Control"]
 visible = false
@@ -12,3 +18,21 @@ __meta__ = {
 
 [node name="rummage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+
+[node name="modem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="cartoon_voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="fanfare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="typing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )

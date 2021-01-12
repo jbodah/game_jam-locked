@@ -2,7 +2,7 @@ extends "res://Modules/BaseModule.gd"
 
 class_name StickyNote
 
-const SPEED = 1.5
+const SPEED = 1.7
 
 func _initialize(spec):
 	$Label.text = spec.message

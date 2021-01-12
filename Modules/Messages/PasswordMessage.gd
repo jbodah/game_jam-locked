@@ -5,6 +5,7 @@ class_name PasswordMessage
 signal correct_password_entered
 
 var state = "enter_password"
+var spec = {"pass_message": "you win", "actual_password": "meatball", "fail_message": "try again later"}
 
 onready var line_edit = $EnterPassword/LineEdit
 onready var result = $Result
@@ -26,15 +27,23 @@ func _process(_delta):
 			if just_clicked() || just_hit_enter():
 				close()
 
-func _initialize(spec):
-	line_edit.connect("text_entered", self, "check_password", [spec])
+func _ready():
+	SoundEffect.play("typing")
+	line_edit.connect("text_entered", self, "check_password", [])
 
-func check_password(text, spec):
+func _initialize(the_spec):
+	spec = the_spec
+
+func check_password(text):
 	delay_input()
 	if text == spec.actual_password:
+		$Background.color = Color("198b13")
+		SoundEffect.play("success")
 		state = "password_pass"
 		result.text = spec.pass_message
 	else:
+		SoundEffect.play("fail")
+		$AnimationPlayer.play("flash_red")
 		state = "password_fail"
 		result.text = spec.fail_message
 

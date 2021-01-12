@@ -1,6 +1,4 @@
-extends Node2D
-
-signal closed
+extends "res://Modules/BaseModule.gd"
 
 class_name Google
 
@@ -10,10 +8,11 @@ var search_results: Array
 var history = []
 
 func _ready():
+	SoundEffect.play("modem")
 	$Homepage.initialize(self)
 	$SearchResults.initialize(self)
 	$BrowserControls/BackButton.connect("pressed", self, "on_back")
-	$BrowserControls/QuitButton.connect("pressed", self, "on_quit")
+	$BrowserControls/QuitButton.connect("pressed", self, "close")
 	show_homepage()
 
 func search():
@@ -49,6 +48,3 @@ func show_page(page):
 
 func on_back():
 	call(history.pop_back())
-
-func on_quit():
-	emit_signal("closed")

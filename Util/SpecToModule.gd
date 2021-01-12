@@ -2,6 +2,7 @@ const SimpleMessage = preload("res://Modules/Messages/SimpleMessage.tscn")
 const PasswordMessage = preload("res://Modules/Messages/PasswordMessage.tscn")
 const MultiPhaseMessage = preload("res://Modules/Messages/MultiPhaseMessage.tscn")
 const StickyNote = preload("res://Modules/StickyNote.tscn")
+const Google = preload("res://Modules/SearchEngine/Google.tscn")
 
 static func spec_to_module(spec):
 	match spec["type"]:
@@ -13,5 +14,7 @@ static func spec_to_module(spec):
 			return MultiPhaseMessage.instance()
 		"sticky_note":
 			return StickyNote.instance()
+		"search_engine":
+			return Google.instance()
 		_:
 			print("SpecToModule.spec_to_module: unrecognized type ", spec["type"])

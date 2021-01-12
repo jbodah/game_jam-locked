@@ -3,7 +3,6 @@ extends Node2D
 signal close
 
 var ignore_input = false
-var timer = Timer.new()
 
 func initialize(spec):
 	if spec.has("sound_open"):
@@ -15,11 +14,8 @@ func _initialize(_spec):
 	pass
 
 func delay_input():
-	timer.wait_time = 0.1
-	timer.autostart = true
 	ignore_input = true
-	add_child(timer)
-	yield(timer, "timeout")
+	yield(get_tree().create_timer(0.1), "timeout")
 	ignore_input = false
 
 func just_clicked():
