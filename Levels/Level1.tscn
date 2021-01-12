@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Levels/BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://placeholder_assets/TileObjectsOfficeFurniture.png" type="Texture" id=5]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Resources/reverse-wall.tres" type="TileSet" id=10]
 [ext_resource path="res://Resources/wall-outercorner.tres" type="TileSet" id=11]
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=12]
-[ext_resource path="res://placeholder_assets/thumper.ogg" type="AudioStream" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -278,7 +277,3 @@ shape = SubResource( 10 )
 position = Vector2( 126.107, 0.468224 )
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 402.065, 258.055, 406.297, 259.837, 406.297, 263.623, 401.62, 263.178, 398.947, 260.283 )
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-autoplay = true

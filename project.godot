@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "SimpleMessage",
 "language": "GDScript",
 "path": "res://Modules/Messages/SimpleMessage.gd"
+}, {
+"base": "Node2D",
+"class": "StickyNote",
+"language": "GDScript",
+"path": "res://Modules/StickyNote.gd"
 } ]
 _global_script_class_icons={
 "Google": "",
 "MultiPhaseMessage": "",
 "PasswordMessage": "",
-"SimpleMessage": ""
+"SimpleMessage": "",
+"StickyNote": ""
 }
 
 [application]
@@ -45,6 +51,8 @@ config/icon="res://icon.png"
 [autoload]
 
 PageManager="*res://Modules/SearchEngine/PageManager.gd"
+SoundEffect="*res://SoundEffect.tscn"
+Music="*res://Music.tscn"
 
 [debug]
 

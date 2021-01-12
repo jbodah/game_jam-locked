@@ -26,7 +26,7 @@ func _process(_delta):
 			if just_clicked() || just_hit_enter():
 				close()
 
-func initialize(spec):
+func _initialize(spec):
 	line_edit.connect("text_entered", self, "check_password", [spec])
 
 func check_password(text, spec):

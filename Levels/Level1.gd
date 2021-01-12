@@ -2,12 +2,9 @@ extends Node2D
 
 const Data = preload("res://Util/Data.gd")
 
-const SimpleMessage = preload("res://Modules/Messages/SimpleMessage.tscn")
-const PasswordMessage = preload("res://Modules/Messages/PasswordMessage.tscn")
-const MultiPhaseMessage = preload("res://Modules/Messages/MultiPhaseMessage.tscn")
-
 func _ready():
 	var config = Data.load_config("level1")[1]
+	Music.play("level1")
 	var specs = build_specs_from_config(config)
 	$BaseLevel.initialize(specs)
 
@@ -24,11 +21,4 @@ func build_spec(config, section):
 	var keys = config.get_section_keys(section)
 	for j in keys.size():
 		spec[keys[j]] = config.get_value(section, keys[j])
-	match spec["type"]:
-		"simple":
-			spec["scene"] = SimpleMessage
-		"password":
-			spec["scene"] = PasswordMessage
-		"multi_phase_message":
-			spec["scene"] = MultiPhaseMessage
 	return spec

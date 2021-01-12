@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SoundEffect.gd" type="Script" id=1]
+[ext_resource path="res://placeholder_assets/14124__adcbicycle__5.wav" type="AudioStream" id=2]
+
+[node name="SoundEffect" type="Control"]
+visible = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rummage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )

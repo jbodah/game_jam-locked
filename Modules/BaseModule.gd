@@ -5,6 +5,14 @@ signal close
 var ignore_input = true
 var timer = Timer.new()
 
+func initialize(spec):
+	if spec.has("sound_open"):
+		SoundEffect.play(spec["sound_open"])
+	_initialize(spec)
+
+func _initialize(_spec):
+	pass
+
 func delay_input():
 	timer.wait_time = 0.1
 	timer.autostart = true

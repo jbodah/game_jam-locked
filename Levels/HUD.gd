@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 const Stack = preload("res://Util/Stack.gd")
+const SpecToModule = preload("res://Util/SpecToModule.gd")
 
 var stack = Stack.new()
 var state = "explore"
@@ -29,7 +30,7 @@ func remove(name):
 
 func render_spec(spec):
 	state = "response"
-	var child = spec.scene.instance()
+	var child = SpecToModule.spec_to_module(spec)
 	add_child(child)
 	child.connect("close", self, "on_response_close", [child])
 	child.initialize(spec)

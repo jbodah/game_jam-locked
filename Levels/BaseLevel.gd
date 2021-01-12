@@ -48,11 +48,4 @@ func format_id(path):
 	return String(path).split("/")[-1]
 
 func play_spec(spec):
-	play_rummage_sound_effect()
 	$HUD.render_spec(spec)
-
-func play_rummage_sound_effect():
-	var start = rand_range(0, 2)
-	$Rummage.play(start)
-	yield(get_tree().create_timer(2), "timeout")
-	$Rummage.stop()

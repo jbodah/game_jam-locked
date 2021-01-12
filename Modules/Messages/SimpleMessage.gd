@@ -2,7 +2,7 @@ extends "res://Modules/BaseModule.gd"
 
 class_name SimpleMessage
 
-func initialize(spec):
+func _initialize(spec):
 	$BaseMessage/Label.text = spec.message
 	delay_input()
 
