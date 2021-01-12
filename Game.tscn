@@ -14,15 +14,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TestUI" type="Button" parent="BootLoader"]
-margin_right = 1026.0
-margin_bottom = 299.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Test UI"
-
 [node name="Level1" type="Button" parent="BootLoader"]
-margin_top = 303.0
 margin_right = 1026.0
 margin_bottom = 603.0
 size_flags_horizontal = 3
