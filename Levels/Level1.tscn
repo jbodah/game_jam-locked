@@ -25,32 +25,32 @@
 [ext_resource path="res://assets/Props/Furniture/trash empty.png" type="Texture" id=23]
 [ext_resource path="res://assets/Props/cup3.png" type="Texture" id=24]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 15.0119
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 13.3077
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 radius = 3.7365
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8.49466, 11.2633 )
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=5]
 radius = 9.36788
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 9.1554
 height = 0.0
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=7]
 radius = 9.07351
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=8]
 radius = 3.31989
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=9]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 12 )
@@ -158,7 +158,7 @@ position = Vector2( -2.27164, -1.28778 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/Computer1/Computer1"]
 position = Vector2( 0.47467, 0.526688 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Screen" type="Sprite" parent="BaseLevel/YSort/Computer1"]
 position = Vector2( -4.46983, -4.58923 )
@@ -188,7 +188,7 @@ position = Vector2( -1.48749, 0.49025 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/Computer2/Computer2"]
 position = Vector2( 2.83102, -0.298004 )
 z_index = 1
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="BookShelf" type="Sprite" parent="BaseLevel/YSort"]
 position = Vector2( 222.909, 309.84 )
@@ -232,7 +232,7 @@ scale = Vector2( 0.809531, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/StickyNote/StickyNote"]
 position = Vector2( 62.4973, 26.5892 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="TrashBin" type="Sprite" parent="BaseLevel/YSort"]
 position = Vector2( 431.284, 305.189 )
@@ -249,7 +249,7 @@ scale = Vector2( 0.809531, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/TrashBin/TrashBin"]
 position = Vector2( -27.6163, 34.7804 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CrumpledPaper" type="Polygon2D" parent="BaseLevel/YSort"]
 position = Vector2( 144.228, 22.6544 )
@@ -263,7 +263,7 @@ position = Vector2( 451.007, 334.613 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/CrumpledPaper/CrumpledPaper"]
 position = Vector2( 0, -1.93243 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Paper" type="Polygon2D" parent="BaseLevel/YSort"]
 position = Vector2( 108.968, -97.3506 )
@@ -279,7 +279,7 @@ position = Vector2( 294.923, 308.599 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/Paper/Paper"]
 position = Vector2( -2.5271, 9.36501 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="Paper2" type="Polygon2D" parent="BaseLevel/YSort/Paper"]
 position = Vector2( 0.667969, -1.55902 )
@@ -307,7 +307,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/Book/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Book2" type="Polygon2D" parent="BaseLevel/YSort/Book"]
 position = Vector2( -2.673, 2.44998 )
@@ -328,7 +328,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/Book2/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Book2" type="Polygon2D" parent="BaseLevel/YSort/Book2"]
 position = Vector2( -2.673, 2.44998 )
@@ -349,7 +349,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/Book3/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Book2" type="Polygon2D" parent="BaseLevel/YSort/Book3"]
 position = Vector2( -2.673, 2.44998 )
@@ -383,7 +383,7 @@ position = Vector2( -1.86031, 2.2078 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/CoffeeMug/CoffeeMug"]
 position = Vector2( 1.78375, -2.67572 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="Trophy" type="Polygon2D" parent="BaseLevel/YSort"]
 position = Vector2( 43.0108, -162.112 )
@@ -399,7 +399,7 @@ __meta__ = {
 position = Vector2( 401.803, 255.085 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseLevel/YSort/Trophy/Trophy"]
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="TrophyBase" type="Polygon2D" parent="BaseLevel/YSort/Trophy"]
 color = Color( 0, 0, 0, 1 )
