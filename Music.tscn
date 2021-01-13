@@ -9,7 +9,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-enabled = true
 
 [node name="level1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )

@@ -2,13 +2,19 @@ extends "res://Modules/BaseModule.gd"
 
 class_name MultiPhaseMessage
 
-func _initialize(spec):
-	if !spec.has("current"):
-		spec["current"] = 0
-	$BaseMessage/Label.text = spec.messages[spec["current"]]
-	if spec.messages.size() > spec["current"]:
-		spec["current"] += 1
+var spec = {}
 
-func _process(_delta):
-	if just_clicked():
-		close()
+func _ready():
+	$SimpleMessage.connect("close", self, "on_message_close")
+
+func _initialize(the_spec):
+	spec = the_spec
+	if !spec.has("index"):
+		spec["index"] = 0
+	var phase = spec.phases[spec["index"]]
+	$SimpleMessage.initialize(phase)
+
+func on_message_close():
+	if spec.phases.size() > spec["index"] + 1:
+		spec["index"] += 1
+	close()

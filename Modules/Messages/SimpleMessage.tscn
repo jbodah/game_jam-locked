@@ -1,9 +1,46 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Modules/Messages/SimpleMessage.gd" type="Script" id=1]
-[ext_resource path="res://Modules/Messages/BaseMessage.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.133333, 0.12549, 0.12549, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
 
 [node name="SimpleMessage" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="BaseMessage" parent="." instance=ExtResource( 2 )]
+[node name="BaseMessage" type="Control" parent="."]
+margin_right = 1028.0
+margin_bottom = 611.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BaseMessage"]
+margin_left = 159.0
+margin_top = 390.0
+margin_right = 890.0
+margin_bottom = 545.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem  lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Caret" type="Polygon2D" parent="BaseMessage"]
+position = Vector2( 365.803, 602.867 )
+scale = Vector2( 0.965237, 1.23927 )
+antialiased = true
+polygon = PoolVector2Array( 497, -70, 514.245, -70, 505.622, -62 )
