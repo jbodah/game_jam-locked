@@ -1,0 +1,5 @@
+#! /usr/bin/env sh
+set -xe
+rm export/html/*
+godot --export HTML5 export/html/index.html
+butler push export/html jbodah/game-jam-Locked:html
