@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "MultiPhaseMessage",
 "language": "GDScript",
-"path": "res://Modules/Messages/MultiPhaseMessage.gd"
+"path": "res://Modules/Messages/MultiVisitMessage.gd"
 }, {
 "base": "Node2D",
 "class": "PasswordMessage",
