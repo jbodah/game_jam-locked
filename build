@@ -1,5 +1,6 @@
 #! /usr/bin/env sh
-set -xe
+set -x
 rm export/html/*
+set -e
 godot --export HTML5 export/html/index.html
 butler push export/html jbodah/game-jam-Locked:html
