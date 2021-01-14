@@ -25,11 +25,6 @@ _global_script_classes=[ {
 "path": "res://LevelConfig.gd"
 }, {
 "base": "Node2D",
-"class": "MultiPhaseMessage",
-"language": "GDScript",
-"path": "res://Modules/Composition/MultiVisit.gd"
-}, {
-"base": "Node2D",
 "class": "PasswordMessage",
 "language": "GDScript",
 "path": "res://Modules/Messages/PasswordMessage.gd"
@@ -48,7 +43,6 @@ _global_script_class_icons={
 "Calendar": "",
 "Google": "",
 "LevelConfig": "",
-"MultiPhaseMessage": "",
 "PasswordMessage": "",
 "SimpleMessage": "",
 "StickyNote": ""

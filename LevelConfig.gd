@@ -7,7 +7,8 @@ const TYPE_LOOKUP = {
 	multi_visit = preload("res://Modules/Composition/MultiVisit.tscn"),
 	sticky_note = preload("res://Modules/StickyNote.tscn"),
 	search_engine = preload("res://Modules/SearchEngine/Google.tscn"),
-	calendar = preload("res://Modules/Calendar.tscn")
+	calendar = preload("res://Modules/Calendar.tscn"),
+	sequence = preload("res://Modules/Composition/Sequence.tscn")
 }
 
 var config

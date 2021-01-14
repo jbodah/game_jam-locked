@@ -14,7 +14,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( -0.5, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 497.25, 789.559 ), Vector2( 497.25, 199.615 ) ]
@@ -26,7 +26,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( -0.5, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 415.795, 670.885 ), Vector2( 415.795, 80.9406 ) ]
@@ -75,16 +75,16 @@ __meta__ = {
 }
 
 [node name="sticky1" type="Sprite" parent="."]
-position = Vector2( 510.049, 208.094 )
+position = Vector2( 497.25, 789.559 )
 scale = Vector2( 2.37321, 2.37321 )
 texture = ExtResource( 2 )
 flip_h = true
 
 [node name="Label" type="Label" parent="."]
 margin_left = 415.795
-margin_top = 80.9406
+margin_top = 670.885
 margin_right = 629.795
-margin_bottom = 295.941
+margin_bottom = 885.885
 rect_rotation = 10.2159
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )

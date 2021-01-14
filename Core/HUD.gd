@@ -30,7 +30,10 @@ func remove(name):
 func render_spec(spec):
 	state = "response"
 	var child = spec.type.instance()
+	child.connect("ready", self, "on_child_ready", [child, spec])
 	add_child(child)
+	
+func on_child_ready(child, spec):
 	child.connect("close", self, "on_child_close", [child])
 	child.initialize(spec)
 
