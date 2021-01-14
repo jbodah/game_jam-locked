@@ -15,4 +15,4 @@ func music():
 	return _level_key()
 
 func _level_key():
-	return String(get_path()).get_basename().get_file()
+	return String(get_path()).get_basename().get_file().to_lower()
