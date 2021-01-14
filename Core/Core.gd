@@ -22,7 +22,7 @@ func initialize(the_level):
 func index_specs(specs):
 	for i in specs.size():
 		var spec = specs[i]
-		if spec.node == null:
+		if !spec.has("node"):
 			print("Section '%s' is missing 'node' property" % spec.id)
 			continue
 		if level.object_root_node().get_node(spec.node) == null:
@@ -30,7 +30,7 @@ func index_specs(specs):
 			continue
 		if !specs_by_node.has(spec.node):
 			specs_by_node[spec.node] = spec
-		if !specs_by_node[spec.node].onclick != null:
+		if !specs_by_node[spec.node].has("onclick"):
 			specs_by_node[spec.node].onclick = [self, "play_spec", [spec]]
 
 func on_input_event(_camera, event, _click_pos, id):

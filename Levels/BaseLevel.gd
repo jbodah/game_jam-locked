@@ -6,7 +6,6 @@ func _ready():
 	$Core.initialize(self)
 
 func specs():
-	print(_level_key())
 	return LevelConfig.new(_level_key()).compile()
 
 func object_root_node():

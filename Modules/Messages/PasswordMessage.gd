@@ -17,6 +17,9 @@ func _ready():
 	line_edit.grab_focus()
 	line_edit.connect("text_entered", self, "check_password", [])
 
+func _initialize(the_spec):
+	spec = the_spec
+
 func _process(_delta):
 	match state:
 		"enter_password":
@@ -33,9 +36,6 @@ func _process(_delta):
 			$Result.show()
 			if just_clicked() || just_hit_enter():
 				close()
-
-func _initialize(the_spec):
-	spec = the_spec
 
 func on_outside_gui_input(_event):
 	if just_clicked():
