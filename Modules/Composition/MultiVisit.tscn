@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Modules/Messages/MultiVisitMessage.gd" type="Script" id=1]
+[ext_resource path="res://Modules/Composition/MultiVisit.gd" type="Script" id=1]
 [ext_resource path="res://Modules/Messages/SimpleMessage.tscn" type="PackedScene" id=2]
 
 [node name="MultiPhaseMessage" type="Node2D"]
