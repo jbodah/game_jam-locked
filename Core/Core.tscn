@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Levels/BaseLevel.gd" type="Script" id=1]
-[ext_resource path="res://Levels/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Core/Core.gd" type="Script" id=1]
+[ext_resource path="res://Core/HUD.tscn" type="PackedScene" id=2]
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource( 1 )

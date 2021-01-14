@@ -25,4 +25,6 @@ func just_hit_enter():
 	return !ignore_input && Input.is_action_just_pressed("ui_accept")
 
 func close():
+	if get_tree().current_scene == self:
+		print("DEBUG: close()")
 	emit_signal("close")

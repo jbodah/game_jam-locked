@@ -9,6 +9,13 @@ var spec = {"pass_message": "you win", "actual_password": "meatball", "fail_mess
 
 onready var line_edit = $EnterPassword/LineEdit
 onready var result = $Result
+onready var outside = $Outside
+
+func _ready():
+	SoundEffect.play("typing")
+	outside.connect("gui_input", self, "on_outside_gui_input")
+	line_edit.grab_focus()
+	line_edit.connect("text_entered", self, "check_password", [])
 
 func _process(_delta):
 	match state:
@@ -27,12 +34,12 @@ func _process(_delta):
 			if just_clicked() || just_hit_enter():
 				close()
 
-func _ready():
-	SoundEffect.play("typing")
-	line_edit.connect("text_entered", self, "check_password", [])
-
 func _initialize(the_spec):
 	spec = the_spec
+
+func on_outside_gui_input(_event):
+	if just_clicked():
+		close()
 
 func check_password(text):
 	delay_input()

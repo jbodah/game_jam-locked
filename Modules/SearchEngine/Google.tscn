@@ -42,8 +42,8 @@ script = ExtResource( 5 )
 script = ExtResource( 3 )
 
 [node name="Background" type="ColorRect" parent="Homepage"]
-margin_right = 1017.0
-margin_bottom = 599.0
+margin_right = 1031.0
+margin_bottom = 607.0
 theme = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -96,8 +96,8 @@ visible = false
 script = ExtResource( 8 )
 
 [node name="Background" type="ColorRect" parent="SearchResults"]
-margin_right = 1017.0
-margin_bottom = 599.0
+margin_right = 1031.0
+margin_bottom = 607.0
 mouse_filter = 2
 theme = SubResource( 1 )
 __meta__ = {
@@ -363,10 +363,9 @@ visible = false
 script = ExtResource( 6 )
 
 [node name="Background" type="ColorRect" parent="Page"]
-margin_left = 0.974609
-margin_top = 0.48732
-margin_right = 1017.97
-margin_bottom = 599.487
+margin_left = 1.0
+margin_right = 1033.0
+margin_bottom = 610.0
 mouse_filter = 2
 theme = SubResource( 1 )
 __meta__ = {
