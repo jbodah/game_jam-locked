@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/sticky1.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI interfaces/z_Sticky.png" type="Texture" id=2]
 [ext_resource path="res://Modules/StickyNote.gd" type="Script" id=3]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "fly_up_in"
 step = 0.5
 tracks/0/type = "value"
@@ -32,7 +32,7 @@ tracks/1/keys = {
 "values": [ Vector2( 415.795, 670.885 ), Vector2( 415.795, 80.9406 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "fly_up_out"
 step = 0.5
 tracks/0/type = "value"
@@ -75,28 +75,25 @@ __meta__ = {
 }
 
 [node name="sticky1" type="Sprite" parent="."]
-position = Vector2( 497.25, 199.615 )
-scale = Vector2( 0.752423, 0.752423 )
+position = Vector2( 510.049, 208.094 )
+scale = Vector2( 2.37321, 2.37321 )
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+flip_h = true
 
 [node name="Label" type="Label" parent="."]
 margin_left = 415.795
 margin_top = 80.9406
 margin_right = 629.795
 margin_bottom = 295.941
-rect_rotation = 15.9949
+rect_rotation = 10.2159
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ja Rule was here"
 autowrap = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/fly_up_in = SubResource( 2 )
-anims/fly_up_out = SubResource( 3 )
+anims/fly_up_in = SubResource( 1 )
+anims/fly_up_out = SubResource( 2 )

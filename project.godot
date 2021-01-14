@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "Calendar",
+"language": "GDScript",
+"path": "res://Modules/Calendar.gd"
+}, {
+"base": "Node2D",
 "class": "Google",
 "language": "GDScript",
 "path": "res://Modules/SearchEngine/Google.gd"
@@ -35,6 +40,7 @@ _global_script_classes=[ {
 "path": "res://Modules/StickyNote.gd"
 } ]
 _global_script_class_icons={
+"Calendar": "",
 "Google": "",
 "MultiPhaseMessage": "",
 "PasswordMessage": "",
