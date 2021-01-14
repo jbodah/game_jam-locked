@@ -2,9 +2,13 @@
 static func load_config(filename) -> Array:
 	var config = ConfigFile.new()
 	var file = File.new()
-	if file.file_exists("user://" + filename + ".cfg"):
-		config.load("user://" + filename + ".cfg")
+	var user_path = "user://" + filename + ".cfg"
+	if file.file_exists(user_path):
+		var err = config.load(user_path)
+		assert(err == 0, "Invalid user file: %s" % user_path)
 		return [true, config]
 	else:
-		config.load("res://data/" + filename + ".cfg")
+		var path = "res://data/" + filename + ".cfg"
+		var err = config.load(path)
+		assert(err == 0, "Invalid resource file: %s" % path)
 		return [false, config]
