@@ -14,6 +14,7 @@ func on_child_close(child):
 		curr += 1
 		render_next_subsection()
 	else:
+		remove_child(child)
 		var animation = $AnimationPlayer
 		animation.play_backwards()
 		yield(animation, "animation_finished")

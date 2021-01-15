@@ -14,17 +14,18 @@ func _process(_delta):
 		hover.rect_position.y = get_viewport().get_mouse_position().y + 20
 		if stack.size() == 0:
 			hover.hide()
+			Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 		else:
 			hover.show()
+			Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 			hover.text = Stack.top(stack)
 	else:
 		hover.hide()
 
-# TODO: explain
-func add(name):
+func add_hover(name):
 	Stack.push(stack, name)
 
-func remove(name):
+func remove_hover(name):
 	Stack.evict(stack, name)
 
 func render_spec(spec):

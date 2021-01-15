@@ -45,11 +45,11 @@ func on_input_event(_camera, event, _click_pos, id):
 
 func on_mouse_entered(id):
 	if specs_by_node.has(id):
-		$HUD.add(specs_by_node[id].name)
+		$HUD.add_hover(specs_by_node[id].name)
 
 func on_mouse_exited(id):
 	if specs_by_node.has(id):
-		$HUD.remove(specs_by_node[id].name)
+		$HUD.remove_hover(specs_by_node[id].name)
 
 func format_id(path):
 	return String(path).split("/")[-1]
