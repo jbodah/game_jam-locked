@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Locked"
-run/main_scene="res://Levels/Level1.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
