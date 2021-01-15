@@ -22,7 +22,7 @@
 [ext_resource path="res://assets/Props/sticky note1.png" type="Texture" id=20]
 [ext_resource path="res://assets/Props/pot plant1.png" type="Texture" id=21]
 [ext_resource path="res://assets/Props/pot plant2.png" type="Texture" id=22]
-[ext_resource path="res://Levels/Level1.gd" type="Script" id=23]
+[ext_resource path="res://Levels/BaseLevel.gd" type="Script" id=23]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
 
 [sub_resource type="CircleShape2D" id=1]
