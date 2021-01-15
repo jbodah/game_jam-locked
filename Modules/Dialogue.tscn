@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Character/female_torso1.png" type="Texture" id=1]
+[ext_resource path="res://assets/Character/torso3_black.png" type="Texture" id=2]
+[ext_resource path="res://assets/Character/female_legs1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Character/head3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Character/female_head2.png" type="Texture" id=5]
+[ext_resource path="res://assets/Character/legs2.png" type="Texture" id=6]
+[ext_resource path="res://Modules/Dialogue.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FlyLeftRightIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Romero:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -143, 148.5 ), Vector2( 165, 148.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Julia:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1105, 135 ), Vector2( 820, 135 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/AlphaMask:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.188235, 0.188235, 0 ), Color( 0.196078, 0.188235, 0.188235, 0.631373 ) ]
+}
+
+[node name="Dialogue" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AlphaMask" type="ColorRect" parent="CanvasLayer"]
+margin_left = -20.0
+margin_top = -15.0
+margin_right = 1061.0
+margin_bottom = 619.0
+color = Color( 0.196078, 0.188235, 0.188235, 0 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Romero" type="Node2D" parent="CanvasLayer"]
+position = Vector2( -143, 148.5 )
+
+[node name="head3" type="Sprite" parent="CanvasLayer/Romero"]
+position = Vector2( 27.2999, 44.7778 )
+scale = Vector2( 5.77778, 5.77778 )
+z_index = 3
+texture = ExtResource( 4 )
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="torso3_black" type="Sprite" parent="CanvasLayer/Romero"]
+position = Vector2( 21.2998, 121.667 )
+scale = Vector2( 4.66667, 4.66667 )
+z_index = 1
+texture = ExtResource( 2 )
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="legs2" type="Sprite" parent="CanvasLayer/Romero"]
+position = Vector2( 30.7998, 214.632 )
+scale = Vector2( 5.36842, 5.36842 )
+texture = ExtResource( 6 )
+flip_h = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Julia" type="Node2D" parent="CanvasLayer"]
+position = Vector2( 1105, 135 )
+
+[node name="female_torso1" type="Sprite" parent="CanvasLayer/Julia"]
+position = Vector2( 45.9999, 127.5 )
+scale = Vector2( 5.22727, 5.22727 )
+z_index = 1
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="female_head2" type="Sprite" parent="CanvasLayer/Julia"]
+position = Vector2( 36.9999, 48.1364 )
+scale = Vector2( 5.90909, 5.90909 )
+z_index = 1
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="female_legs1" type="Sprite" parent="CanvasLayer/Julia"]
+position = Vector2( 28.2998, 224.5 )
+scale = Vector2( 5.22727, 5.22727 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "FlyLeftRightIn"
+playback_speed = 1.3
+anims/FlyLeftRightIn = SubResource( 1 )

@@ -3,7 +3,7 @@ extends Control
 const Path = preload("res://Util/Path.gd")
 
 var curr
-var enabled = false
+var enabled = true
 
 func _ready():
 	if self == get_tree().current_scene:
@@ -23,11 +23,10 @@ func play(name):
 	if curr:
 		stop(curr)
 	else:
-		curr = name
-		call(name)
+		var node = get_node(name)
+		if node:
+			node.play()
+			curr = name
 
 func stop(name):
 	get_node(name).stop()
-
-func level1():
-	$level1.play()

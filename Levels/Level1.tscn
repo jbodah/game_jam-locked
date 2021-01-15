@@ -22,7 +22,7 @@
 [ext_resource path="res://assets/Props/sticky note1.png" type="Texture" id=20]
 [ext_resource path="res://assets/Props/pot plant1.png" type="Texture" id=21]
 [ext_resource path="res://assets/Props/pot plant2.png" type="Texture" id=22]
-[ext_resource path="res://Levels/BaseLevel.gd" type="Script" id=23]
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=23]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -60,6 +60,9 @@ script = ExtResource( 23 )
 [node name="Tiles" type="Node2D" parent="."]
 position = Vector2( 403.702, -8.49769 )
 scale = Vector2( 1.2, 1.2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Wall" type="TileMap" parent="Tiles"]
 position = Vector2( -10, 11 )
@@ -117,6 +120,9 @@ format = 1
 tile_data = PoolIntArray( -65532, 1, 0, 262146, 1, 0 )
 
 [node name="YSort" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cupboard" type="Sprite" parent="YSort"]
 position = Vector2( 627.083, 233 )

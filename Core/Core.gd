@@ -22,6 +22,8 @@ func initialize(the_level):
 func index_specs(specs):
 	for i in specs.size():
 		var spec = specs[i]
+		if spec.id[0] == "_":
+			continue
 		if !spec.has("node"):
 			print("Section '%s' is missing 'node' property" % spec.id)
 			continue

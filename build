@@ -4,3 +4,4 @@ rm export/html/*
 set -e
 godot --export HTML5 export/html/index.html
 butler push export/html jbodah/game-jam-Locked:html
+open https://jbodah.itch.io/game-jam-locked
