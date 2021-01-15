@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://assets/Props/Furniture/trash full.png" type="Texture" id=1]
 [ext_resource path="res://assets/Props/computer block.png" type="Texture" id=2]
@@ -22,8 +22,11 @@
 [ext_resource path="res://assets/Props/sticky note1.png" type="Texture" id=20]
 [ext_resource path="res://assets/Props/pot plant1.png" type="Texture" id=21]
 [ext_resource path="res://assets/Props/pot plant2.png" type="Texture" id=22]
-[ext_resource path="res://Levels/BaseLevel.gd" type="Script" id=23]
+[ext_resource path="res://Levels/Level2.gd" type="Script" id=23]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/Character/female_legs1.png" type="Texture" id=25]
+[ext_resource path="res://assets/Character/female_head2.png" type="Texture" id=26]
+[ext_resource path="res://assets/Character/female_torso1.png" type="Texture" id=27]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.0119
@@ -52,10 +55,51 @@ radius = 3.31989
 
 [sub_resource type="CircleShape2D" id=9]
 
+[sub_resource type="Animation" id=10]
+resource_name = "ZoomIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("JuliaCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("JuliaCamera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 395.668, 327.759 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AlphaMask:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.188235, 0.188235, 0 ), Color( 0.196078, 0.188235, 0.188235, 0.631373 ) ]
+}
+
 [node name="Level2" type="Node2D"]
+position = Vector2( -4.76575, -1.26151 )
 script = ExtResource( 23 )
 
 [node name="Core" parent="." instance=ExtResource( 24 )]
+position = Vector2( 0.396851, 0 )
 
 [node name="Tiles" type="Node2D" parent="."]
 position = Vector2( 403.702, -8.49769 )
@@ -483,3 +527,41 @@ texture = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="female_head2" type="Sprite" parent="."]
+position = Vector2( 537.5, 373.299 )
+scale = Vector2( 2, 2 )
+z_index = 2
+texture = ExtResource( 26 )
+
+[node name="female_legs1" type="Sprite" parent="."]
+position = Vector2( 535.056, 438.908 )
+scale = Vector2( 2, 2 )
+z_index = 2
+texture = ExtResource( 25 )
+
+[node name="female_torso1" type="Sprite" parent="."]
+position = Vector2( 541.678, 401.354 )
+scale = Vector2( 2, 2 )
+z_index = 2
+texture = ExtResource( 27 )
+
+[node name="JuliaCamera" type="Camera2D" parent="."]
+position = Vector2( 395.668, 327.759 )
+anchor_mode = 0
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="AlphaMask" type="ColorRect" parent="."]
+margin_left = -20.0
+margin_top = -15.0
+margin_right = 1061.0
+margin_bottom = 619.0
+mouse_filter = 2
+color = Color( 0.196078, 0.188235, 0.188235, 0.631373 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="JuliaCameraAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ZoomIn = SubResource( 10 )

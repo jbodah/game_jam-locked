@@ -21,11 +21,4 @@ func on_child_close(child):
 		close()
 		
 func render_next_subsection():
-	var child_spec = spec.subsections[curr]
-	var child = child_spec.type.instance()
-	child.connect("ready", self, "on_child_ready", [child, child_spec])
-	add_child(child)
-	
-func on_child_ready(child, child_spec):
-	child.connect("close", self, "on_child_close", [child])
-	child.initialize(child_spec)	
+	spawn_child(spec.subsections[curr])

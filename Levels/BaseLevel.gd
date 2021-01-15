@@ -17,7 +17,12 @@ func maybe_play_intro():
 func specs():
 	if !_specs:
 		_specs = LevelConfig.new(_level_key()).compile()
+		for spec in _specs:
+			spec["camera_provider"] = self
 	return _specs
+	
+func get_camera(_name):
+	pass
 
 func object_root_node():
 	return $YSort

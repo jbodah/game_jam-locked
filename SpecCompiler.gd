@@ -7,7 +7,8 @@ const TYPE_LOOKUP = {
 	calendar = preload("res://Modules/Calendar.tscn"),
 	sequence = preload("res://Modules/Composition/Sequence.tscn"),
 	dialogue = preload("res://Modules/Dialogue.tscn"),
-	choice = preload("res://Modules/Choice.tscn")
+	choice = preload("res://Modules/Choice.tscn"),
+	camera_zoom = preload("res://Modules/CameraZoom.tscn")
 }
 
 static func compile_spec(spec):

@@ -33,10 +33,9 @@ func render_spec(spec):
 	var child = spec.type.instance()
 	child.connect("ready", self, "on_child_ready", [child, spec])
 	add_child(child)
-	
+
 func on_child_ready(child, spec):
 	child.connect("close", self, "on_child_close", [child])
-	print("init1")
 	child.initialize(spec)
 
 func on_child_close(child):

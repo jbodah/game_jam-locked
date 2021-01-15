@@ -57,14 +57,14 @@ margin_left = -20.0
 margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
-color = Color( 0.196078, 0.188235, 0.188235, 0 )
+color = Color( 0.196078, 0.188235, 0.188235, 0.631373 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Romero" type="Node2D" parent="CanvasLayer"]
-position = Vector2( -143, 148.5 )
+position = Vector2( 165, 148.5 )
 
 [node name="head3" type="Sprite" parent="CanvasLayer/Romero"]
 position = Vector2( 27.2999, 44.7778 )
@@ -96,7 +96,7 @@ __meta__ = {
 }
 
 [node name="Julia" type="Node2D" parent="CanvasLayer"]
-position = Vector2( 1105, 135 )
+position = Vector2( 820, 135 )
 
 [node name="female_torso1" type="Sprite" parent="CanvasLayer/Julia"]
 position = Vector2( 45.9999, 127.5 )

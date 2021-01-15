@@ -18,11 +18,4 @@ func on_child_close(child):
 		
 func render_next_subsection():
 	var child_spec = spec.subsections[curr]
-	var child = child_spec.type.instance()
-	child.connect("ready", self, "on_child_ready", [child, child_spec])
-	add_child(child)
-	
-func on_child_ready(child, child_spec):
-	child.connect("close", self, "on_child_close", [child])
-	print("init2")
-	child.initialize(child_spec)	
+	spawn_child(child_spec)
