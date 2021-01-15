@@ -6,11 +6,14 @@ var _specs
 
 func _ready():
 	$Core.initialize(self)
+	maybe_play_intro()
+
+func maybe_play_intro():
 	for spec in specs():
 		if spec.id == "_intro":
 			$Core.play_spec(spec)
 			break
-
+			
 func specs():
 	if !_specs:
 		_specs = LevelConfig.new(_level_key()).compile()

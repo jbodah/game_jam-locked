@@ -24,4 +24,5 @@ func render_next_subsection():
 	
 func on_child_ready(child, child_spec):
 	child.connect("close", self, "on_child_close", [child])
+	print("init2")
 	child.initialize(child_spec)	
