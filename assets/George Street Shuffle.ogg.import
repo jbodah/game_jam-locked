@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/George Street Shuffle.ogg-5e655277d17c86cc57e81ef23c63703e.oggstr"
+
+[deps]
+
+source_file="res://assets/George Street Shuffle.ogg"
+dest_files=[ "res://.import/George Street Shuffle.ogg-5e655277d17c86cc57e81ef23c63703e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

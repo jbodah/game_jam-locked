@@ -55,10 +55,10 @@ radius = 3.31989
 
 [sub_resource type="CircleShape2D" id=20]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=21]
 resource_name = "ZoomIn"
 tracks/0/type = "value"
-tracks/0/path = NodePath("BossCamera:zoom")
+tracks/0/path = NodePath("JuliaCamera:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -70,7 +70,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BossCamera:position")
+tracks/1/path = NodePath("JuliaCamera:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -79,7 +79,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 305.865, 329.173 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 389.097, 329.173 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AlphaMask:color")
@@ -547,7 +547,9 @@ z_index = 2
 texture = ExtResource( 27 )
 
 [node name="JuliaCamera" type="Camera2D" parent="."]
+position = Vector2( 389.097, 329.173 )
 anchor_mode = 0
+zoom = Vector2( 0.3, 0.3 )
 
 [node name="AlphaMask" type="ColorRect" parent="."]
 margin_left = -20.0
@@ -555,11 +557,11 @@ margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
 mouse_filter = 2
-color = Color( 0.196078, 0.188235, 0.188235, 0 )
+color = Color( 0.196078, 0.188235, 0.188235, 0.631373 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="JuliaCameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ZoomIn = SubResource( 11 )
+anims/ZoomIn = SubResource( 21 )

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Music.gd" type="Script" id=1]
-[ext_resource path="res://placeholder_assets/thumper.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/George Street Shuffle.ogg" type="AudioStream" id=3]
 
 [node name="Music" type="Control"]
 visible = false
@@ -11,7 +11,7 @@ __meta__ = {
 }
 
 [node name="level1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
 
 [node name="level2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
