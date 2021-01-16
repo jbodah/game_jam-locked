@@ -32,6 +32,165 @@ def_level do
     end
   end
 
+  camera_zoom 'Julia' do |z|
+    z.camera = 'julia'
+    z.speed = 1
+
+    sequence do
+      message 'Any progress? I really need to send some emails.'
+
+      choice do
+        on_choice 'Still nothing' do
+          '...'
+        end
+
+        on_choice 'Do you remember anything about your password, Julia?'  do
+          messages [
+            'Not exactly, I remember a few things, but it’s all a bit fuzzy...',
+            "My password was a word plus a single number at the end.\nAnd there was something pink involved... Sorry, that’s everything I know."
+          ]
+        end
+
+        on_choice %(So, you’re Romero’s girlfriend, right?) do
+          message "Oh, that’s a common misconception here, but no I’m not.\nI mean, we used to date, but he didn’t want anything serious."
+
+          choice do
+            resp = proc do
+              messages [
+              "Weird right? Even a bit creepy.\nBut he never did anything to me, so I guess it’s fine.",
+              "I just don’t want any drama, we share an office after all.\nPlus, as long as he doesn’t interfere with my work, he can have any platonic obsession he wants.",
+              'Soon I’ll be promoted and get the hell out of this damn agency!',
+              'Whoops, don’t tell that to the boss.'
+              ]
+            end
+            on_choice 'Then why does he have so many pictures of you?', &resp
+            on_choice 'But all he talks about is his love for you!', &resp
+          end
+        end
+      end
+    end
+  end
+
+  # todo after unlock
+  # Oh, you’re my hero! Thanks a lot.
+  # Now please, get the hell out of here, I have work to do.
+  #After that:
+  #= Julia doesn’t respond, she just keeps typing on the computer.
+
+  camera_zoom 'Romero' do |z|
+    z.camera = 'romero'
+    z.speed = 1
+
+    multi_visit do
+      sequence do
+        messages [
+          'Oh mere mortal, struck by such sight you stand in shock, thinking your eyes deceive you.',
+          "But fear not! I guarantee you this beautiful face isn’t the one of a demon or incubus.\nJust a public relations specialist.",
+          'Romero\'s the name.'
+        ]
+
+        choice do
+          on_choice "Oh... Alright, I guess. I'm here to unlock your computer." do
+            message "Do it quickly, will you? I'm not used to waiting for other people.\nIt’s usually the other way around."
+          end
+
+          on_choice "What the fuck are you talking about?" do
+            messages [
+              "Rude.",
+              "Just do your job, tech guy."
+            ]
+          end
+        end
+      end
+
+      sequence do
+        message "I know I'm irresistible, but you have more to do than just staring at me."
+
+        choice do
+          on_choice "I sure have, goodbye." do
+            message "Oh, it’s so tiring being beautiful."
+          end
+
+          on_choice "Romero, do you remember anything about your password?" do
+            messages [
+              "Oh, how it hurts!\nTo think that such important information could simply vanish overnight.\nNow I fear that one day I might forget her smile..."
+            ]
+
+            choice do
+              resp = proc do
+                messages [
+                  "It's Julia! I was sure my password was the love of my life. How could it be anything else?\nBut I tried inputting her name over and over again, with no success.",
+                  "I even tried \"J5L14\"..."
+                ]
+              end
+
+              on_choice "Just get to the point already.", &resp
+              on_choice "Sorry, what are you talking about?", &resp
+            end
+          end
+
+          on_choice "Why do you have so many pictures of Julia on your wall?" do
+            messages [
+              "Is that not clear enough?\nBecause I love her with every fiber of my body!\nShe's my most precious possession, she’s my guiding light!",
+              "She gives hope and strength to face this cruel existence!\nJulia is... the son."
+            ]
+
+            choice do
+              on_choice "You mean \"the sun\"?" do
+                message "Oh, yeah, yeah, that’s it."
+              end
+
+              on_choice "(remain silent)" do
+                message "Yes, be speechless in face of true love!"
+              end
+
+              on_choice "Julia told me you two aren’t even dating anymore. (only unlocks after talking to julia about Romero)" do
+                messages [
+                  "She what? Damn Julia!",
+                  "Ok, you’re the IT guy, I don't need to uphold this facade.\nKid, let me teach you one thing.\nDo you know what really attracts women?",
+                  "A man’s romantic and unconditional love...\nFor another woman."
+                ]
+
+                final = "Now get to work! And don’t tell anyone about our conversation."
+                choice do
+                  on_choice "You're a jerk." do
+                    messages [
+                      "Meh, doesn't seem to bother Julia, so what's the problem?",
+                      final
+                    ]
+                  end
+
+                  on_choice "That’s bullshit, you know that?" do
+                    messages [
+                      "It is not! I read it in a book.",
+                      final
+                    ]
+                  end
+
+                  on_choice "(remain silent)" do
+                    messages [
+                      "Judge me all you want, you still need to unlock my computer.",
+                      final
+                    ]
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+# After unlocking his computer:
+
+# Finally! You may not have the looks I do, but at least you’re pretty clever.
+# Not as much as me, of course, but still pretty clever.
+
+# After that:
+
+# Bother my beauty no longer, for I have work to do.
+# = Romero is just browsing social media.
+
   password do |p|
     p.name = "Romero's computer"
     p.actual_password = '0128'
@@ -141,7 +300,6 @@ def_level do
 
   sequence do |s|
     s.name = 'bookshelf'
-    s.node = 'Book'
 
     message 'There are several books here, of varying genres.'
 
@@ -155,12 +313,10 @@ def_level do
       end
 
       on_choice 'Pink book...' do
-        sequence do
-          message "It's \"Pride and Prejudice\". There's a note inside the book."
+        message "It's \"Pride and Prejudice\". There's a note inside the book."
 
-          sticky_note do |s|
-            s.message = 'password = green book + lucky number'
-          end
+        sticky_note do |s|
+          s.message = 'password = green book + lucky number'
         end
       end
 

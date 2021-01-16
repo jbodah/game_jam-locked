@@ -42,17 +42,13 @@ def_level do
 
     choice do
       on_choice 'Are they all broken?' do
-        sequence do
-          play_animation 'boss_angry'
-          message "No, no, that’s not it!\nThey are all in good condition, but something real strange happened."
-        end
+        play_animation 'boss_angry'
+        message "No, no, that’s not it!\nThey are all in good condition, but something real strange happened."
       end
 
       on_choice 'Have you tried turning it off and on again?' do
-        sequence do
-          play_animation 'boss_angry'
-          message "No, no, that’s not it!\nThey are all in good condition, but something real strange happened."
-        end
+        play_animation 'boss_angry'
+        message "No, no, that’s not it!\nThey are all in good condition, but something real strange happened."
       end
     end
 
@@ -172,7 +168,7 @@ def_level do
 
   sticky_note do |s|
     s.name = 'sticky note'
-    s.message = "password question \nwhat is your favorite food? \n+ \nwhat is your age?"
+    s.message = "password question\nwhat is your favorite food?\n+\nwhat is your age?"
   end
 
   simple do |s|
@@ -220,12 +216,12 @@ def_level do
 
   simple do |s|
     s.name = 'employee of the month'
-    s.message = "The employee of the month is... \nThe Boss himself?"
+    s.message = "The employee of the month is...\nThe Boss himself?"
   end
 
   simple do |s|
     s.name = 'picture on the wall'
-    s.message = "The Boss surfing in Hawaii. He almost looks cool. \nAlmost."
+    s.message = "The Boss surfing in Hawaii. He almost looks cool.\nAlmost."
   end
   simple do |s|
     s.name = 'trophy rack'

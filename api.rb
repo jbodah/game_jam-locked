@@ -70,20 +70,26 @@ module API
 
   def message(msg)
     simple do |s|
-      s.message = msg
+      s.message = fix_msg(msg)
     end
   end
 
   def messages(msgs)
     simple do |s|
-      s.messages = msgs
+      s.messages = msgs.map { |m| fix_msg(m) }
     end
+  end
+
+  def fix_msg(msg)
+    msg.split("\n").map(&:lstrip).join("\n")
   end
 
   def on_choice(choice_msg, &blk)
     self["choices"] ||= []
     self["choices"] << choice_msg
-    instance_eval(&blk)
+    instance_eval do
+      sequence(&blk)
+    end
   end
 end
 
