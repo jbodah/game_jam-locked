@@ -10,8 +10,8 @@ func _ready():
 	$Core.initialize(self)
 	$Core.event_bus.connect("correct_password_entered", self, "on_correct_password_entered")
 	$Core.event_bus.connect("next_level", self, "on_next_level")
-	if get_tree().current_scene == self:
-		maybe_play_intro()
+	$Core.event_bus.connect("play_animation", self, "on_play_animation")
+	maybe_play_intro()
 
 func maybe_play_intro():
 	for spec in specs():
@@ -49,3 +49,6 @@ func on_correct_password_entered(_spec):
 func on_next_level():
 	print("on_next_level()")
 	emit_signal("done")
+
+func on_play_animation(_name):
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://SoundEffect.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_assets/14124__adcbicycle__5.wav" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/397355__plasterbrain__tada-fanfare-a.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/537244__georgehopkins__mechanical-keyboard-typing.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/442943__qubodup__level-up.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/mumble.wav" type="AudioStream" id=9]
 
 [node name="SoundEffect" type="Control"]
 visible = false
@@ -36,3 +37,6 @@ stream = ExtResource( 5 )
 
 [node name="typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+
+[node name="mumble" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )

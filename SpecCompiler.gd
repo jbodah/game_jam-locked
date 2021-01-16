@@ -9,7 +9,8 @@ const TYPE_LOOKUP = {
 	dialogue = preload("res://Modules/Dialogue.tscn"),
 	choice = preload("res://Modules/Choice.tscn"),
 	camera_zoom = preload("res://Modules/CameraZoom.tscn"),
-	next_level = preload("res://Modules/NextLevel.tscn")
+	next_level = preload("res://Modules/NextLevel.tscn"),
+	play_animation = preload("res://Modules/PlayAnimation.tscn")
 }
 
 static func compile_spec(spec):

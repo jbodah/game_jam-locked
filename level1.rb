@@ -17,10 +17,13 @@ end
 
 def_level do
   boss_chat '_intro' do
-    messages [
-      'Oh, there you are!',
-      'Welcome to Howard Phillips Advertising Agency, we’re so happy to have a new member in our family, yada, yada, you’re late on the first day kid, you know that’s no good, right?'
-    ]
+    simple do |s|
+      s.sound_open = 'mumble'
+      s.messages = [
+        'Oh, there you are!',
+        'Welcome to Howard Phillips Advertising Agency, we’re so happy to have a new member in our family, yada, yada, you’re late on the first day kid, you know that’s no good, right?'
+      ]
+    end
 
     choose do
       on_choice 'Sorry I missed the bus...' do
@@ -39,11 +42,17 @@ def_level do
 
     choice do
       on_choice 'Are they all broken?' do
-        message "No, no, that’s not it! \nThey are all in good condition, but something real strange happened."
+        sequence do
+          play_animation 'boss_angry'
+          message "No, no, that’s not it!\nThey are all in good condition, but something real strange happened."
+        end
       end
 
       on_choice 'Have you tried turning it off and on again?' do
-        message "No, no, that’s not it! \nThey are all in good condition, but something real strange happened."
+        sequence do
+          play_animation 'boss_angry'
+          message "No, no, that’s not it!\nThey are all in good condition, but something real strange happened."
+        end
       end
     end
 

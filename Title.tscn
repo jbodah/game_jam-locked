@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/UI interfaces/Title/titleback.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI interfaces/Title/admin1.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI interfaces/Title/admin2.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI interfaces/Title/password.png" type="Texture" id=4]
+[ext_resource path="res://Resources/font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Title.gd" type="Script" id=6]
+[ext_resource path="res://assets/UI interfaces/Title/title stickynote.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 52.6011
+
+[node name="Title" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="titleback" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 512, 231 )
+scale = Vector2( 4.79545, 4.79545 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.5
+playing = true
+
+[node name="password" type="Sprite" parent="."]
+position = Vector2( 512, 322 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 372.0
+margin_top = 371.0
+margin_right = 655.0
+margin_bottom = 406.0
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 368.0
+margin_top = 410.0
+margin_right = 668.0
+margin_bottom = 411.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title stickynote" type="Sprite" parent="."]
+position = Vector2( 203.5, 343.183 )
+scale = Vector2( 6.08333, 6.08333 )
+texture = ExtResource( 7 )
+
+[node name="StickyNote" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickyNote"]
+position = Vector2( 202, 343 )
+shape = SubResource( 4 )

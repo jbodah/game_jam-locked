@@ -50,14 +50,16 @@ module API
     calendar
     search_engine
     next_level
+    play_animation
   ).each do |sym|
     class_eval <<~EOF
-      def #{sym}(&blk)
+      def #{sym}(name = nil, &blk)
         res = {"type" => "#{sym}"}
         if respond_to?(:[]=)
           self["subsections"] ||= []
           self["subsections"] << res
         end
+        res["name"] = name if name
         res.instance_eval(&blk) if blk
         res
       end

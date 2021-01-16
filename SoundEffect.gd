@@ -26,6 +26,9 @@ func modem():
 
 func cartoon_voice():
 	play_for($cartoon_voice, 0, 1.6)
+	
+func mumble():
+	$mumble.play()
 
 func fanfare():
 	$fanfare.play()
