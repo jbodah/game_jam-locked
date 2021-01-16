@@ -2,6 +2,8 @@ extends Node2D
 
 signal done
 
+const LeftClick = preload("res://Util/LeftClick.gd")
+
 var sticky_spec = {
 	type = preload("res://Modules/StickyNote.tscn"),
 	message = "password123"
@@ -18,15 +20,15 @@ func _ready():
 	$StickyNote.connect("mouse_exited", self, "on_sticky_mouse_exited")
 	$LineEdit.connect("text_entered", self, "on_text_entered")
 	$LineEdit.connect("text_changed", self, "on_text_changed")
-	
+
 func on_sticky_mouse_entered():
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-	
+
 func on_sticky_mouse_exited():
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-	
+
 func on_sticky_input_event(_camera, event, _click_pos):
-	if event is InputEventMouseButton && event.pressed:
+	if LeftClick.is_left_click(event):
 		child = sticky_spec.type.instance()
 		child.connect("ready", self, "on_child_ready", [sticky_spec])
 		add_child(child)
@@ -39,7 +41,7 @@ func on_child_close(_spec):
 	remove_child(child)
 	child.queue_free()
 	child = null
-	
+
 func on_text_changed(_text):
 	$LineEdit.add_color_override("font_color", Color.black)
 

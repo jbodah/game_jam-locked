@@ -1,5 +1,7 @@
 extends Node2D
 
+const LeftClick = preload("res://Util/LeftClick.gd")
+
 var specs_by_node = {}
 var level
 var child
@@ -38,7 +40,7 @@ func index_specs(specs):
 			specs_by_node[spec.node].onclick = [self, "play_spec", [spec]]
 
 func on_input_event(_camera, event, _click_pos, id):
-	if event is InputEventMouseButton && event.pressed:
+	if LeftClick.is_left_click(event):
 		if specs_by_node.has(id):
 			var receiver = specs_by_node.get(id).get("onclick")[0]
 			var method = specs_by_node.get(id).get("onclick")[1]

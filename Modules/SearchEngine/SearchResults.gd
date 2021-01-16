@@ -1,5 +1,7 @@
 extends Node2D
 
+const LeftClick = preload("res://Util/LeftClick.gd")
+
 var google
 
 func _ready():
@@ -37,10 +39,10 @@ func do_show():
 		node.get_node("DescLabel").text = google.search_results[i].desc_text
 
 func on_SearchResults_MagnifyingGlass_input_event(_camera, event, _click_pos):
-	if event is InputEventMouseButton:
+	if LeftClick.is_left_click(event):
 		google.search_text = $Searchbar.text
 		google.search()
 
 func on_SearchResult_Link_input_event(event, idx):
-	if event is InputEventMouseButton && event.pressed:
+	if LeftClick.is_left_click(event):
 		google.show_page(google.search_results[idx])
