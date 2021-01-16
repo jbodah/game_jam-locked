@@ -6,10 +6,10 @@
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Characters/Julia.tscn" type="PackedScene" id=25]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 3.53001
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 resource_name = "ZoomIn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("JuliaCamera:zoom")
@@ -118,7 +118,7 @@ polygon = PoolVector2Array( -22.4548, -54.3555, -11.129, -50.3582, -10.7293, -23
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/StickyNote"]
 position = Vector2( -38.6407, -23.9839 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ContactBook" type="Area2D" parent="level"]
 
@@ -200,4 +200,4 @@ __meta__ = {
 }
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ZoomIn = SubResource( 1 )
+anims/ZoomIn = SubResource( 2 )

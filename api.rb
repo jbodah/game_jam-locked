@@ -91,6 +91,7 @@ module API
     instance_eval do
       sequence.instance_exec(choice, &blk)
     end
+    raise "Can't set_flag on choice; set_flag on choice response instead" if choice["set_flag"]
   end
 end
 

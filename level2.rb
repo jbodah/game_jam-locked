@@ -1,6 +1,8 @@
 require './api'
 include API
 
+FLAG_TALKED_TO_JULIA_ABOUT_ROMERO = "talked_to_julia_about_romero"
+
 def_level do
   camera_zoom do |z|
     z.id = '_intro'
@@ -51,8 +53,11 @@ def_level do
           ]
         end
 
-        on_choice %(So, you’re Romero’s girlfriend, right?) do
-          message "Oh, that’s a common misconception here, but no I’m not.\nI mean, we used to date, but he didn’t want anything serious."
+        on_choice %(So, you’re Romero’s girlfriend, right?) do |c|
+          simple do |s|
+            s.set_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
+            s.message = "Oh, that’s a common misconception here, but no I’m not.\nI mean, we used to date, but he didn’t want anything serious."
+          end
 
           choice do
             resp = proc do
@@ -144,7 +149,9 @@ def_level do
                 message "Yes, be speechless in face of true love!"
               end
 
-              on_choice "Julia told me you two aren’t even dating anymore. (only unlocks after talking to julia about Romero)" do
+              on_choice "Julia told me you two aren’t even dating anymore." do |c|
+                c.if_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
+
                 messages [
                   "She what? Damn Julia!",
                   "Ok, you’re the IT guy, I don't need to uphold this facade.\nKid, let me teach you one thing.\nDo you know what really attracts women?",
