@@ -22,4 +22,6 @@ func _process(_delta):
 			label.text = queue.pop_front()
 	if queue.size() > 0:
 		caret.show()
+	else:
+		caret.hide()
 

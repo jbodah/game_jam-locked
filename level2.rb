@@ -37,13 +37,11 @@ def_level do
     p.actual_password = '0128'
     p.pass_message = 'Welcome SexyGuy123'
     p.fail_message = "Hmm... that didn't seem right"
-    p.node = 'Computer1'
   end
 
   calendar do |c|
     c.name = "Romero's calendar"
     c.message = "Two dates are on the calendar\n01/17 - Julia's Bday (a lot of <3 here)\n01/28 - My birthday (a ;) face)"
-    c.node = 'Calendar1'
   end
 
   sticky_note do |s|
@@ -74,7 +72,6 @@ def_level do
   simple do |s|
     s.name = 'photos on the wall'
     s.message = 'MANY photos of Julia and MANY heart stickers.'
-    s.node = 'WallPhoto'
   end
 
   simple do |s|
@@ -90,8 +87,6 @@ def_level do
   simple do |s|
     s.name = 'portrait on desk'
     s.message = "Romero's portrait. His teeth are so white it hurts to look at."
-
-    s.node = 'Portrait'
   end
 
   password do |p|
@@ -99,13 +94,11 @@ def_level do
     p.actual_password = 'macbeth7'
     p.pass_message = 'Welcome Juju3'
     p.fail_message = "Hmm... that didn't seem right"
-    p.node = 'Computer2'
   end
 
   calendar do |c|
     c.name = "Julia's calendar"
     c.message = "Two dates are on the calendar\n01/16 - My birthday\n01/28 - Romero's birthday"
-    c.node = 'Calendar2'
   end
 
   simple do |s|
@@ -117,13 +110,11 @@ def_level do
   simple do |s|
     s.name = "Julia's bag"
     s.message = "I may be desperate for clues, but searching through someone's bag is a bit too much."
-    s.node = 'Bag'
   end
 
   simple do |s|
     s.name = "Julia's drawer"
     s.message = 'Lipstick, eyeliner, paper clips and clearly expired vegan sandwich.'
-    s.node = 'Drawer'
   end
 
   multi_visit do |m|

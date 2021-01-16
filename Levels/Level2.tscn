@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/lvl2.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Romero.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Level2.gd" type="Script" id=23]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Characters/Julia.tscn" type="PackedScene" id=25]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.53001
 
 [sub_resource type="Animation" id=1]
 resource_name = "ZoomIn"
@@ -100,6 +103,82 @@ scale = Vector2( 0.7, 0.7 )
 [node name="Romero" parent="level" instance=ExtResource( 2 )]
 position = Vector2( -51.6986, 12.9246 )
 scale = Vector2( 0.8, 0.8 )
+
+[node name="RomerosComputer" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/RomerosComputer"]
+polygon = PoolVector2Array( -55.366, -25.4416, -44.0402, -31.0379, -43.6405, -20.7781, -35.5126, -14.6489, -48.5705, -6.25455, -54.4332, -16.3811 )
+
+[node name="RomerosCalendar" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/RomerosCalendar"]
+polygon = PoolVector2Array( -22.4548, -54.3555, -11.129, -50.3582, -10.7293, -23.443, -23.3875, -28.906 )
+
+[node name="StickyNote" type="Area2D" parent="level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/StickyNote"]
+position = Vector2( -38.6407, -23.9839 )
+shape = SubResource( 2 )
+
+[node name="ContactBook" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/ContactBook"]
+polygon = PoolVector2Array( -83.7202, 13.5188, -79.0567, 9.52148, -71.3286, 14.0518, -75.7256, 17.6493 )
+
+[node name="RomanceBooks" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/RomanceBooks"]
+polygon = PoolVector2Array( -61.4685, -40.0185, -35.7525, -53.0764, -35.7525, -45.4815, -61.202, -33.2231 )
+
+[node name="DeskBook" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/DeskBook"]
+polygon = PoolVector2Array( -52.5412, -53.7426, -44.4133, -58.5394, -39.4833, -55.8745, -46.8117, -49.6121, -52.5412, -48.9458 )
+
+[node name="PhotosOnTheWall" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/PhotosOnTheWall"]
+polygon = PoolVector2Array( -109.436, -18.1665, -77.591, -36.5542, -72.5278, -18.433, -107.837, -3.37651 )
+
+[node name="Papers" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Papers"]
+polygon = PoolVector2Array( -61.0688, -6.7076, -55.2061, -8.57301, -49.8763, -5.24191, -54.0069, -0.978127 )
+
+[node name="PortraitOnDesk" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/PortraitOnDesk"]
+polygon = PoolVector2Array( -65.5991, -11.9041, -62.6677, -14.8355, -60.6691, -8.97274, -63.8669, -6.84084 )
+
+[node name="JuliasComputer" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/JuliasComputer"]
+polygon = PoolVector2Array( 69.2435, -38.4196, 80.0363, -33.8893, 80.0363, -22.2971, 73.7738, -14.4357, 62.9811, -19.6322, 58.8505, -22.8301, 68.4441, -28.6928 )
+
+[node name="JuliasCalendar" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/JuliasCalendar"]
+polygon = PoolVector2Array( 103.487, -51.744, 114.813, -46.9472, 114.946, -21.6309, 114.147, -20.032, 102.155, -25.8947 )
+
+[node name="JuliasBag" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/JuliasBag"]
+polygon = PoolVector2Array( 21.942, -44.0158, 26.4723, -45.4815, 29.1372, -28.4263, 21.2758, -25.2285, 18.8774, -29.892, 20.6096, -33.4896 )
+
+[node name="JuliasDrawer" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/JuliasDrawer"]
+polygon = PoolVector2Array( 72.7079, -8.97274, 80.5692, -6.44112, 79.903, 0.087822, 72.1749, -3.90948 )
+
+[node name="Magazine" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Magazine"]
+polygon = PoolVector2Array( 83.6339, -19.6322, 89.3633, -17.1006, 84.4333, -10.5717, 77.9044, -14.036 )
+
+[node name="Bookshelf" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Bookshelf"]
+polygon = PoolVector2Array( 61.2489, -57.4734, 86.2987, -45.6147, 86.2987, -38.4196, 60.5827, -51.4775 )
 
 [node name="JuliaCamera" type="Camera2D" parent="."]
 anchor_mode = 0
