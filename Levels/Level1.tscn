@@ -12,7 +12,7 @@ radius = 26.2486
 radius = 4.13663
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 3.89428
+radius = 7.30419
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 3.23084
