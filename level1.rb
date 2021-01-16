@@ -15,6 +15,8 @@ API.class_eval do
   end
 end
 
+FLAG_STICKY_NOTE = 'seen_sticky_note'
+
 def_level do
   boss_chat '_intro' do
     simple do |s|
@@ -105,7 +107,9 @@ def_level do
           message 'Hey, why is it taking so long?'
 
           choose do
-            on_choice 'Nothing.' do
+            on_choice 'Nothing.' do |c|
+              c.not_if_flag = FLAG_STICKY_NOTE
+
               message 'Get back to work then!'
             end
 
@@ -127,7 +131,9 @@ def_level do
               ]
             end
 
-            on_choice 'Boss, what’s your favorite food? (only unlocks after finding the sticky note)' do
+            on_choice 'Boss, what’s your favorite food?' do |c|
+              c.if_flag = FLAG_STICKY_NOTE
+
               messages [
                 'Oh, so you’re the toady type, uh? First day and you already want to flatter me with food?',
                 'Well, I don’t mind that. I really like pizza, any pizza.',
@@ -135,7 +141,9 @@ def_level do
               ]
             end
 
-            on_choice 'Boss, how old are you? (only unlocks after finding the sticky note)' do
+            on_choice 'Boss, how old are you?' do |c|
+              c.if_flag = FLAG_STICKY_NOTE
+
               message 'Hey, that’s not something you should be asking your boss on your first day! How rude!'
 
               choose do
@@ -169,6 +177,7 @@ def_level do
   sticky_note do |s|
     s.name = 'sticky note'
     s.message = "password question\nwhat is your favorite food?\n+\nwhat is your age?"
+    s.set_flag = FLAG_STICKY_NOTE
   end
 
   simple do |s|

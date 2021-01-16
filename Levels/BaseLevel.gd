@@ -3,8 +3,10 @@ extends Node2D
 signal done
 
 const LevelConfig = preload("res://LevelConfig.gd")
+const FlagStore = preload("res://FlagStore.gd")
 
 var _specs
+var flag_provider = FlagStore.new()
 
 func _ready():
 	$Core.initialize(self)
@@ -28,7 +30,7 @@ func maybe_play_outro():
 
 func specs():
 	if !_specs:
-		_specs = LevelConfig.new(_level_key(), self, $Core.event_bus).compile()
+		_specs = LevelConfig.new(_level_key(), self, $Core.event_bus, flag_provider).compile()
 	return _specs
 
 func get_camera(_name):

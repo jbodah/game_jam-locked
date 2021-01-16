@@ -86,9 +86,10 @@ module API
 
   def on_choice(choice_msg, &blk)
     self["choices"] ||= []
-    self["choices"] << choice_msg
+    choice = {"message" => choice_msg}
+    self["choices"] << choice
     instance_eval do
-      sequence(&blk)
+      sequence.instance_exec(choice, &blk)
     end
   end
 end

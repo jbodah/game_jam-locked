@@ -6,11 +6,13 @@ const SpecCompiler = preload("res://SpecCompiler.gd")
 var config
 var camera_provider
 var event_bus
+var flag_provider
 
-func _init(level_name, the_camera_provider, the_event_bus):
+func _init(level_name, the_camera_provider, the_event_bus, the_flag_provider):
 	config = Data.load_config(level_name)[1]
 	camera_provider = the_camera_provider
 	event_bus = the_event_bus
+	flag_provider = the_flag_provider
 
 func compile():
 	var specs = []
@@ -31,6 +33,7 @@ func section_to_dict(section):
 func add_camera_provider(spec):
 	spec["camera_provider"] = camera_provider
 	spec["event_bus"] = event_bus
+	spec["flag_provider"] = flag_provider
 	if spec.has("subsections"):
 		var subspecs = []
 		for subsection in spec["subsections"]:

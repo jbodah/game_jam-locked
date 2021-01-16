@@ -7,6 +7,8 @@ var ignore_input = false
 func initialize(spec):
 	if spec.has("sound_open"):
 		SoundEffect.play(spec["sound_open"])
+	if spec.has("set_flag"):
+		spec.flag_provider.set_flag(spec.set_flag)
 	delay_input()
 	_initialize(spec)
 
