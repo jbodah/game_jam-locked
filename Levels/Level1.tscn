@@ -72,7 +72,6 @@ tracks/3/keys = {
 resource_name = "New Anim"
 
 [node name="Level1" type="Node2D"]
-visible = false
 script = ExtResource( 23 )
 
 [node name="Core" parent="." instance=ExtResource( 24 )]
@@ -155,18 +154,17 @@ shape = SubResource( 5 )
 polygon = PoolVector2Array( -45.7523, -36.0906, -20.122, -49.1326, -19.1013, -27.8117, -44.8451, -15.2233, -45.4121, -33.9358 )
 
 [node name="BossCamera" type="Camera2D" parent="."]
-position = Vector2( 320.361, 233.36 )
 anchor_mode = 0
-zoom = Vector2( 0.3, 0.3 )
 smoothing_speed = 30.0
 
 [node name="AlphaMask" type="ColorRect" parent="."]
+visible = false
 margin_left = -20.0
 margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
 mouse_filter = 2
-color = Color( 0.196078, 0.188235, 0.188235, 0.631373 )
+color = Color( 0.196078, 0.188235, 0.188235, 0 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false

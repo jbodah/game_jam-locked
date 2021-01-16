@@ -286,7 +286,7 @@ def_level do
       ]
 
       sticky_note do |n|
-        n.message "(a pop up image, it's a chart that links each zodiac sign to a \"lucky\" number, Capricorn is 7)"
+        n.message = "(a pop up image, it's a chart that links each zodiac sign to a \"lucky\" number, Capricorn is 7)"
       end
     end
 
