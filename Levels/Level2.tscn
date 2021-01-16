@@ -28,37 +28,37 @@
 [ext_resource path="res://assets/Character/female_head2.png" type="Texture" id=26]
 [ext_resource path="res://assets/Character/female_torso1.png" type="Texture" id=27]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=12]
 radius = 15.0119
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=13]
 radius = 13.3077
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=14]
 radius = 3.7365
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 8.49466, 11.2633 )
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=16]
 radius = 9.36788
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=17]
 radius = 9.1554
 height = 0.0
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=18]
 radius = 9.07351
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=19]
 radius = 3.31989
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=20]
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 resource_name = "ZoomIn"
 tracks/0/type = "value"
-tracks/0/path = NodePath("JuliaCamera:zoom")
+tracks/0/path = NodePath("BossCamera:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -70,7 +70,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("JuliaCamera:position")
+tracks/1/path = NodePath("BossCamera:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -79,7 +79,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 395.668, 327.759 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 305.865, 329.173 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AlphaMask:color")
@@ -202,7 +202,7 @@ position = Vector2( -2.27164, -1.28778 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Computer1/Computer1"]
 position = Vector2( 0.47467, 0.526688 )
-shape = SubResource( 1 )
+shape = SubResource( 12 )
 
 [node name="Screen" type="Sprite" parent="YSort/Computer1"]
 position = Vector2( -4.46983, -4.58923 )
@@ -232,7 +232,7 @@ position = Vector2( -1.48749, 0.49025 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Computer2/Computer2"]
 position = Vector2( 2.83102, -0.298004 )
 z_index = 1
-shape = SubResource( 2 )
+shape = SubResource( 13 )
 
 [node name="BookShelf" type="Sprite" parent="YSort"]
 position = Vector2( 222.909, 309.84 )
@@ -276,7 +276,7 @@ scale = Vector2( 0.809531, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/StickyNote/StickyNote"]
 position = Vector2( 62.4973, 26.5892 )
-shape = SubResource( 3 )
+shape = SubResource( 14 )
 
 [node name="TrashBin" type="Sprite" parent="YSort"]
 position = Vector2( 431.284, 305.189 )
@@ -293,7 +293,7 @@ scale = Vector2( 0.809531, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TrashBin/TrashBin"]
 position = Vector2( -27.6163, 34.7804 )
-shape = SubResource( 4 )
+shape = SubResource( 15 )
 
 [node name="CrumpledPaper" type="Polygon2D" parent="YSort"]
 position = Vector2( 144.228, 22.6544 )
@@ -307,7 +307,7 @@ position = Vector2( 451.007, 334.613 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CrumpledPaper/CrumpledPaper"]
 position = Vector2( 0, -1.93243 )
-shape = SubResource( 5 )
+shape = SubResource( 16 )
 
 [node name="Paper" type="Polygon2D" parent="YSort"]
 position = Vector2( 108.968, -97.3506 )
@@ -323,7 +323,7 @@ position = Vector2( 294.923, 308.599 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Paper/Paper"]
 position = Vector2( -2.5271, 9.36501 )
-shape = SubResource( 6 )
+shape = SubResource( 17 )
 
 [node name="Paper2" type="Polygon2D" parent="YSort/Paper"]
 position = Vector2( 0.667969, -1.55902 )
@@ -351,7 +351,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 7 )
+shape = SubResource( 18 )
 
 [node name="Book2" type="Polygon2D" parent="YSort/Book"]
 position = Vector2( -2.673, 2.44998 )
@@ -372,7 +372,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book2/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 7 )
+shape = SubResource( 18 )
 
 [node name="Book2" type="Polygon2D" parent="YSort/Book2"]
 position = Vector2( -2.673, 2.44998 )
@@ -393,7 +393,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book3/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 7 )
+shape = SubResource( 18 )
 
 [node name="Book2" type="Polygon2D" parent="YSort/Book3"]
 position = Vector2( -2.673, 2.44998 )
@@ -427,7 +427,7 @@ position = Vector2( -1.86031, 2.2078 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CoffeeMug/CoffeeMug"]
 position = Vector2( 1.78375, -2.67572 )
-shape = SubResource( 8 )
+shape = SubResource( 19 )
 
 [node name="Trophy" type="Polygon2D" parent="YSort"]
 position = Vector2( 43.0108, -162.112 )
@@ -443,7 +443,7 @@ __meta__ = {
 position = Vector2( 401.803, 255.085 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Trophy/Trophy"]
-shape = SubResource( 9 )
+shape = SubResource( 20 )
 
 [node name="TrophyBase" type="Polygon2D" parent="YSort/Trophy"]
 color = Color( 0, 0, 0, 1 )
@@ -547,9 +547,7 @@ z_index = 2
 texture = ExtResource( 27 )
 
 [node name="JuliaCamera" type="Camera2D" parent="."]
-position = Vector2( 395.668, 327.759 )
 anchor_mode = 0
-zoom = Vector2( 0.3, 0.3 )
 
 [node name="AlphaMask" type="ColorRect" parent="."]
 margin_left = -20.0
@@ -557,11 +555,11 @@ margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
 mouse_filter = 2
-color = Color( 0.196078, 0.188235, 0.188235, 0.631373 )
+color = Color( 0.196078, 0.188235, 0.188235, 0 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="JuliaCameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ZoomIn = SubResource( 10 )
+anims/ZoomIn = SubResource( 11 )

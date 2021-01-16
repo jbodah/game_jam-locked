@@ -4,14 +4,18 @@ const Data = preload("res://Util/Data.gd")
 const SpecCompiler = preload("res://SpecCompiler.gd")
 
 var config
+var camera_provider
 
-func _init(level_name):
+func _init(level_name, the_camera_provider):
 	config = Data.load_config(level_name)[1]
+	camera_provider = the_camera_provider
 
 func compile():
 	var specs = []
 	for section in config.get_sections():
-		var compiled = SpecCompiler.compile_spec(section_to_dict(section))
+		var spec = section_to_dict(section)
+		var with_camera = add_camera_provider(spec)
+		var compiled = SpecCompiler.compile_spec(with_camera)
 		specs.push_back(compiled)
 	return specs
 
@@ -21,3 +25,12 @@ func section_to_dict(section):
 	for j in keys.size():
 		dict[keys[j]] = config.get_value(section, keys[j])
 	return dict
+
+func add_camera_provider(spec):
+	spec["camera_provider"] = camera_provider
+	if spec.has("subsections"):
+		var subspecs = []
+		for subsection in spec["subsections"]:
+			subspecs.push_back(add_camera_provider(subsection))
+		spec["subsections"] = subspecs
+	return spec

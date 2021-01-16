@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/Props/Furniture/trash full.png" type="Texture" id=1]
 [ext_resource path="res://assets/Props/computer block.png" type="Texture" id=2]
@@ -22,7 +22,7 @@
 [ext_resource path="res://assets/Props/sticky note1.png" type="Texture" id=20]
 [ext_resource path="res://assets/Props/pot plant1.png" type="Texture" id=21]
 [ext_resource path="res://assets/Props/pot plant2.png" type="Texture" id=22]
-[ext_resource path="res://Levels/BaseLevel.gd" type="Script" id=23]
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=23]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -52,10 +52,53 @@ radius = 3.31989
 
 [sub_resource type="CircleShape2D" id=9]
 
+[sub_resource type="CircleShape2D" id=10]
+radius = 38.6914
+
+[sub_resource type="Animation" id=11]
+resource_name = "ZoomIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("BossCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BossCamera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 305.865, 329.173 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AlphaMask:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.188235, 0.188235, 0 ), Color( 0.196078, 0.188235, 0.188235, 0.631373 ) ]
+}
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 23 )
 
 [node name="Core" parent="." instance=ExtResource( 24 )]
+position = Vector2( 0.707108, -3.53555 )
 
 [node name="Tiles" type="Node2D" parent="."]
 position = Vector2( 403.702, -8.49769 )
@@ -489,3 +532,32 @@ texture = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Boss" type="Area2D" parent="YSort"]
+
+[node name="Polygon2D" type="Polygon2D" parent="YSort/Boss"]
+position = Vector2( -77.4282, 7.7782 )
+color = Color( 0.752941, 0.141176, 0.94902, 1 )
+polygon = PoolVector2Array( 555.526, 379.35, 506.382, 378.289, 507.089, 436.979, 554.465, 436.626 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Boss"]
+position = Vector2( 452.902, 414.718 )
+shape = SubResource( 10 )
+
+[node name="BossCamera" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="AlphaMask" type="ColorRect" parent="."]
+margin_left = -20.0
+margin_top = -15.0
+margin_right = 1061.0
+margin_bottom = 619.0
+mouse_filter = 2
+color = Color( 0.196078, 0.188235, 0.188235, 0 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BossCameraAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ZoomIn = SubResource( 11 )
