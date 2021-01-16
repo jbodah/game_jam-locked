@@ -10,7 +10,7 @@ func _ready():
 	$AnimationPlayer.connect("animation_finished", self, "on_animation_finished")
 
 func _initialize(spec):
-	$SimpleMessage.initialize({"messages": spec.messages})
+	$SimpleMessage.initialize(spec)
 
 func _process(_delta):
 	if just_clicked() || just_hit_enter():
