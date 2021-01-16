@@ -72,6 +72,7 @@ tracks/3/keys = {
 resource_name = "New Anim"
 
 [node name="Level1" type="Node2D"]
+visible = false
 script = ExtResource( 23 )
 
 [node name="Core" parent="." instance=ExtResource( 24 )]
