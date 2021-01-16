@@ -1,72 +1,89 @@
 require './api'
 include API
 
-def_level do
-  camera_zoom do |z|
-    z.id = '_intro'
-    z.camera = 'boss'
-    z.speed = 1
+API.class_eval do
+  def boss_chat(id, &blk)
+    camera_zoom do |z|
+      z.id = id
+      z.camera = 'boss'
+      z.speed = 1
 
-    sequence do |_s|
-      messages [
-        'Oh, there you are!',
-        'Welcome to Howard Phillips Advertising Agency, we’re so happy to have a new member in our family, yada, yada, you’re late on the first day kid, you know that’s no good, right?'
-      ]
-
-      choose do
-        on_choice 'Sorry I missed the bus...' do
-          message 'Yeah, yeah, yeah, it doesn’t matter. Now listen here.'
-        end
-
-        on_choice 'Sorry, my name is...' do
-          message 'Yeah, yeah, yeah, it doesn’t matter. Now listen here.'
-        end
+      sequence do
+        instance_eval(&blk)
       end
-
-      messages [
-        'You’re our new IT guy. That means your job is to make sure all the tech here is working as it should, right?',
-        'Well, guess what kid, you’re in for a ride. Because there isn’t a single computer in this office working right now!'
-      ]
-
-      choice do
-        on_choice 'Are they all broken?' do
-          message "No, no, that’s not it! \nThey are all in good condition, but something real strange happened."
-        end
-
-        on_choice 'Have you tried turning it off and on again?' do
-          message "No, no, that’s not it! \nThey are all in good condition, but something real strange happened."
-        end
-      end
-
-      message 'Thing is, since the new year, no one seems to remember their passwords anymore! And a locked PC is good for nothing. Damn, we haven’t been able to get any work done this week!'
-
-      choice do
-        on_choice 'Like a collective amnesia?' do
-          message 'Yeah, sure, call it any fancy word you like.'
-        end
-
-        on_choice 'Must have been a crazy new year’s party here at the office.' do
-          message 'Well, must have been. Can’t say for sure... I don’t remember it...'
-        end
-      end
-
-      messages [
-        'All I care about is that every computer in this office is unlocked by the end of the day, that’s your first job.',
-        'Oh, and we can’t afford to lose any data on those computers, so be careful when you’re doing your hacking magic bullshit, alright?'
-      ]
-
-      choice do
-        on_choice 'Well, actually, it would be easier to try to find each person’s password.' do
-          message 'Great, then do that! I didn’t know I was hiring a psychoanalyst too.'
-        end
-
-        on_choice '... I’ll do my MAGIC' do
-          message 'Alright, but before you mess anything up around the office, let’s test your competence.'
-        end
-      end
-
-      message 'Start by unlocking my computer.'
     end
+  end
+end
+
+def_level do
+  boss_chat '_intro' do
+    messages [
+      'Oh, there you are!',
+      'Welcome to Howard Phillips Advertising Agency, we’re so happy to have a new member in our family, yada, yada, you’re late on the first day kid, you know that’s no good, right?'
+    ]
+
+    choose do
+      on_choice 'Sorry I missed the bus...' do
+        message 'Yeah, yeah, yeah, it doesn’t matter. Now listen here.'
+      end
+
+      on_choice 'Sorry, my name is...' do
+        message 'Yeah, yeah, yeah, it doesn’t matter. Now listen here.'
+      end
+    end
+
+    messages [
+      'You’re our new IT guy. That means your job is to make sure all the tech here is working as it should, right?',
+      'Well, guess what kid, you’re in for a ride. Because there isn’t a single computer in this office working right now!'
+    ]
+
+    choice do
+      on_choice 'Are they all broken?' do
+        message "No, no, that’s not it! \nThey are all in good condition, but something real strange happened."
+      end
+
+      on_choice 'Have you tried turning it off and on again?' do
+        message "No, no, that’s not it! \nThey are all in good condition, but something real strange happened."
+      end
+    end
+
+    message 'Thing is, since the new year, no one seems to remember their passwords anymore! And a locked PC is good for nothing. Damn, we haven’t been able to get any work done this week!'
+
+    choice do
+      on_choice 'Like a collective amnesia?' do
+        message 'Yeah, sure, call it any fancy word you like.'
+      end
+
+      on_choice 'Must have been a crazy new year’s party here at the office.' do
+        message 'Well, must have been. Can’t say for sure... I don’t remember it...'
+      end
+    end
+
+    messages [
+      'All I care about is that every computer in this office is unlocked by the end of the day, that’s your first job.',
+      'Oh, and we can’t afford to lose any data on those computers, so be careful when you’re doing your hacking magic bullshit, alright?'
+    ]
+
+    choice do
+      on_choice 'Well, actually, it would be easier to try to find each person’s password.' do
+        message 'Great, then do that! I didn’t know I was hiring a psychoanalyst too.'
+      end
+
+      on_choice '... I’ll do my MAGIC' do
+        message 'Alright, but before you mess anything up around the office, let’s test your competence.'
+      end
+    end
+
+    message 'Start by unlocking my computer.'
+  end
+
+  boss_chat '_outro' do
+    messages [
+      'Hey, hey, good job kid!',
+      "Now you only have... A dozen computers or so.\nGet out there and do your magic! No fooling around, uh!\nYou have until closing hours, go, go, go!"
+    ]
+
+    next_level
   end
 
   sequence do |s|
@@ -149,7 +166,7 @@ def_level do
   end
 
   simple do |s|
-    s.name = 'trash_can'
+    s.name = 'trash can'
     s.message = "The Boss' trash can is mostly full of paper. There's a lot of receipts from a place called \"Domingo's Pizza\"."
     s.node = 'TrashBin'
     s.sound_open = 'rummage'

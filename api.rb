@@ -21,7 +21,7 @@ module API
 
       puts "[#{id}]"
       puts "type=#{subsec.fetch("type").to_json}"
-      unless id == "_intro"
+      unless id.start_with?("_")
         puts "name=#{subsec.fetch("name").to_json}"
         puts "node=#{node.to_json}"
       end
@@ -49,6 +49,7 @@ module API
     multi_visit
     calendar
     search_engine
+    next_level
   ).each do |sym|
     class_eval <<~EOF
       def #{sym}(&blk)
@@ -57,7 +58,7 @@ module API
           self["subsections"] ||= []
           self["subsections"] << res
         end
-        res.instance_eval(&blk)
+        res.instance_eval(&blk) if blk
         res
       end
     EOF

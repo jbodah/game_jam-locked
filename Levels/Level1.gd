@@ -7,3 +7,6 @@ func get_camera(name):
 				camera = $BossCamera,
 				animation = $BossCameraAnimationPlayer
 			}
+
+func _level_key():
+	return "level1"

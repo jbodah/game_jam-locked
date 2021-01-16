@@ -8,7 +8,8 @@ const TYPE_LOOKUP = {
 	sequence = preload("res://Modules/Composition/Sequence.tscn"),
 	dialogue = preload("res://Modules/Dialogue.tscn"),
 	choice = preload("res://Modules/Choice.tscn"),
-	camera_zoom = preload("res://Modules/CameraZoom.tscn")
+	camera_zoom = preload("res://Modules/CameraZoom.tscn"),
+	next_level = preload("res://Modules/NextLevel.tscn")
 }
 
 static func compile_spec(spec):

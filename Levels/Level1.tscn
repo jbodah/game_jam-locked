@@ -548,6 +548,7 @@ shape = SubResource( 10 )
 position = Vector2( 305.865, 329.173 )
 anchor_mode = 0
 zoom = Vector2( 0.3, 0.3 )
+smoothing_speed = 30.0
 
 [node name="AlphaMask" type="ColorRect" parent="."]
 margin_left = -20.0

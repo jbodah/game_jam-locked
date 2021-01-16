@@ -8,6 +8,7 @@ func _ready():
 		node.connect("gui_input", self, "on_choice_made", [idx])
 		node.connect("mouse_entered", self, "on_choice_mouse_entered", [idx])
 		node.connect("mouse_exited", self, "on_choice_mouse_exited", [idx])
+		node.hide()
 		node.text = ""
 	
 func _initialize(the_spec):
@@ -16,6 +17,7 @@ func _initialize(the_spec):
 		if spec.choices.size() > idx:
 			var node = get_node("BaseMessage/Label%s" % idx)
 			node.text = "* " + spec.choices[idx]
+			node.show()
 	
 func on_choice_made(event, idx):
 	if event is InputEventMouseButton && event.pressed:

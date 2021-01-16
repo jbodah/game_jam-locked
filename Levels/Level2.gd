@@ -7,3 +7,6 @@ func get_camera(name):
 				camera = $JuliaCamera,
 				animation = $JuliaCameraAnimationPlayer
 			}
+
+func _level_key():
+	return "level2"

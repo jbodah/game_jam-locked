@@ -2,8 +2,6 @@ extends "res://Modules/BaseModule.gd"
 
 class_name PasswordMessage
 
-signal correct_password_entered
-
 var state = "enter_password"
 var spec = {"pass_message": "you win", "actual_password": "meatball", "fail_message": "try again later"}
 
@@ -29,7 +27,7 @@ func _process(_delta):
 			$EnterPassword.hide()
 			$Result.show()
 			if just_clicked() || just_hit_enter():
-				emit_signal("correct_password_entered")
+				spec.event_bus.emit_signal("correct_password_entered", [spec])
 				close()
 		"password_fail":
 			$EnterPassword.hide()

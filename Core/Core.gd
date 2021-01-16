@@ -3,9 +3,10 @@ extends Node2D
 var specs_by_node = {}
 var level
 
+onready var event_bus = $EventBus
+
 func initialize(the_level):
 	level = the_level
-	Music.play(level.music())
 	index_specs(level.specs())
 	var queue = [level.object_root_node()]
 	while queue.size() > 0:
