@@ -66,7 +66,7 @@ def_level do
 
         choice do
           on_choice 'Still nothing' do
-            '...'
+            message '...'
           end
 
           on_choice 'Do you remember anything about your password, Julia?'  do
@@ -85,10 +85,10 @@ def_level do
             choice do
               resp = proc do
                 messages [
-                "Weird right? Even a bit creepy.\nBut he never did anything to me, so I guess it’s fine.",
-                "I just don’t want any drama, we share an office after all.\nPlus, as long as he doesn’t interfere with my work, he can have any platonic obsession he wants.",
-                'Soon I’ll be promoted and get the hell out of this damn agency!',
-                'Whoops, don’t tell that to the boss.'
+                  "Weird right? Even a bit creepy.\nBut he never did anything to me, so I guess it’s fine.",
+                  "I just don’t want any drama, we share an office after all.\nPlus, as long as he doesn’t interfere with my work, he can have any platonic obsession he wants.",
+                  'Soon I’ll be promoted and get the hell out of this damn agency!',
+                  'Whoops, don’t tell that to the boss.'
                 ]
               end
               on_choice 'Then why does he have so many pictures of you?', &resp
