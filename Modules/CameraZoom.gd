@@ -2,8 +2,10 @@ extends "res://Modules/BaseModule.gd"
 
 var camera
 var animation
+var spec
 
-func _initialize(spec):
+func _initialize(the_spec):
+	spec = the_spec
 	var rv = spec.camera_provider.get_camera(spec.camera)
 	camera = rv.camera
 	animation = rv.animation

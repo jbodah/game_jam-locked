@@ -1,61 +1,23 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://assets/Props/Furniture/trash full.png" type="Texture" id=1]
-[ext_resource path="res://assets/Props/computer block.png" type="Texture" id=2]
-[ext_resource path="res://assets/Props/Furniture/desk.png" type="Texture" id=3]
-[ext_resource path="res://assets/Props/pot.png" type="Texture" id=4]
-[ext_resource path="res://assets/Props/cup2.png" type="Texture" id=5]
-[ext_resource path="res://Resources/reverse-wall.tres" type="TileSet" id=6]
-[ext_resource path="res://Resources/wall.tres" type="TileSet" id=7]
-[ext_resource path="res://assets/Props/Furniture/book_shelf.png" type="Texture" id=8]
-[ext_resource path="res://Resources/floor.tres" type="TileSet" id=9]
-[ext_resource path="res://assets/Props/cup3.png" type="Texture" id=10]
-[ext_resource path="res://Resources/wall-backcorner.tres" type="TileSet" id=11]
-[ext_resource path="res://Resources/reverse-wall-outercorner.tres" type="TileSet" id=12]
-[ext_resource path="res://Resources/wall-outercorner.tres" type="TileSet" id=13]
-[ext_resource path="res://assets/Props/Furniture/chair west1.png" type="Texture" id=14]
-[ext_resource path="res://assets/Props/computer.png" type="Texture" id=15]
-[ext_resource path="res://assets/Props/calendar.png" type="Texture" id=16]
-[ext_resource path="res://assets/Props/computer screen2.png" type="Texture" id=17]
-[ext_resource path="res://assets/Props/Furniture/book_cupboard.png" type="Texture" id=18]
-[ext_resource path="res://assets/Props/Furniture/trash empty.png" type="Texture" id=19]
-[ext_resource path="res://assets/Props/sticky note1.png" type="Texture" id=20]
-[ext_resource path="res://assets/Props/pot plant1.png" type="Texture" id=21]
-[ext_resource path="res://assets/Props/pot plant2.png" type="Texture" id=22]
+[ext_resource path="res://assets/lvl1.png" type="Texture" id=1]
+[ext_resource path="res://Characters/Danny.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=23]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 15.0119
-
 [sub_resource type="CircleShape2D" id=2]
-radius = 13.3077
+radius = 26.2486
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 3.7365
+radius = 4.13663
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 8.49466, 11.2633 )
+[sub_resource type="CircleShape2D" id=4]
+radius = 3.89428
 
 [sub_resource type="CircleShape2D" id=5]
-radius = 9.36788
+radius = 3.23084
 
-[sub_resource type="CapsuleShape2D" id=6]
-radius = 9.1554
-height = 0.0
-
-[sub_resource type="CircleShape2D" id=7]
-radius = 9.07351
-
-[sub_resource type="CircleShape2D" id=8]
-radius = 3.31989
-
-[sub_resource type="CircleShape2D" id=9]
-
-[sub_resource type="CircleShape2D" id=10]
-radius = 38.6914
-
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=6]
 resource_name = "ZoomIn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("BossCamera:zoom")
@@ -79,7 +41,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 305.865, 329.173 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 320.361, 233.36 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AlphaMask:color")
@@ -93,6 +55,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 0.196078, 0.188235, 0.188235, 0 ), Color( 0.196078, 0.188235, 0.188235, 0.631373 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("AlphaMask:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 23 )
@@ -100,454 +74,86 @@ script = ExtResource( 23 )
 [node name="Core" parent="." instance=ExtResource( 24 )]
 position = Vector2( 0.707108, -3.53555 )
 
-[node name="Tiles" type="Node2D" parent="."]
-position = Vector2( 403.702, -8.49769 )
-scale = Vector2( 1.2, 1.2 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="lvl1" type="Sprite" parent="."]
+position = Vector2( 524.539, 301.055 )
+scale = Vector2( 3.11752, 3.11752 )
+texture = ExtResource( 1 )
 
-[node name="Wall" type="TileMap" parent="Tiles"]
-position = Vector2( -10, 11 )
-scale = Vector2( 2, 2 )
-mode = 1
-tile_set = ExtResource( 7 )
-cell_size = Vector2( 40, 20 )
-format = 1
-tile_data = PoolIntArray( -65533, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, 262145, 1, 0, 327681, 1, 0 )
+[node name="Danny" parent="lvl1" instance=ExtResource( 2 )]
+position = Vector2( -17.3515, -15.4236 )
+scale = Vector2( 0.8, 0.8 )
 
-[node name="WallOuterCorner" type="TileMap" parent="Tiles"]
-position = Vector2( -2, 11 )
-scale = Vector2( 2, 2 )
-mode = 1
-tile_set = ExtResource( 13 )
-cell_size = Vector2( 40, 20 )
-format = 1
-tile_data = PoolIntArray( 196611, 1, 0 )
+[node name="Computer1" type="Area2D" parent="lvl1"]
+position = Vector2( -170.863, -96.5685 )
+scale = Vector2( 0.320767, 0.320767 )
 
-[node name="ReverseWall" type="TileMap" parent="Tiles"]
-position = Vector2( -2, -11 )
-scale = Vector2( 2, 2 )
-mode = 1
-tile_set = ExtResource( 6 )
-cell_size = Vector2( 40, 20 )
-format = 1
-tile_data = PoolIntArray( -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, 262146, 1, 0 )
-
-[node name="ReverseWallOuterCorner" type="TileMap" parent="Tiles"]
-position = Vector2( -2, -11 )
-scale = Vector2( 2, 2 )
-mode = 1
-tile_set = ExtResource( 12 )
-cell_size = Vector2( 40, 20 )
-format = 1
-tile_data = PoolIntArray( 262147, 1, 0 )
-
-[node name="Floor" type="TileMap" parent="Tiles"]
-scale = Vector2( 2, 2 )
-mode = 1
-tile_set = ExtResource( 9 )
-cell_size = Vector2( 40, 20 )
-cell_tile_origin = 1
-centered_textures = true
-format = 1
-tile_data = PoolIntArray( 196615, 4, 0, 196616, 4, 0, 196617, 4, 0, 196618, 4, 0, 196619, 4, 0, 196620, 4, 0, 262151, 4, 0, 262152, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 327687, 4, 0, 327688, 4, 0, 327689, 4, 0, 327690, 4, 0, 327691, 4, 0, 327692, 4, 0, 393223, 4, 0, 393224, 4, 0, 393225, 4, 0, 393226, 4, 0, 393227, 4, 0, 393228, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0 )
-
-[node name="WallBackCorner" type="TileMap" parent="Tiles"]
-position = Vector2( -2, -9 )
-scale = Vector2( 2, 2 )
-mode = 1
-tile_set = ExtResource( 11 )
-cell_size = Vector2( 40, 20 )
-format = 1
-tile_data = PoolIntArray( -65532, 1, 0, 262146, 1, 0 )
-
-[node name="YSort" type="YSort" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Cupboard" type="Sprite" parent="YSort"]
-position = Vector2( 627.083, 233 )
-scale = Vector2( 2.58333, 2.58333 )
-texture = ExtResource( 18 )
-flip_h = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Chair1" type="Sprite" parent="YSort"]
-position = Vector2( 503.874, 301.711 )
-scale = Vector2( 2.40603, 2.40603 )
-texture = ExtResource( 14 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Chair2" type="Sprite" parent="YSort"]
-position = Vector2( 689.789, 291.765 )
-scale = Vector2( 2.40603, 2.40603 )
-texture = ExtResource( 14 )
-flip_h = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Computer1" type="Sprite" parent="YSort"]
-position = Vector2( 475.34, 251.007 )
-scale = Vector2( 1.87898, 1.87898 )
-z_index = 1
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Computer1" type="Area2D" parent="YSort/Computer1"]
-position = Vector2( -2.27164, -1.28778 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Computer1/Computer1"]
-position = Vector2( 0.47467, 0.526688 )
-shape = SubResource( 1 )
-
-[node name="Screen" type="Sprite" parent="YSort/Computer1"]
-position = Vector2( -4.46983, -4.58923 )
-scale = Vector2( 1.02575, 0.992078 )
-texture = ExtResource( 17 )
-
-[node name="Computer2" type="Sprite" parent="YSort"]
-position = Vector2( 722.295, 244.576 )
-scale = Vector2( 1.99532, 1.99532 )
-z_index = 1
-texture = ExtResource( 15 )
-flip_h = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ComputerBlock2" type="Sprite" parent="YSort/Computer2"]
-position = Vector2( -13.9799, -4.97813 )
-scale = Vector2( 1.03332, 1.03332 )
-z_index = 1
-texture = ExtResource( 2 )
-flip_h = true
-
-[node name="Computer2" type="Area2D" parent="YSort/Computer2"]
-position = Vector2( -1.48749, 0.49025 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Computer2/Computer2"]
-position = Vector2( 2.83102, -0.298004 )
-z_index = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/Computer1"]
+position = Vector2( 250.316, 280.014 )
 shape = SubResource( 2 )
 
-[node name="BookShelf" type="Sprite" parent="YSort"]
-position = Vector2( 222.909, 309.84 )
-scale = Vector2( 2.42705, 2.42705 )
-texture = ExtResource( 18 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="StickyNote" type="Area2D" parent="lvl1"]
 
-[node name="book_shelf" type="Sprite" parent="YSort/BookShelf"]
-position = Vector2( 1.52588e-05, -11.5145 )
-z_index = 1
-texture = ExtResource( 8 )
-
-[node name="book_shelf2" type="Sprite" parent="YSort/BookShelf"]
-position = Vector2( 1.52588e-05, -18.2518 )
-z_index = 2
-texture = ExtResource( 8 )
-
-[node name="book_shelf3" type="Sprite" parent="YSort/BookShelf"]
-position = Vector2( 0.122505, -24.4991 )
-z_index = 3
-texture = ExtResource( 8 )
-
-[node name="book_shelf4" type="Sprite" parent="YSort/BookShelf"]
-position = Vector2( 0.122505, -30.6238 )
-z_index = 4
-texture = ExtResource( 8 )
-
-[node name="StickyNote" type="Sprite" parent="YSort"]
-position = Vector2( 494.292, 214.582 )
-scale = Vector2( 2.42705, 2.42705 )
-texture = ExtResource( 20 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="StickyNote" type="Area2D" parent="YSort/StickyNote"]
-position = Vector2( -51.306, -26.7238 )
-scale = Vector2( 0.809531, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/StickyNote/StickyNote"]
-position = Vector2( 62.4973, 26.5892 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/StickyNote"]
+position = Vector2( -78.7055, -19.3928 )
 shape = SubResource( 3 )
 
-[node name="TrashBin" type="Sprite" parent="YSort"]
-position = Vector2( 431.284, 305.189 )
-scale = Vector2( 2.1382, 2.1382 )
-texture = ExtResource( 1 )
-flip_h = true
-__meta__ = {
-"_edit_group_": true
-}
+[node name="TrashCan" type="Area2D" parent="lvl1"]
 
-[node name="TrashBin" type="Area2D" parent="YSort/TrashBin"]
-position = Vector2( 22.3314, -34.0232 )
-scale = Vector2( 0.809531, 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/TrashCan"]
+polygon = PoolVector2Array( -108.502, 14.3836, -104.306, 11.5484, -95.4596, 15.0641, -94.8926, 30.0341, -100.223, 33.0961, -108.955, 28.6732 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TrashBin/TrashBin"]
-position = Vector2( -27.6163, 34.7804 )
+[node name="PizzaFlyer" type="Area2D" parent="lvl1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/PizzaFlyer"]
+position = Vector2( -15.1968, -10.0934 )
+polygon = PoolVector2Array( 82.4451, 34.5178, 86.868, 31.7279, 89.8167, 32.9754, 85.2803, 35.924 )
+
+[node name="CrumpledPaper" type="Area2D" parent="lvl1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/CrumpledPaper"]
+position = Vector2( -49.8999, 42.5283 )
 shape = SubResource( 4 )
 
-[node name="CrumpledPaper" type="Polygon2D" parent="YSort"]
-position = Vector2( 144.228, 22.6544 )
-polygon = PoolVector2Array( 449.951, 327.991, 454.406, 330.886, 457.078, 327.545, 458.86, 331.777, 457.747, 336.677, 454.183, 335.118, 448.615, 336.9, 448.615, 332.223, 443.047, 328.436 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Calendar" type="Area2D" parent="lvl1"]
 
-[node name="CrumpledPaper" type="Area2D" parent="YSort/CrumpledPaper"]
-position = Vector2( 451.007, 334.613 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/Calendar"]
+polygon = PoolVector2Array( -112.244, -33.0213, -101.017, -39.8258, -99.8826, -13.9686, -111.337, -8.18472 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CrumpledPaper/CrumpledPaper"]
-position = Vector2( 0, -1.93243 )
+[node name="Paper" type="Area2D" parent="lvl1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/Paper"]
+polygon = PoolVector2Array( -66.9598, -7.14866, -72.5168, -5.67434, -66.3928, 0.109512, -61.2894, -5.2207, -65.7123, -8.39616 )
+
+[node name="EmployeeOfTheMonth" type="Area2D" parent="lvl1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/EmployeeOfTheMonth"]
+polygon = PoolVector2Array( 19.9225, -58.3114, 29.1086, -54.1153, 28.5415, -37.4442, 19.0152, -43.1146 )
+
+[node name="PictureOnTheWall" type="Area2D" parent="lvl1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/PictureOnTheWall"]
+polygon = PoolVector2Array( -70.9407, -54.3194, -61.9814, -59.0826, -61.5278, -46.6076, -72.1882, -42.9785, -72.7552, -52.7317 )
+
+[node name="TrophyRack" type="Area2D" parent="lvl1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/TrophyRack"]
+polygon = PoolVector2Array( 4.5896, -25.7404, 30.22, -13.7191, 35.21, -16.7811, 23.302, -26.9879, 21.7143, -34.0192, 7.87845, -37.6483, 2.66164, -28.5756 )
+
+[node name="CoffeeMug" type="Area2D" parent="lvl1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/CoffeeMug"]
+position = Vector2( -77.7985, -5.67044 )
 shape = SubResource( 5 )
 
-[node name="Paper" type="Polygon2D" parent="YSort"]
-position = Vector2( 108.968, -97.3506 )
-scale = Vector2( 1.16036, 1.16036 )
-z_index = 1
-polygon = PoolVector2Array( 284.244, 317.968, 289.812, 315.073, 297.83, 319.305, 290.926, 322.868 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Bookshelf" type="Area2D" parent="lvl1"]
 
-[node name="Paper" type="Area2D" parent="YSort/Paper"]
-position = Vector2( 294.923, 308.599 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Paper/Paper"]
-position = Vector2( -2.5271, 9.36501 )
-shape = SubResource( 6 )
-
-[node name="Paper2" type="Polygon2D" parent="YSort/Paper"]
-position = Vector2( 0.667969, -1.55902 )
-polygon = PoolVector2Array( 284.244, 317.968, 289.812, 315.073, 297.83, 319.305, 290.926, 322.868 )
-
-[node name="Paper3" type="Polygon2D" parent="YSort/Paper"]
-position = Vector2( 1.78198, -2.89539 )
-polygon = PoolVector2Array( 284.244, 317.968, 289.812, 315.073, 297.83, 319.305, 290.926, 322.868 )
-
-[node name="Paper4" type="Polygon2D" parent="YSort/Paper"]
-position = Vector2( 2.00397, -3.34085 )
-polygon = PoolVector2Array( 284.244, 317.968, 289.812, 315.073, 297.83, 319.305, 290.926, 322.868 )
-
-[node name="Book" type="Polygon2D" parent="YSort"]
-position = Vector2( -160.057, 17.3358 )
-z_index = 2
-color = Color( 0.796078, 0.14902, 0.14902, 1 )
-polygon = PoolVector2Array( 410.752, 235.337, 419.438, 239.792, 419.438, 249.592, 414.761, 251.819, 408.525, 246.474, 409.415, 233.556 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Book" type="Area2D" parent="YSort/Book"]
-position = Vector2( 298.491, 247.206 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book/Book"]
-position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 7 )
-
-[node name="Book2" type="Polygon2D" parent="YSort/Book"]
-position = Vector2( -2.673, 2.44998 )
-color = Color( 0.14902, 0.294118, 0.796078, 1 )
-polygon = PoolVector2Array( 410.752, 235.337, 419.438, 239.792, 419.438, 249.592, 414.761, 251.819, 408.525, 246.474, 409.415, 233.556 )
-
-[node name="Book2" type="Polygon2D" parent="YSort"]
-position = Vector2( -195.733, 18.8223 )
-z_index = 3
-color = Color( 0.796078, 0.14902, 0.14902, 1 )
-polygon = PoolVector2Array( 410.752, 235.337, 419.438, 239.792, 419.438, 249.592, 414.761, 251.819, 408.525, 246.474, 409.415, 233.556 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Book" type="Area2D" parent="YSort/Book2"]
-position = Vector2( 298.491, 247.206 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book2/Book"]
-position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 7 )
-
-[node name="Book2" type="Polygon2D" parent="YSort/Book2"]
-position = Vector2( -2.673, 2.44998 )
-color = Color( 0.14902, 0.294118, 0.796078, 1 )
-polygon = PoolVector2Array( 410.752, 235.337, 419.438, 239.792, 419.438, 249.592, 414.761, 251.819, 408.525, 246.474, 409.415, 233.556 )
-
-[node name="Book3" type="Polygon2D" parent="YSort"]
-position = Vector2( -179.976, 24.1738 )
-z_index = 2
-color = Color( 0.796078, 0.14902, 0.14902, 1 )
-polygon = PoolVector2Array( 410.752, 235.337, 419.438, 239.792, 419.438, 249.592, 414.761, 251.819, 408.525, 246.474, 409.415, 233.556 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Book" type="Area2D" parent="YSort/Book3"]
-position = Vector2( 298.491, 247.206 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book3/Book"]
-position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 7 )
-
-[node name="Book2" type="Polygon2D" parent="YSort/Book3"]
-position = Vector2( -2.673, 2.44998 )
-color = Color( 0.14902, 0.294118, 0.796078, 1 )
-polygon = PoolVector2Array( 410.752, 235.337, 419.438, 239.792, 419.438, 249.592, 414.761, 251.819, 408.525, 246.474, 409.415, 233.556 )
-
-[node name="Calendar" type="Sprite" parent="YSort"]
-position = Vector2( 398.586, 263.118 )
-scale = Vector2( 1.86713, 1.86713 )
-texture = ExtResource( 16 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Calendar" type="Area2D" parent="YSort/Calendar"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Calendar/Calendar"]
-polygon = PoolVector2Array( -6.6723, -10.0072, 6.70293, -15.8987, 7.33984, 11.648, -5.71693, 17.0618 )
-
-[node name="CoffeeMug" type="Sprite" parent="YSort"]
-position = Vector2( 506.181, 253.64 )
-scale = Vector2( 2.39047, 2.39047 )
-z_index = 1
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CoffeeMug" type="Area2D" parent="YSort/CoffeeMug"]
-position = Vector2( -1.86031, 2.2078 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CoffeeMug/CoffeeMug"]
-position = Vector2( 1.78375, -2.67572 )
-shape = SubResource( 8 )
-
-[node name="Trophy" type="Polygon2D" parent="YSort"]
-position = Vector2( 43.0108, -162.112 )
-scale = Vector2( 1.38706, 1.38706 )
-z_index = 1
-color = Color( 0.941176, 0.909804, 0.0862745, 1 )
-polygon = PoolVector2Array( 402.288, 260.505, 401.843, 256.273, 396.275, 254.714, 393.602, 248.924, 399.838, 247.587, 406.52, 247.587, 409.861, 252.487, 405.406, 255.828, 403.402, 256.719 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Trophy" type="Area2D" parent="YSort/Trophy"]
-position = Vector2( 401.803, 255.085 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Trophy/Trophy"]
-shape = SubResource( 9 )
-
-[node name="TrophyBase" type="Polygon2D" parent="YSort/Trophy"]
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( 402.065, 258.055, 406.297, 259.837, 406.297, 263.623, 401.62, 263.178, 398.947, 260.283 )
-
-[node name="Plant1" type="Sprite" parent="YSort"]
-position = Vector2( 380.34, 331.199 )
-scale = Vector2( 2.06179, 2.06179 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="PotPlant" type="Sprite" parent="YSort/Plant1"]
-position = Vector2( -2.1608, -18.1027 )
-scale = Vector2( 1.28465, 1.28465 )
-z_index = 1
-texture = ExtResource( 22 )
-
-[node name="Desk1" type="Sprite" parent="YSort"]
-position = Vector2( 473.804, 281.547 )
-scale = Vector2( 1.96977, 1.96977 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Desk2" type="Sprite" parent="YSort"]
-position = Vector2( 718.329, 274.337 )
-scale = Vector2( 2.1255, 2.1255 )
-texture = ExtResource( 3 )
-flip_h = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="TrashBinEmpty" type="Sprite" parent="YSort"]
-position = Vector2( 757.502, 304.093 )
-scale = Vector2( 2.00625, 2.00625 )
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Plant2" type="Sprite" parent="YSort"]
-position = Vector2( 836.512, 349.846 )
-scale = Vector2( 2.06179, 2.06179 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="PotPlant" type="Sprite" parent="YSort/Plant2"]
-position = Vector2( 0.815704, -17.9162 )
-scale = Vector2( 1.49524, 1.49524 )
-z_index = 1
-texture = ExtResource( 21 )
-
-[node name="Plant3" type="Sprite" parent="YSort"]
-position = Vector2( 200.012, 237.846 )
-scale = Vector2( 1.06179, 1.06179 )
-z_index = 5
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="PotPlant" type="Sprite" parent="YSort/Plant3"]
-position = Vector2( 0.815704, -17.9162 )
-scale = Vector2( 1.49524, 1.49524 )
-z_index = 1
-texture = ExtResource( 21 )
-flip_h = true
-
-[node name="CoffeeMug2" type="Sprite" parent="YSort"]
-position = Vector2( 654.1, 223.464 )
-scale = Vector2( 1.81317, 1.81317 )
-z_index = 3
-texture = ExtResource( 10 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Boss" type="Area2D" parent="YSort"]
-
-[node name="Polygon2D" type="Polygon2D" parent="YSort/Boss"]
-position = Vector2( -77.4282, 7.7782 )
-color = Color( 0.752941, 0.141176, 0.94902, 1 )
-polygon = PoolVector2Array( 555.526, 379.35, 506.382, 378.289, 507.089, 436.979, 554.465, 436.626 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Boss"]
-position = Vector2( 452.902, 414.718 )
-shape = SubResource( 10 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/Bookshelf"]
+polygon = PoolVector2Array( -45.7523, -36.0906, -20.122, -49.1326, -19.1013, -27.8117, -44.8451, -15.2233, -45.4121, -33.9358 )
 
 [node name="BossCamera" type="Camera2D" parent="."]
-position = Vector2( 305.865, 329.173 )
+position = Vector2( 32.0361, 23.336 )
 anchor_mode = 0
-zoom = Vector2( 0.3, 0.3 )
+zoom = Vector2( 0.93, 0.93 )
 smoothing_speed = 30.0
 
 [node name="AlphaMask" type="ColorRect" parent="."]
@@ -556,11 +162,11 @@ margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
 mouse_filter = 2
-color = Color( 0.196078, 0.188235, 0.188235, 0.631373 )
+color = Color( 0.196078, 0.188235, 0.188235, 0.0631373 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="BossCameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ZoomIn = SubResource( 11 )
+anims/ZoomIn = SubResource( 6 )

@@ -2,6 +2,7 @@ extends Node2D
 
 var specs_by_node = {}
 var level
+var child
 
 onready var event_bus = $EventBus
 
@@ -56,4 +57,21 @@ func format_id(path):
 	return String(path).split("/")[-1]
 
 func play_spec(spec):
-	$HUD.render_spec(spec)
+	$HUD.state = "response"
+	if child:
+		print("next %s" % spec.id)
+		print("curr %s" % child.spec.id)
+		assert(false)
+	child = spec.type.instance()
+	child.connect("ready", self, "on_child_ready", [spec])
+	$HUD.add_child(child)
+
+func on_child_ready(spec):
+	child.connect("close", self, "on_child_close", [spec])
+	child.initialize(spec)
+
+func on_child_close(_spec):
+	$HUD.state = "explore"
+	$HUD.remove_child(child)
+	child.queue_free()
+	child = null

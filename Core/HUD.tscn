@@ -15,7 +15,6 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="HoverLabel" type="Label" parent="."]
-visible = false
 margin_right = 216.0
 margin_bottom = 29.0
 custom_styles/normal = SubResource( 1 )

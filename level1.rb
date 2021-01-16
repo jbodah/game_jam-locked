@@ -89,6 +89,7 @@ def_level do
   sequence do |s|
     s.id = 'boss'
     s.name = 'Boss'
+    s.node = 'Danny'
 
     sequence do
       camera_zoom do |z|
@@ -168,7 +169,6 @@ def_level do
   simple do |s|
     s.name = 'trash can'
     s.message = "The Boss' trash can is mostly full of paper. There's a lot of receipts from a place called \"Domingo's Pizza\"."
-    s.node = 'TrashBin'
     s.sound_open = 'rummage'
   end
 
@@ -195,7 +195,6 @@ def_level do
 
   simple do |s|
     s.name = 'bookshelf'
-    s.node = 'Book'
     s.message = "Most books are about business and administration.\nBut there's one called \"Dating after the 40's\"."
   end
 
@@ -227,10 +226,5 @@ def_level do
   simple do |s|
     s.name = 'coffee mug'
     s.message = "World's best Boss. Sure..."
-  end
-
-  search_engine do |s|
-    s.name = 'your computer'
-    s.node = 'Computer2'
   end
 end

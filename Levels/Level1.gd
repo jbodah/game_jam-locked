@@ -10,3 +10,6 @@ func get_camera(name):
 
 func _level_key():
 	return "level1"
+	
+func object_root_node():
+	return $lvl1

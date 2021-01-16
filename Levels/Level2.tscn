@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/Props/Furniture/trash full.png" type="Texture" id=1]
 [ext_resource path="res://assets/Props/computer block.png" type="Texture" id=2]
@@ -24,38 +24,36 @@
 [ext_resource path="res://assets/Props/pot plant2.png" type="Texture" id=22]
 [ext_resource path="res://Levels/Level2.gd" type="Script" id=23]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
-[ext_resource path="res://assets/Character/female_legs1.png" type="Texture" id=25]
-[ext_resource path="res://assets/Character/female_head2.png" type="Texture" id=26]
-[ext_resource path="res://assets/Character/female_torso1.png" type="Texture" id=27]
+[ext_resource path="res://Characters/Julia.tscn" type="PackedScene" id=25]
 
-[sub_resource type="CircleShape2D" id=12]
+[sub_resource type="CircleShape2D" id=1]
 radius = 15.0119
 
-[sub_resource type="CircleShape2D" id=13]
+[sub_resource type="CircleShape2D" id=2]
 radius = 13.3077
 
-[sub_resource type="CircleShape2D" id=14]
+[sub_resource type="CircleShape2D" id=3]
 radius = 3.7365
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 8.49466, 11.2633 )
 
-[sub_resource type="CircleShape2D" id=16]
+[sub_resource type="CircleShape2D" id=5]
 radius = 9.36788
 
-[sub_resource type="CapsuleShape2D" id=17]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 9.1554
 height = 0.0
 
-[sub_resource type="CircleShape2D" id=18]
+[sub_resource type="CircleShape2D" id=7]
 radius = 9.07351
 
-[sub_resource type="CircleShape2D" id=19]
+[sub_resource type="CircleShape2D" id=8]
 radius = 3.31989
 
-[sub_resource type="CircleShape2D" id=20]
+[sub_resource type="CircleShape2D" id=9]
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=10]
 resource_name = "ZoomIn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("JuliaCamera:zoom")
@@ -202,7 +200,7 @@ position = Vector2( -2.27164, -1.28778 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Computer1/Computer1"]
 position = Vector2( 0.47467, 0.526688 )
-shape = SubResource( 12 )
+shape = SubResource( 1 )
 
 [node name="Screen" type="Sprite" parent="YSort/Computer1"]
 position = Vector2( -4.46983, -4.58923 )
@@ -232,7 +230,7 @@ position = Vector2( -1.48749, 0.49025 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Computer2/Computer2"]
 position = Vector2( 2.83102, -0.298004 )
 z_index = 1
-shape = SubResource( 13 )
+shape = SubResource( 2 )
 
 [node name="BookShelf" type="Sprite" parent="YSort"]
 position = Vector2( 222.909, 309.84 )
@@ -276,7 +274,7 @@ scale = Vector2( 0.809531, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/StickyNote/StickyNote"]
 position = Vector2( 62.4973, 26.5892 )
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 
 [node name="TrashBin" type="Sprite" parent="YSort"]
 position = Vector2( 431.284, 305.189 )
@@ -293,7 +291,7 @@ scale = Vector2( 0.809531, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/TrashBin/TrashBin"]
 position = Vector2( -27.6163, 34.7804 )
-shape = SubResource( 15 )
+shape = SubResource( 4 )
 
 [node name="CrumpledPaper" type="Polygon2D" parent="YSort"]
 position = Vector2( 144.228, 22.6544 )
@@ -307,7 +305,7 @@ position = Vector2( 451.007, 334.613 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CrumpledPaper/CrumpledPaper"]
 position = Vector2( 0, -1.93243 )
-shape = SubResource( 16 )
+shape = SubResource( 5 )
 
 [node name="Paper" type="Polygon2D" parent="YSort"]
 position = Vector2( 108.968, -97.3506 )
@@ -323,7 +321,7 @@ position = Vector2( 294.923, 308.599 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Paper/Paper"]
 position = Vector2( -2.5271, 9.36501 )
-shape = SubResource( 17 )
+shape = SubResource( 6 )
 
 [node name="Paper2" type="Polygon2D" parent="YSort/Paper"]
 position = Vector2( 0.667969, -1.55902 )
@@ -351,7 +349,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="Book2" type="Polygon2D" parent="YSort/Book"]
 position = Vector2( -2.673, 2.44998 )
@@ -372,7 +370,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book2/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="Book2" type="Polygon2D" parent="YSort/Book2"]
 position = Vector2( -2.673, 2.44998 )
@@ -393,7 +391,7 @@ position = Vector2( 298.491, 247.206 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Book3/Book"]
 position = Vector2( 113.718, -2.67572 )
-shape = SubResource( 18 )
+shape = SubResource( 7 )
 
 [node name="Book2" type="Polygon2D" parent="YSort/Book3"]
 position = Vector2( -2.673, 2.44998 )
@@ -427,7 +425,7 @@ position = Vector2( -1.86031, 2.2078 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/CoffeeMug/CoffeeMug"]
 position = Vector2( 1.78375, -2.67572 )
-shape = SubResource( 19 )
+shape = SubResource( 8 )
 
 [node name="Trophy" type="Polygon2D" parent="YSort"]
 position = Vector2( 43.0108, -162.112 )
@@ -443,7 +441,7 @@ __meta__ = {
 position = Vector2( 401.803, 255.085 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Trophy/Trophy"]
-shape = SubResource( 20 )
+shape = SubResource( 9 )
 
 [node name="TrophyBase" type="Polygon2D" parent="YSort/Trophy"]
 color = Color( 0, 0, 0, 1 )
@@ -528,23 +526,8 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="female_head2" type="Sprite" parent="."]
-position = Vector2( 537.5, 373.299 )
-scale = Vector2( 2, 2 )
-z_index = 2
-texture = ExtResource( 26 )
-
-[node name="female_legs1" type="Sprite" parent="."]
-position = Vector2( 535.056, 438.908 )
-scale = Vector2( 2, 2 )
-z_index = 2
-texture = ExtResource( 25 )
-
-[node name="female_torso1" type="Sprite" parent="."]
-position = Vector2( 541.678, 401.354 )
-scale = Vector2( 2, 2 )
-z_index = 2
-texture = ExtResource( 27 )
+[node name="Julia" parent="YSort" instance=ExtResource( 25 )]
+position = Vector2( 525.325, 371.527 )
 
 [node name="JuliaCamera" type="Camera2D" parent="."]
 position = Vector2( 389.097, 329.173 )
@@ -564,4 +547,4 @@ __meta__ = {
 }
 
 [node name="JuliaCameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ZoomIn = SubResource( 21 )
+anims/ZoomIn = SubResource( 10 )
