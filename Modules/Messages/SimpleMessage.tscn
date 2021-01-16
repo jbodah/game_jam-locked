@@ -41,6 +41,7 @@ __meta__ = {
 }
 
 [node name="Caret" type="Polygon2D" parent="BaseMessage"]
+visible = false
 position = Vector2( 365.803, 602.867 )
 scale = Vector2( 0.965237, 1.23927 )
 antialiased = true
