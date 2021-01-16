@@ -2,15 +2,31 @@ extends Node2D
 
 const Title = preload("res://Title.tscn")
 const Level1 = preload("res://Levels/Level1.tscn")
+const Level2 = preload("res://Levels/Level2.tscn")
 
 var child
+var current = {
+	builder = Title,
+	next = {
+		builder = Level1,
+		next = {
+			builder = Level2
+		}
+	}
+}
 
 func _init():
-	child = Title.instance()
-	child.connect("done", self, "on_child_done")
+	start_phase()
+
+func start_phase():
+	child = current.builder.instance()
+	child.connect("done", self, "on_phase_done")
 	add_child(child)
 
-func on_child_done():
+func on_phase_done():
 	remove_child(child)
-	child = Level1.instance()
-	add_child(child)
+	if current.has("next"):
+		current = current.next
+		start_phase()
+	else:
+		get_tree().quit()
