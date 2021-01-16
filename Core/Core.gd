@@ -3,6 +3,8 @@ extends Node2D
 const LeftClick = preload("res://Util/LeftClick.gd")
 
 var specs_by_node = {}
+var lock = Mutex.new()
+var spec_queue = []
 var level
 var child
 
@@ -60,11 +62,16 @@ func format_id(path):
 
 func play_spec(spec):
 	$HUD.state = "response"
-	if child:
-		print("next %s" % spec.id)
-		print("curr %s" % child.spec.id)
-		assert(false)
-	child = spec.type.instance()
+	lock.lock()
+	if child || spec_queue.size() > 0:
+		spec_queue.push_back(spec)
+		lock.unlock()
+	else:
+		child = spec.type.instance()
+		lock.unlock()
+		_do_play_child(spec)
+		
+func _do_play_child(spec):
 	child.connect("ready", self, "on_child_ready", [spec])
 	$HUD.add_child(child)
 
@@ -73,7 +80,17 @@ func on_child_ready(spec):
 	child.initialize(spec)
 
 func on_child_close(_spec):
-	$HUD.state = "explore"
+	var next_spec
+	
 	$HUD.remove_child(child)
 	child.queue_free()
+	lock.lock()
 	child = null
+	if spec_queue.size() > 0:
+		next_spec = spec_queue.pop_front()
+		child = next_spec.type.instance()
+	lock.unlock()
+	if child:
+		_do_play_child(next_spec)
+	else:
+		$HUD.state = "explore"

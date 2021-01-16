@@ -27,7 +27,7 @@ func _process(_delta):
 			$EnterPassword.hide()
 			$Result.show()
 			if just_clicked() || just_hit_enter():
-				spec.event_bus.emit_signal("correct_password_entered", [spec])
+				spec.event_bus.emit_signal("correct_password_entered", spec)
 				close()
 		"password_fail":
 			$EnterPassword.hide()

@@ -51,6 +51,7 @@ module API
     search_engine
     next_level
     play_animation
+    branch
   ).each do |sym|
     class_eval <<~EOF
       def #{sym}(name = nil, &blk)

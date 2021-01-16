@@ -5,6 +5,7 @@ const Stack = preload("res://Util/Stack.gd")
 var stack = Stack.new()
 var state = "explore"
 var can_transition = true
+var lock = Mutex.new()
 
 onready var hover = $HoverLabel
 

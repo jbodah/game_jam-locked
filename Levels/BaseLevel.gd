@@ -4,6 +4,7 @@ signal done
 
 const LevelConfig = preload("res://LevelConfig.gd")
 const FlagStore = preload("res://FlagStore.gd")
+const NextLevel = preload("res://Modules/NextLevel.tscn")
 
 var _specs
 var flag_provider = FlagStore.new()
@@ -16,17 +17,23 @@ func _ready():
 	yield(get_tree().create_timer(0.2), "timeout")
 	maybe_play_intro()
 
-func maybe_play_intro():
+func play_spec(spec):
+	$Core.play_spec(spec)
+
+func find_child_spec(id):
 	for spec in specs():
-		if spec.id == "_intro":
-			$Core.play_spec(spec)
-			break
+		if spec.id == id:
+			return spec
+
+func maybe_play_intro():
+	var spec = find_child_spec("_intro")
+	if spec:
+		play_spec(spec)
 
 func maybe_play_outro():
-	for spec in specs():
-		if spec.id == "_outro":
-			$Core.play_spec(spec)
-			break
+	var spec = find_child_spec("_outro")
+	if spec:
+		play_spec(spec)
 
 func specs():
 	if !_specs:
@@ -46,11 +53,10 @@ func _level_key():
 	pass
 
 func on_correct_password_entered(_spec):
-	yield(get_tree().create_timer(0.2), "timeout")
 	maybe_play_outro()
 
 func on_next_level():
-	print("on_next_level()")
+	print("emit_signal('done')")
 	emit_signal("done")
 
 func on_play_animation(_name):

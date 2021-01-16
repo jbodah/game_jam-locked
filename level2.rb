@@ -2,8 +2,14 @@ require './api'
 include API
 
 FLAG_TALKED_TO_JULIA_ABOUT_ROMERO = "talked_to_julia_about_romero"
+FLAG_JULIA_COMPUTER_UNLOCKED = "julia_computer_unlocked"
+FLAG_ROMERO_COMPUTER_UNLOCKED = "romero_computer_unlocked"
 
 def_level do
+  next_level do |n|
+    n.id = "_next_level"
+  end
+
   camera_zoom do |z|
     z.id = '_intro'
     z.camera = 'julia'
@@ -34,151 +40,187 @@ def_level do
     end
   end
 
-  camera_zoom 'Julia' do |z|
-    z.camera = 'julia'
-    z.speed = 1
+  branch 'Julia' do |b|
+    b.flag = FLAG_JULIA_COMPUTER_UNLOCKED
 
-    sequence do
-      message 'Any progress? I really need to send some emails.'
+    multi_visit do
+      camera_zoom do |z|
+        z.camera = "julia"
+        z.speed = 1
 
-      choice do
-        on_choice 'Still nothing' do
-          '...'
-        end
+        messages [
+          "Oh, you’re my hero! Thanks a lot.",
+          "Now please, get the hell out of here, I have work to do."
+        ]
+      end
 
-        on_choice 'Do you remember anything about your password, Julia?'  do
-          messages [
-            'Not exactly, I remember a few things, but it’s all a bit fuzzy...',
-            "My password was a word plus a single number at the end.\nAnd there was something pink involved... Sorry, that’s everything I know."
-          ]
-        end
+      message "Julia doesn’t respond, she just keeps typing on the computer."
+    end
 
-        on_choice %(So, you’re Romero’s girlfriend, right?) do |c|
-          simple do |s|
-            s.set_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
-            s.message = "Oh, that’s a common misconception here, but no I’m not.\nI mean, we used to date, but he didn’t want anything serious."
+    camera_zoom do |z|
+      z.camera = 'julia'
+      z.speed = 1
+
+      sequence do
+        message 'Any progress? I really need to send some emails.'
+
+        choice do
+          on_choice 'Still nothing' do
+            '...'
           end
 
-          choice do
-            resp = proc do
-              messages [
-              "Weird right? Even a bit creepy.\nBut he never did anything to me, so I guess it’s fine.",
-              "I just don’t want any drama, we share an office after all.\nPlus, as long as he doesn’t interfere with my work, he can have any platonic obsession he wants.",
-              'Soon I’ll be promoted and get the hell out of this damn agency!',
-              'Whoops, don’t tell that to the boss.'
-              ]
+          on_choice 'Do you remember anything about your password, Julia?'  do
+            messages [
+              'Not exactly, I remember a few things, but it’s all a bit fuzzy...',
+              "My password was a word plus a single number at the end.\nAnd there was something pink involved... Sorry, that’s everything I know."
+            ]
+          end
+
+          on_choice %(So, you’re Romero’s girlfriend, right?) do |c|
+            simple do |s|
+              s.set_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
+              s.message = "Oh, that’s a common misconception here, but no I’m not.\nI mean, we used to date, but he didn’t want anything serious."
             end
-            on_choice 'Then why does he have so many pictures of you?', &resp
-            on_choice 'But all he talks about is his love for you!', &resp
+
+            choice do
+              resp = proc do
+                messages [
+                "Weird right? Even a bit creepy.\nBut he never did anything to me, so I guess it’s fine.",
+                "I just don’t want any drama, we share an office after all.\nPlus, as long as he doesn’t interfere with my work, he can have any platonic obsession he wants.",
+                'Soon I’ll be promoted and get the hell out of this damn agency!',
+                'Whoops, don’t tell that to the boss.'
+                ]
+              end
+              on_choice 'Then why does he have so many pictures of you?', &resp
+              on_choice 'But all he talks about is his love for you!', &resp
+            end
           end
         end
       end
     end
   end
 
-  # todo after unlock
-  # Oh, you’re my hero! Thanks a lot.
-  # Now please, get the hell out of here, I have work to do.
-  #After that:
-  #= Julia doesn’t respond, she just keeps typing on the computer.
-
-  camera_zoom 'Romero' do |z|
-    z.camera = 'romero'
-    z.speed = 1
+  branch 'Romero' do |b|
+    b.flag = FLAG_ROMERO_COMPUTER_UNLOCKED
 
     multi_visit do
-      sequence do
-        messages [
-          'Oh mere mortal, struck by such sight you stand in shock, thinking your eyes deceive you.',
-          "But fear not! I guarantee you this beautiful face isn’t the one of a demon or incubus.\nJust a public relations specialist.",
-          'Romero\'s the name.'
-        ]
+      camera_zoom do |z|
+        z.camera = "romero"
+        z.speed = 1
 
-        choice do
-          on_choice "Oh... Alright, I guess. I'm here to unlock your computer." do
-            message "Do it quickly, will you? I'm not used to waiting for other people.\nIt’s usually the other way around."
-          end
-
-          on_choice "What the fuck are you talking about?" do
-            messages [
-              "Rude.",
-              "Just do your job, tech guy."
-            ]
-          end
-        end
+        message "Finally! You may not have the looks I do, but at least you’re pretty clever.\nNot as much as me, of course, but still pretty clever."
       end
 
       sequence do
-        message "I know I'm irresistible, but you have more to do than just staring at me."
+        camera_zoom do |z|
+          z.camera = "romero"
+          z.speed = 1
 
-        choice do
-          on_choice "I sure have, goodbye." do
-            message "Oh, it’s so tiring being beautiful."
-          end
+          message "Bother my beauty no longer, for I have work to do."
+        end
 
-          on_choice "Romero, do you remember anything about your password?" do
-            messages [
-              "Oh, how it hurts!\nTo think that such important information could simply vanish overnight.\nNow I fear that one day I might forget her smile..."
-            ]
+        "Romero is just browsing social media."
+      end
+    end
 
-            choice do
-              resp = proc do
-                messages [
-                  "It's Julia! I was sure my password was the love of my life. How could it be anything else?\nBut I tried inputting her name over and over again, with no success.",
-                  "I even tried \"J5L14\"..."
-                ]
-              end
+    camera_zoom do |z|
+      z.camera = 'romero'
+      z.speed = 1
 
-              on_choice "Just get to the point already.", &resp
-              on_choice "Sorry, what are you talking about?", &resp
+      multi_visit do
+        sequence do
+          messages [
+            'Oh mere mortal, struck by such sight you stand in shock, thinking your eyes deceive you.',
+            "But fear not! I guarantee you this beautiful face isn’t the one of a demon or incubus.\nJust a public relations specialist.",
+            'Romero\'s the name.'
+          ]
+
+          choice do
+            on_choice "Oh... Alright, I guess. I'm here to unlock your computer." do
+              message "Do it quickly, will you? I'm not used to waiting for other people.\nIt’s usually the other way around."
+            end
+
+            on_choice "What the fuck are you talking about?" do
+              messages [
+                "Rude.",
+                "Just do your job, tech guy."
+              ]
             end
           end
+        end
 
-          on_choice "Why do you have so many pictures of Julia on your wall?" do
-            messages [
-              "Is that not clear enough?\nBecause I love her with every fiber of my body!\nShe's my most precious possession, she’s my guiding light!",
-              "She gives hope and strength to face this cruel existence!\nJulia is... the son."
-            ]
+        sequence do
+          message "I know I'm irresistible, but you have more to do than just staring at me."
 
-            choice do
-              on_choice "You mean \"the sun\"?" do
-                message "Oh, yeah, yeah, that’s it."
+          choice do
+            on_choice "I sure have, goodbye." do
+              message "Oh, it’s so tiring being beautiful."
+            end
+
+            on_choice "Romero, do you remember anything about your password?" do
+              messages [
+                "Oh, how it hurts!\nTo think that such important information could simply vanish overnight.\nNow I fear that one day I might forget her smile..."
+              ]
+
+              choice do
+                resp = proc do
+                  messages [
+                    "It's Julia! I was sure my password was the love of my life. How could it be anything else?\nBut I tried inputting her name over and over again, with no success.",
+                    "I even tried \"J5L14\"..."
+                  ]
+                end
+
+                on_choice "Just get to the point already.", &resp
+                on_choice "Sorry, what are you talking about?", &resp
               end
+            end
 
-              on_choice "(remain silent)" do
-                message "Yes, be speechless in face of true love!"
-              end
+            on_choice "Why do you have so many pictures of Julia on your wall?" do
+              messages [
+                "Is that not clear enough?\nBecause I love her with every fiber of my body!\nShe's my most precious possession, she’s my guiding light!",
+                "She gives hope and strength to face this cruel existence!\nJulia is... the son."
+              ]
 
-              on_choice "Julia told me you two aren’t even dating anymore." do |c|
-                c.if_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
+              choice do
+                on_choice "You mean \"the sun\"?" do
+                  message "Oh, yeah, yeah, that’s it."
+                end
 
-                messages [
-                  "She what? Damn Julia!",
-                  "Ok, you’re the IT guy, I don't need to uphold this facade.\nKid, let me teach you one thing.\nDo you know what really attracts women?",
-                  "A man’s romantic and unconditional love...\nFor another woman."
-                ]
+                on_choice "(remain silent)" do
+                  message "Yes, be speechless in face of true love!"
+                end
 
-                final = "Now get to work! And don’t tell anyone about our conversation."
-                choice do
-                  on_choice "You're a jerk." do
-                    messages [
-                      "Meh, doesn't seem to bother Julia, so what's the problem?",
-                      final
-                    ]
-                  end
+                on_choice "Julia told me you two aren’t even dating anymore." do |c|
+                  c.if_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
 
-                  on_choice "That’s bullshit, you know that?" do
-                    messages [
-                      "It is not! I read it in a book.",
-                      final
-                    ]
-                  end
+                  messages [
+                    "She what? Damn Julia!",
+                    "Ok, you’re the IT guy, I don't need to uphold this facade.\nKid, let me teach you one thing.\nDo you know what really attracts women?",
+                    "A man’s romantic and unconditional love...\nFor another woman."
+                  ]
 
-                  on_choice "(remain silent)" do
-                    messages [
-                      "Judge me all you want, you still need to unlock my computer.",
-                      final
-                    ]
+                  final = "Now get to work! And don’t tell anyone about our conversation."
+                  choice do
+                    on_choice "You're a jerk." do
+                      messages [
+                        "Meh, doesn't seem to bother Julia, so what's the problem?",
+                        final
+                      ]
+                    end
+
+                    on_choice "That’s bullshit, you know that?" do
+                      messages [
+                        "It is not! I read it in a book.",
+                        final
+                      ]
+                    end
+
+                    on_choice "(remain silent)" do
+                      messages [
+                        "Judge me all you want, you still need to unlock my computer.",
+                        final
+                      ]
+                    end
                   end
                 end
               end
@@ -188,15 +230,6 @@ def_level do
       end
     end
   end
-# After unlocking his computer:
-
-# Finally! You may not have the looks I do, but at least you’re pretty clever.
-# Not as much as me, of course, but still pretty clever.
-
-# After that:
-
-# Bother my beauty no longer, for I have work to do.
-# = Romero is just browsing social media.
 
   password do |p|
     p.name = "Romero's computer"
