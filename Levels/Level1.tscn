@@ -77,86 +77,86 @@ script = ExtResource( 23 )
 [node name="Core" parent="." instance=ExtResource( 24 )]
 position = Vector2( 0.707108, -3.53555 )
 
-[node name="lvl1" type="Sprite" parent="."]
+[node name="level" type="Sprite" parent="."]
 position = Vector2( 524.539, 301.055 )
 scale = Vector2( 3.11752, 3.11752 )
 texture = ExtResource( 1 )
 
-[node name="Danny" parent="lvl1" instance=ExtResource( 2 )]
+[node name="Danny" parent="level" instance=ExtResource( 2 )]
 position = Vector2( -11, -15.424 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Computer1" type="Area2D" parent="lvl1"]
+[node name="Computer1" type="Area2D" parent="level"]
 position = Vector2( -170.863, -96.5685 )
 scale = Vector2( 0.320767, 0.320767 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/Computer1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/Computer1"]
 position = Vector2( 250.316, 280.014 )
 shape = SubResource( 2 )
 
-[node name="StickyNote" type="Area2D" parent="lvl1"]
+[node name="StickyNote" type="Area2D" parent="level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/StickyNote"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/StickyNote"]
 position = Vector2( -78.7055, -19.3928 )
 shape = SubResource( 3 )
 
-[node name="TrashCan" type="Area2D" parent="lvl1"]
+[node name="TrashCan" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/TrashCan"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/TrashCan"]
 polygon = PoolVector2Array( -108.502, 14.3836, -104.306, 11.5484, -95.4596, 15.0641, -94.8926, 30.0341, -100.223, 33.0961, -108.955, 28.6732 )
 
-[node name="PizzaFlyer" type="Area2D" parent="lvl1"]
+[node name="PizzaFlyer" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/PizzaFlyer"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/PizzaFlyer"]
 position = Vector2( -15.1968, -10.0934 )
 polygon = PoolVector2Array( 82.4451, 34.5178, 86.868, 31.7279, 89.8167, 32.9754, 85.2803, 35.924 )
 
-[node name="CrumpledPaper" type="Area2D" parent="lvl1"]
+[node name="CrumpledPaper" type="Area2D" parent="level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/CrumpledPaper"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/CrumpledPaper"]
 position = Vector2( -49.8999, 42.5283 )
 shape = SubResource( 4 )
 
-[node name="Calendar" type="Area2D" parent="lvl1"]
+[node name="Calendar" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/Calendar"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Calendar"]
 polygon = PoolVector2Array( -112.244, -33.0213, -101.017, -39.8258, -99.8826, -13.9686, -111.337, -8.18472 )
 
-[node name="Paper" type="Area2D" parent="lvl1"]
+[node name="Paper" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/Paper"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Paper"]
 polygon = PoolVector2Array( -66.9598, -7.14866, -72.5168, -5.67434, -66.3928, 0.109512, -61.2894, -5.2207, -65.7123, -8.39616 )
 
-[node name="EmployeeOfTheMonth" type="Area2D" parent="lvl1"]
+[node name="EmployeeOfTheMonth" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/EmployeeOfTheMonth"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/EmployeeOfTheMonth"]
 polygon = PoolVector2Array( 19.9225, -58.3114, 29.1086, -54.1153, 28.5415, -37.4442, 19.0152, -43.1146 )
 
-[node name="PictureOnTheWall" type="Area2D" parent="lvl1"]
+[node name="PictureOnTheWall" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/PictureOnTheWall"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/PictureOnTheWall"]
 polygon = PoolVector2Array( -70.9407, -54.3194, -61.9814, -59.0826, -61.5278, -46.6076, -72.1882, -42.9785, -72.7552, -52.7317 )
 
-[node name="TrophyRack" type="Area2D" parent="lvl1"]
+[node name="TrophyRack" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/TrophyRack"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/TrophyRack"]
 polygon = PoolVector2Array( 4.5896, -25.7404, 30.22, -13.7191, 35.21, -16.7811, 23.302, -26.9879, 21.7143, -34.0192, 7.87845, -37.6483, 2.66164, -28.5756 )
 
-[node name="CoffeeMug" type="Area2D" parent="lvl1"]
+[node name="CoffeeMug" type="Area2D" parent="level"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl1/CoffeeMug"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/CoffeeMug"]
 position = Vector2( -77.7985, -5.67044 )
 shape = SubResource( 5 )
 
-[node name="Bookshelf" type="Area2D" parent="lvl1"]
+[node name="Bookshelf" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="lvl1/Bookshelf"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Bookshelf"]
 polygon = PoolVector2Array( -45.7523, -36.0906, -20.122, -49.1326, -19.1013, -27.8117, -44.8451, -15.2233, -45.4121, -33.9358 )
 
 [node name="BossCamera" type="Camera2D" parent="."]
-position = Vector2( 32.0361, 23.336 )
+position = Vector2( 320.361, 233.36 )
 anchor_mode = 0
-zoom = Vector2( 0.93, 0.93 )
+zoom = Vector2( 0.3, 0.3 )
 smoothing_speed = 30.0
 
 [node name="AlphaMask" type="ColorRect" parent="."]
@@ -165,7 +165,7 @@ margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
 mouse_filter = 2
-color = Color( 0.196078, 0.188235, 0.188235, 0.0631373 )
+color = Color( 0.196078, 0.188235, 0.188235, 0.631373 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false

@@ -34,7 +34,7 @@ func get_camera(_name):
 	pass
 
 func object_root_node():
-	return $YSort
+	return $level
 
 func music():
 	return _level_key()

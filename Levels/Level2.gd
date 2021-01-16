@@ -5,7 +5,12 @@ func get_camera(name):
 		"julia": 
 			return {
 				camera = $JuliaCamera,
-				animation = $JuliaCameraAnimationPlayer
+				animation = $CameraAnimationPlayer
+			}
+		"romero":
+			return {
+				camera = $RomeroCamera,
+				animation = $CameraAnimationPlayer
 			}
 
 func _level_key():
