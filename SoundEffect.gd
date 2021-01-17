@@ -42,6 +42,9 @@ func fail():
 func typing():
 	play_for($typing, 0, 1)
 
+func romero_chuckle():
+	$romero_chuckle.play()
+
 func play_for(node, start, duration):
 	node.play(start)
 	yield(get_tree().create_timer(duration), "timeout")

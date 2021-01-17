@@ -108,7 +108,10 @@ def_level do
         z.camera = "romero"
         z.speed = 1
 
-        message "Finally! You may not have the looks I do, but at least you’re pretty clever.\nNot as much as me, of course, but still pretty clever."
+        simple do |s|
+          s.message = "Finally! You may not have the looks I do, but at least you’re pretty clever.\nNot as much as me, of course, but still pretty clever."
+          s.sound_open = "romero_chuckle"
+        end
       end
 
       sequence do
@@ -189,39 +192,39 @@ def_level do
                 on_choice "(remain silent)" do
                   message "Yes, be speechless in face of true love!"
                 end
+              end
+            end
 
-                on_choice "Julia told me you two aren’t even dating anymore." do |c|
-                  c.if_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
+            on_choice "Julia told me you two aren’t even dating anymore." do |c|
+              c.if_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
 
+              messages [
+                "She what? Damn Julia!",
+                "Ok, you’re the IT guy, I don't need to uphold this facade.\nKid, let me teach you one thing.\nDo you know what really attracts women?",
+                "A man’s romantic and unconditional love...\nFor another woman."
+              ]
+
+              final = "Now get to work! And don’t tell anyone about our conversation."
+              choice do
+                on_choice "You're a jerk." do
                   messages [
-                    "She what? Damn Julia!",
-                    "Ok, you’re the IT guy, I don't need to uphold this facade.\nKid, let me teach you one thing.\nDo you know what really attracts women?",
-                    "A man’s romantic and unconditional love...\nFor another woman."
+                    "Meh, doesn't seem to bother Julia, so what's the problem?",
+                    final
                   ]
+                end
 
-                  final = "Now get to work! And don’t tell anyone about our conversation."
-                  choice do
-                    on_choice "You're a jerk." do
-                      messages [
-                        "Meh, doesn't seem to bother Julia, so what's the problem?",
-                        final
-                      ]
-                    end
+                on_choice "That’s bullshit, you know that?" do
+                  messages [
+                    "It is not! I read it in a book.",
+                    final
+                  ]
+                end
 
-                    on_choice "That’s bullshit, you know that?" do
-                      messages [
-                        "It is not! I read it in a book.",
-                        final
-                      ]
-                    end
-
-                    on_choice "(remain silent)" do
-                      messages [
-                        "Judge me all you want, you still need to unlock my computer.",
-                        final
-                      ]
-                    end
-                  end
+                on_choice "(remain silent)" do
+                  messages [
+                    "Judge me all you want, you still need to unlock my computer.",
+                    final
+                  ]
                 end
               end
             end

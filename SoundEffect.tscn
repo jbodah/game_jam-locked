@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://SoundEffect.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_assets/14124__adcbicycle__5.wav" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/537244__georgehopkins__mechanical-keyboard-typing.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/442943__qubodup__level-up.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/mumble.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/romero_chuckle.wav" type="AudioStream" id=10]
 
 [node name="SoundEffect" type="Control"]
 visible = false
@@ -25,6 +26,7 @@ stream = ExtResource( 3 )
 
 [node name="cartoon_voice" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -7.0
 
 [node name="fanfare" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -40,3 +42,7 @@ stream = ExtResource( 7 )
 
 [node name="mumble" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+
+[node name="romero_chuckle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = 10.0
