@@ -25,7 +25,7 @@ func modem():
 	play_for($modem, 10.1, 2.1)
 
 func cartoon_voice():
-	play_for($cartoon_voice, 0, 1.6)
+	play_for($cartoon_voice, 0, 0.7)
 	
 func mumble():
 	$mumble.play()
