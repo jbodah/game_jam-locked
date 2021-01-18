@@ -31,10 +31,10 @@ __meta__ = {
 [node name="ChildContainer" type="Node" parent="."]
 
 [node name="LevelSelectButton" type="Button" parent="."]
-margin_left = 889.0
-margin_top = 16.0
-margin_right = 1008.0
-margin_bottom = 50.0
+margin_left = 886.0
+margin_top = 555.0
+margin_right = 1005.0
+margin_bottom = 589.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 3 )
 text = "Level Select"
