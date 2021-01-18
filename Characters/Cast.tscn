@@ -10,19 +10,19 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Danny" parent="." instance=ExtResource( 3 )]
-position = Vector2( 113.33, 5.23258 )
+position = Vector2( 180.669, 8.94885 )
 
 [node name="Julia" parent="." instance=ExtResource( 5 )]
-position = Vector2( 75.1397, 5.23258 )
+position = Vector2( 142.478, 8.94885 )
 
 [node name="Romero" parent="." instance=ExtResource( 2 )]
-position = Vector2( 34.7066, 5.23258 )
+position = Vector2( 102.045, 8.94885 )
 
 [node name="Woman1" parent="." instance=ExtResource( 1 )]
-position = Vector2( -6.32102, 5.23258 )
+position = Vector2( 61.0177, 8.94885 )
 
 [node name="Woman2" parent="." instance=ExtResource( 4 )]
-position = Vector2( -48.8352, 5.23258 )
+position = Vector2( 18.5036, 8.94885 )
 
 [node name="Steve" parent="." instance=ExtResource( 6 )]
-position = Vector2( 154.894, 4.90547 )
+position = Vector2( 222.233, 8.62174 )

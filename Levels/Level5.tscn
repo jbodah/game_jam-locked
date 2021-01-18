@@ -6,12 +6,11 @@
 [ext_resource path="res://assets/lvl5.png" type="Texture" id=4]
 [ext_resource path="res://Characters/Steve.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 6.07771
 height = 9.54863
 
-[sub_resource type="Animation" id=1]
-resource_name = "ZoomIn"
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("SteveCamera:zoom")
 tracks/0/interp = 1
@@ -179,17 +178,14 @@ scale = Vector2( 0.903233, 0.903233 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/PottedPlantWithANote"]
 position = Vector2( 20.1274, 69.4966 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="UpperCabinet" type="Area2D" parent="level"]
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/UpperCabinet"]
-scale = Vector2( 1, 1 )
 polygon = PoolVector2Array( -158.208, -42.1824, -132.384, -55.8539, -132.004, -43.5116, -158.208, -31.1693 )
 
 [node name="Calendar" type="Area2D" parent="level"]
-scale = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Calendar"]
 polygon = PoolVector2Array( 185.478, -26.954, 196.681, -23.3462, 196.681, 2.47765, 183.959, -2.45927 )
@@ -275,7 +271,7 @@ polygon = PoolVector2Array( -44.4008, -89.3014, -19.5263, -104.112, -4.71556, -9
 polygon = PoolVector2Array( 64.148, 70.7942, 64.148, 79.6558, 82.1397, 89.0544, 130.207, 65.155, 130.207, 50.1172, 122.957, 46.8948, 111.41, 46.3577, 103.085, 49.8487, 99.0572, 55.7564, 75.6949, 66.4977, 64.4165, 67.0348 )
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ZoomIn = SubResource( 1 )
+anims/ZoomIn = SubResource( 2 )
 
 [node name="AlphaMask" type="ColorRect" parent="."]
 margin_left = -20.0

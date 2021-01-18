@@ -180,19 +180,22 @@ polygon = PoolVector2Array( 83.6339, -19.6322, 89.3633, -17.1006, 84.4333, -10.5
 polygon = PoolVector2Array( 61.2489, -57.4734, 86.2987, -45.6147, 86.2987, -38.4196, 60.5827, -51.4775 )
 
 [node name="JuliaCamera" type="Camera2D" parent="."]
+position = Vector2( 355.364, 184.508 )
 anchor_mode = 0
+zoom = Vector2( 0.51, 0.51 )
 
 [node name="RomeroCamera" type="Camera2D" parent="."]
+position = Vector2( 142.575, 224.241 )
 anchor_mode = 0
+zoom = Vector2( 0.51, 0.51 )
 
 [node name="AlphaMask" type="ColorRect" parent="."]
-visible = false
 margin_left = -20.0
 margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
 mouse_filter = 2
-color = Color( 0.196078, 0.188235, 0.188235, 0 )
+color = Color( 0.196078, 0.188235, 0.188235, 0.441961 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false

@@ -250,7 +250,9 @@ def_level do
 
     choose do
       on_choice "Insert a dollar" do
-        choose do
+        choose do |c|
+          c.sound_open = "chaching"
+
           on_choice "Candy" do
             messages [
               "<Nothing happens>",
@@ -263,7 +265,7 @@ def_level do
           end
 
           on_choice "Chips" do
-            message "You watch the machine whirl your bag of chips is released.\nIt starts to fall but gets stuck in the machine"
+            message "The machine buzzes and whirls as your bag of chips is released.\nIt starts to fall but gets stuck in the machine"
           end
         end
       end

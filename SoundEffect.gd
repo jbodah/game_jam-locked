@@ -44,6 +44,9 @@ func typing():
 
 func romero_chuckle():
 	$romero_chuckle.play()
+	
+func chaching():
+	$chaching.play()
 
 func play_for(node, start, duration):
 	node.play(start)
