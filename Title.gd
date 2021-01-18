@@ -46,7 +46,7 @@ func on_text_changed(_text):
 	$LineEdit.add_color_override("font_color", Color.black)
 
 func on_text_entered(text):
-	if text == password:
+	if text.to_lower() == password.to_lower():
 		print("done title")
 		emit_signal("done")
 	else:

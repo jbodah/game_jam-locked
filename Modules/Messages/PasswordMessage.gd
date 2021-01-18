@@ -41,7 +41,7 @@ func on_outside_gui_input(_event):
 
 func check_password(text):
 	delay_input()
-	if text == spec.actual_password:
+	if text.to_lower() == spec.actual_password.to_lower():
 		$Background.color = Color("198b13")
 		SoundEffect.play("success")
 		state = "password_pass"
