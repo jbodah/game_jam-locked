@@ -250,19 +250,21 @@ def_level do
 
     choose do
       on_choice "Insert a dollar?" do
-        on_choice "Candy" do
-          messages [
-            "<Nothing happens>",
-            "Hey! Where's my dollar?!"
-          ]
-        end
+        choose do
+          on_choice "Candy" do
+            messages [
+              "<Nothing happens>",
+              "Hey! Where's my dollar?!"
+            ]
+          end
 
-        on_choice "Soda" do
-          message "\"Sorry, out of stock\". Nine dimes and a nickel fall out of the machine."
-        end
+          on_choice "Soda" do
+            message "\"Sorry, out of stock\". Nine dimes and a nickel fall out of the machine."
+          end
 
-        on_choice "Chips" do
-          message "You watch the machine whirl your bag of chips is released.\nIt starts to fall but gets stuck in the machine"
+          on_choice "Chips" do
+            message "You watch the machine whirl your bag of chips is released.\nIt starts to fall but gets stuck in the machine"
+          end
         end
       end
 
