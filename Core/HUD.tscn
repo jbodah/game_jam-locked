@@ -28,6 +28,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ChildContainer" type="Node" parent="."]
+
 [node name="LevelSelectButton" type="Button" parent="."]
 margin_left = 889.0
 margin_top = 16.0

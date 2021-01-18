@@ -73,7 +73,7 @@ func play_spec(spec):
 		
 func _do_play_child(spec):
 	child.connect("ready", self, "on_child_ready", [spec])
-	$HUD.add_child(child)
+	$HUD/ChildContainer.add_child(child)
 
 func on_child_ready(spec):
 	child.connect("close", self, "on_child_close", [spec])
@@ -82,7 +82,7 @@ func on_child_ready(spec):
 func on_child_close(_spec):
 	var next_spec
 	
-	$HUD.remove_child(child)
+	$HUD/ChildContainer.remove_child(child)
 	child.queue_free()
 	lock.lock()
 	child = null

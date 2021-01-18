@@ -16,6 +16,7 @@ func _ready():
 		grid.add_child(button)
 
 func play(name):
+	print("play sound: %s" % name)
 	call(name)
 
 func rummage():
@@ -47,6 +48,9 @@ func romero_chuckle():
 	
 func chaching():
 	$chaching.play()
+	
+func steve_hey():
+	play_for($steve_hey, 0, 2)
 
 func play_for(node, start, duration):
 	node.play(start)

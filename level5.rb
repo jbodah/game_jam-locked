@@ -11,7 +11,9 @@ def_level do
     z.camera = "steve"
     z.speed = 1
 
-    sequence do
+    sequence do |s|
+      s.sound_open = "steve_hey"
+
       message "What's up dude, you new here?"
 
       choose do

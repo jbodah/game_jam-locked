@@ -16,3 +16,6 @@ volume_db = -4.039
 
 [node name="level2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="level5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

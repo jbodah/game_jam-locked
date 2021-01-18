@@ -14,6 +14,8 @@ func _ready():
 	$Core.event_bus.connect("correct_password_entered", self, "on_correct_password_entered")
 	$Core.event_bus.connect("next_level", self, "on_next_level")
 	$Core.event_bus.connect("play_animation", self, "on_play_animation")
+	if !Music.is_playing:
+		Music.play(_level_key())
 	yield(get_tree().create_timer(0.2), "timeout")
 	maybe_play_intro()
 

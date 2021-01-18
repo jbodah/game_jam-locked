@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/steve_hey.wav-31ddec2586a2a0785d005be20eb0aead.sample"
+
+[deps]
+
+source_file="res://assets/steve_hey.wav"
+dest_files=[ "res://.import/steve_hey.wav-31ddec2586a2a0785d005be20eb0aead.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

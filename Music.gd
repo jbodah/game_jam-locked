@@ -3,6 +3,7 @@ extends Control
 const Path = preload("res://Util/Path.gd")
 
 var curr
+var is_playing = false
 var enabled = true
 
 func _ready():
@@ -27,6 +28,8 @@ func play(name):
 		if node:
 			node.play()
 			curr = name
+			is_playing = true
 
 func stop(name):
 	get_node(name).stop()
+	is_playing = false
