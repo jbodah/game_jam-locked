@@ -259,15 +259,20 @@ polygon = PoolVector2Array( -51.6163, -69.7436, -39.8436, -69.5537, -36.8055, -6
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/WetFloor"]
 polygon = PoolVector2Array( 22.5514, -35.9447, 40.4003, -38.0334, 55.211, -33.6661, 61.4771, -21.3238, 58.439, -13.3488, 44.3877, -14.4881, 19.5133, -16.0072, 22.5514, -22.4631, 22.5514, -32.5268 )
 
-[node name="JunkFood" type="Area2D" parent="level"]
+[node name="ABunchOfJunkFood" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/JunkFood"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/ABunchOfJunkFood"]
 polygon = PoolVector2Array( -5.74094, 4.31015, 2.80371, 9.43694, 7.17101, 12.475, 2.99361, 15.3233, -8.58916, 6.20895 )
 
 [node name="VendingMachine" type="Area2D" parent="level"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/VendingMachine"]
 polygon = PoolVector2Array( -44.4008, -89.3014, -19.5263, -104.112, -4.71556, -94.2383, -4.14592, -45.2489, -29.0204, -33.6661, -32.2484, -36.1346, -32.6281, -56.0721, -35.6662, -62.3382, -37.1853, -72.0222, -44.5907, -72.9716 )
+
+[node name="Sofa" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Sofa"]
+polygon = PoolVector2Array( 64.148, 70.7942, 64.148, 79.6558, 82.1397, 89.0544, 130.207, 65.155, 130.207, 50.1172, 122.957, 46.8948, 111.41, 46.3577, 103.085, 49.8487, 99.0572, 55.7564, 75.6949, 66.4977, 64.4165, 67.0348 )
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ZoomIn = SubResource( 1 )
@@ -290,6 +295,7 @@ anchor_mode = 0
 zoom = Vector2( 0.3, 0.3 )
 
 [node name="Fiyah" type="Sprite" parent="."]
+visible = false
 position = Vector2( 255.166, 155.205 )
 scale = Vector2( 2.93509, 2.18543 )
 z_index = 10
@@ -297,18 +303,21 @@ texture = ExtResource( 2 )
 flip_h = true
 
 [node name="Fiyah2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 771.758, 152.33 )
 scale = Vector2( 3.00101, 2.23451 )
 z_index = 10
 texture = ExtResource( 2 )
 
 [node name="Fiyah3" type="Sprite" parent="."]
+visible = false
 position = Vector2( 256.274, 469.976 )
 scale = Vector2( 2.96584, 2.18543 )
 z_index = 10
 texture = ExtResource( 2 )
 
 [node name="Fiyah4" type="Sprite" parent="."]
+visible = false
 position = Vector2( 772.939, 472.427 )
 scale = Vector2( 2.97375, 2.21422 )
 z_index = 10
