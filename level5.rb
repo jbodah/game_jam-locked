@@ -195,15 +195,16 @@ def_level do
   end
 
   simple 'coffee machine' do |s|
-    s.message "Just a regular coffee machine. Despite what Steve has said, it seems to be working fine."
+    s.set_flag = FLAG_COFFEE_MACHINE_INSPECTED
+    s.message = "Just a regular coffee machine. Despite what Steve has said, it seems to be working fine."
   end
 
   simple 'bookshelf' do |s|
-    s.message "Most of the books here are old or simply weird.\nLooks like the Boss bought the cheapest book he could find to fill this bookshelf."
+    s.message = "Most of the books here are old or simply weird.\nLooks like the Boss bought the cheapest book he could find to fill this bookshelf."
   end
 
   simple 'refrigerator' do |s|
-    s.message "Oh yeah, the office refrigerator... The heart and soul of chaos at the workplace."
+    s.message = "Oh yeah, the office refrigerator... The heart and soul of chaos at the workplace."
   end
 
   simple 'employee of the month picture' do |s|
