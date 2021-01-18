@@ -23,12 +23,11 @@ func play(name):
 		return
 	if curr:
 		stop(curr)
-	else:
-		var node = get_node(name)
-		if node:
-			node.play()
-			curr = name
-			is_playing = true
+	var node = get_node(name)
+	if node:
+		node.play()
+		curr = name
+		is_playing = true
 
 func stop(name):
 	get_node(name).stop()
