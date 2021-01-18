@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Level5.gd" type="Script" id=1]
+[ext_resource path="res://assets/Fiyah.png" type="Texture" id=2]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/lvl5.png" type="Texture" id=4]
 [ext_resource path="res://Characters/Steve.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 6.07771
+height = 9.54863
 
 [sub_resource type="Animation" id=1]
 resource_name = "ZoomIn"
@@ -56,6 +61,105 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "Burn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fiyah:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Fiyah2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Fiyah3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Fiyah4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Fiyah4:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Fiyah:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Fiyah2:flip_h")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Fiyah3:flip_h")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false ]
+}
+
 [node name="Level5" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -70,6 +174,100 @@ texture = ExtResource( 4 )
 [node name="Steve" parent="level" instance=ExtResource( 5 )]
 position = Vector2( -93.249, 12.5324 )
 scale = Vector2( 0.903233, 0.903233 )
+
+[node name="PottedPlantWithANote" type="Area2D" parent="level"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="level/PottedPlantWithANote"]
+position = Vector2( 20.1274, 69.4966 )
+shape = SubResource( 2 )
+
+[node name="UpperCabinet" type="Area2D" parent="level"]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/UpperCabinet"]
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( -158.208, -42.1824, -132.384, -55.8539, -132.004, -43.5116, -158.208, -31.1693 )
+
+[node name="Calendar" type="Area2D" parent="level"]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Calendar"]
+polygon = PoolVector2Array( 185.478, -26.954, 196.681, -23.3462, 196.681, 2.47765, 183.959, -2.45927 )
+
+[node name="CoffeeMachine" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/CoffeeMachine"]
+polygon = PoolVector2Array( -148.334, -26.0425, -141.878, -30.2199, -135.802, -26.6121, -135.042, -14.6496, -142.068, -11.2318, -149.093, -14.8395 )
+
+[node name="Bookshelf" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Bookshelf"]
+polygon = PoolVector2Array( 106.107, -54.6766, 133.26, -42.904, 131.741, -7.20631, 104.588, -19.1688 )
+
+[node name="Refrigerator" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Refrigerator"]
+polygon = PoolVector2Array( -119.32, -38.3468, -95.7746, -50.4993, -95.3949, -1.13011, -119.32, 10.0729 )
+
+[node name="EmployeeOfTheMonthPicture" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/EmployeeOfTheMonthPicture"]
+polygon = PoolVector2Array( 162.16, -38.3089, 171.275, -34.5112, 171.085, -20.46, 162.16, -24.2576 )
+
+[node name="DartBoard" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/DartBoard"]
+polygon = PoolVector2Array( -88.4832, -74.0066, -83.7361, -82.1715, -76.3307, -84.2601, -71.9635, -80.8423, -72.723, -72.4875, -80.5081, -65.4619, -87.154, -64.1327, -90.1921, -69.4494 )
+
+[node name="Tv" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Tv"]
+polygon = PoolVector2Array( 43.8642, 27.3901, 62.0928, 16.7567, 63.0422, 36.5044, 43.6743, 45.6187 )
+
+[node name="Magazines" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Magazines"]
+polygon = PoolVector2Array( 5.96385, 7.60445, 13.1793, 4.18658, 11.0907, 0.578842, 7.29303, -2.07951, -0.11235, 0.958588, 0.0775299, 4.94611 )
+
+[node name="BottomCabinet" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/BottomCabinet"]
+polygon = PoolVector2Array( -183.766, 16.6428, -158.511, 2.97133, -158.322, 23.6684, -185.095, 36.9601 )
+
+[node name="StevesComputer" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/StevesComputer"]
+polygon = PoolVector2Array( -4.56367, 72.9332, 7.0191, 67.2368, 7.58875, 78.2499, 11.1965, 86.7946, 3.03157, 93.4404, -4.56367, 81.6678 )
+
+[node name="Pizza" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Pizza"]
+polygon = PoolVector2Array( -55.9835, 14.9435, -48.0085, 10.956, -43.4514, 1.84169, -34.7168, 7.53815, -39.0841, 16.6524, -48.5782, 20.2602 )
+
+[node name="FireExtinguisher" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/FireExtinguisher"]
+polygon = PoolVector2Array( 3.82912, -91.2002, 13.8928, -92.1496, 14.8422, -78.8579, 9.90532, -72.212, 3.63922, -76.0097, 2.31004, -87.5924 )
+
+[node name="WaterCooler" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/WaterCooler"]
+polygon = PoolVector2Array( -51.6163, -69.7436, -39.8436, -69.5537, -36.8055, -65.3763, -36.9954, -53.7935, -34.1472, -53.034, -33.1978, -32.7167, -45.5401, -27.2102, -55.224, -32.1471, -54.6544, -47.9072, -55.9835, -50.9453, -53.3252, -54.9328, -53.1353, -68.6043 )
+
+[node name="WetFloor" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/WetFloor"]
+polygon = PoolVector2Array( 22.5514, -35.9447, 40.4003, -38.0334, 55.211, -33.6661, 61.4771, -21.3238, 58.439, -13.3488, 44.3877, -14.4881, 19.5133, -16.0072, 22.5514, -22.4631, 22.5514, -32.5268 )
+
+[node name="JunkFood" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/JunkFood"]
+polygon = PoolVector2Array( -5.74094, 4.31015, 2.80371, 9.43694, 7.17101, 12.475, 2.99361, 15.3233, -8.58916, 6.20895 )
+
+[node name="VendingMachine" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/VendingMachine"]
+polygon = PoolVector2Array( -44.4008, -89.3014, -19.5263, -104.112, -4.71556, -94.2383, -4.14592, -45.2489, -29.0204, -33.6661, -32.2484, -36.1346, -32.6281, -56.0721, -35.6662, -62.3382, -37.1853, -72.0222, -44.5907, -72.9716 )
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ZoomIn = SubResource( 1 )
@@ -90,3 +288,32 @@ __meta__ = {
 position = Vector2( 162.896, 287.969 )
 anchor_mode = 0
 zoom = Vector2( 0.3, 0.3 )
+
+[node name="Fiyah" type="Sprite" parent="."]
+position = Vector2( 255.166, 155.205 )
+scale = Vector2( 2.93509, 2.18543 )
+z_index = 10
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Fiyah2" type="Sprite" parent="."]
+position = Vector2( 771.758, 152.33 )
+scale = Vector2( 3.00101, 2.23451 )
+z_index = 10
+texture = ExtResource( 2 )
+
+[node name="Fiyah3" type="Sprite" parent="."]
+position = Vector2( 256.274, 469.976 )
+scale = Vector2( 2.96584, 2.18543 )
+z_index = 10
+texture = ExtResource( 2 )
+
+[node name="Fiyah4" type="Sprite" parent="."]
+position = Vector2( 772.939, 472.427 )
+scale = Vector2( 2.97375, 2.21422 )
+z_index = 10
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="FireAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Burn = SubResource( 3 )

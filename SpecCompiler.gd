@@ -11,7 +11,8 @@ const TYPE_LOOKUP = {
 	camera_zoom = preload("res://Modules/CameraZoom.tscn"),
 	next_level = preload("res://Modules/NextLevel.tscn"),
 	play_animation = preload("res://Modules/PlayAnimation.tscn"),
-	branch = preload("res://Modules/Branch.tscn")
+	branch = preload("res://Modules/Branch.tscn"),
+	close = preload("res://Modules/Close.tscn")
 }
 
 static func compile_spec(spec):

@@ -117,65 +117,169 @@ def_level do
       end
     end
   end
-end
 
-#Interactive objects:
-#
-#Break room computer -
-#Username: HowardPhilipsBreakPC
-#Password: catnip
-#
-#Upper cabinet -
-#= There's a funny smell coming from this upper cabinet.
-#Besides the dust, there are also some cans, a half empty wine bottle, a lost remote control...
-#And finally, a curious looking small sack with a cat's face on it.
-#(show sack, if possible)
-#Open it.
-#There's a bunch of weed inside. Well, that explains the smell.
-#Don't open it.
-#        No, dumb player, what do you accomlish by not opening it?
-#(loop back to the choice)
-#
-#Potted plant with a note -
-#= There is a sticky note hidden in this plant.
-#(show note)
-#“For safety reasons, I'm going to write this down and hide.
-#The password to computer here is:
-#A thing my cats love that you can find in this room.
-#Kira”
-#
-#Calendar -
-#Exactly like Julia's calendar.
-#
-#Coffee Machine -
-#Just a regular coffee machine. Despite what Steve has said, it seems to be working fine.
-#
-#Bookshelf -
-#= Most of the books here are old or simply weird.
-#Looks like the Boss bought the cheapest book he could find to fill this bookshelf.
-#
-#Refrigerator -
-#= Oh yeah, the office refrigerator... The heart and soul of chaos at the workplace.
-#
-#Employee of the month picture -
-#= Hey Boss, nice to see you here.
-#
-#Dart board -
-#= I once hit someone's shoulder with a dart. It's a pretty dangerous game for drunk people.
-#Anyway, no clues here.
-#
-#TV -
-#= There's a guy on the news trying to argue that unions are actually bad for workers.
-#Sure, just like sniffing glue does wonders to your health.
-#
-#Magazines -
-#= Magazines from months ago. Nobody bothered to update them.
-#
-#Sofa -
-#= Ah... Pretty comfy. Doesn't help much though.
-#
-#Bottom cabbinet -
-#= Here we have canned food, snack bars, cereals, a rat...
-#Holy shit, there's a rat in here!
-#
-#end
+  password "Steve's computer" do |p|
+    p.actual_password = 'catnip'
+    p.pass_message = 'Welcome HowardPhilipsBreakPC'
+    p.fail_message = "Hmm... that didn't seem right"
+  end
+
+  sequence 'upper cabinet' do
+    messages [
+      "There's a funny smell coming from this upper cabinet.",
+      "Besides the dust, there are also some cans, a half empty wine bottle, a lost remote control...\nAnd finally, a curious looking small sack with a cat's face on it."
+    ]
+
+    choose do
+      on_choice "Open it." do
+        simple do |s|
+          s.set_flag = FLAG_OPENED_BAG_IN_CABINET
+          s.message = "There's a bunch of weed inside. Well, that explains the smell."
+        end
+      end
+
+      on_choice "Don't open it." do
+        message "No, dumb player, what do you accomlish by not opening it?"
+
+        choose do
+          on_choice "Open it." do
+            simple do |s|
+              s.set_flag = FLAG_OPENED_BAG_IN_CABINET
+              s.message = "There's a bunch of weed inside. Well, that explains the smell."
+            end
+          end
+
+          on_choice "Don't open it." do
+            message "Really? Seriously? Do you know how hard it is to program the game when you do this."
+
+            choose do
+              on_choice "Open it." do
+                simple do |s|
+                  s.set_flag = FLAG_OPENED_BAG_IN_CABINET
+                  s.message = "There's a bunch of weed inside. Well, that explains the smell."
+                end
+              end
+
+              on_choice "Don't open it." do
+                message "Please dude, just OPEN THE BAG. This is your last warning"
+
+                choose do
+                  on_choice "Open it." do
+                    simple do |s|
+                      s.set_flag = FLAG_OPENED_BAG_IN_CABINET
+                      s.message = "There's a bunch of weed inside. Well, that explains the smell."
+                    end
+                  end
+
+                  on_choice "Don't open it." do
+                    play_animation "burn"
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+
+  sequence 'potted plant with a note' do
+    message "There is a sticky note hidden in this plant."
+    sticky_note do |s|
+      s.message = "For safety reasons, I'm going to write this down and hide.\nThe password to computer here is:\nA thing my cats love that you can find in this room.\nKira"
+    end
+  end
+
+  calendar 'calendar' do |c|
+    c.message = 'Every day says "watch cat videos"...'
+  end
+
+  simple 'coffee machine' do |s|
+    s.message "Just a regular coffee machine. Despite what Steve has said, it seems to be working fine."
+  end
+
+  simple 'bookshelf' do |s|
+    s.message "Most of the books here are old or simply weird.\nLooks like the Boss bought the cheapest book he could find to fill this bookshelf."
+  end
+
+  simple 'refrigerator' do |s|
+    s.message "Oh yeah, the office refrigerator... The heart and soul of chaos at the workplace."
+  end
+
+  simple 'employee of the month picture' do |s|
+    s.message = "Hey Boss, nice to see you here."
+  end
+
+  simple 'dart board' do |s|
+    s.messages = [
+      "I used to love darts. Then I took a dart in the knee",
+      "Anyway, no clues here."
+    ]
+  end
+
+  simple 'tv' do |s|
+    s.messages = [
+      "There's a guy on the news trying to argue that unions are actually bad for workers.",
+      "Sure, just like sniffing glue does wonders to your health."
+    ]
+  end
+
+  simple 'magazines' do |s|
+    s.message = 'Magazines from months ago. Nobody bothered to update them.'
+  end
+
+  simple 'sofa' do |s|
+    s.message = "Ah... Pretty comfy. Doesn't help much though."
+  end
+
+  simple 'bottom cabinet' do |s|
+    s.message = "Here we have canned food, snack bars, cereals, a rat...\nHoly shit, there's a rat in here!"
+  end
+
+  simple 'pizza' do |s|
+    s.message = "A large pizza from \"Domingo's\". I guess no one was hungry"
+  end
+
+  simple 'water cooler' do |s|
+    s.message = "Wouldn't be an office without one, right?"
+  end
+
+  sequence 'vending machine' do
+    message = "Candy... Soda... Chips...\nWho eats this stuff at work?!"
+
+    choose do
+      on_choice "Insert a dollar?" do
+        on_choice "Candy" do
+          messages [
+            "<Nothing happens>",
+            "Hey! Where's my dollar?!"
+          ]
+        end
+
+        on_choice "Soda" do
+          message "\"Sorry, out of stock\". Nine dimes and a nickel fall out of the machine."
+        end
+
+        on_choice "Chips" do
+          message "You watch the machine whirl your bag of chips is released.\nIt starts to fall but gets stuck in the machine"
+        end
+      end
+
+      on_choice "Leave" do
+        close
+      end
+    end
+  end
+
+  simple 'a bunch of junk food' do |s|
+    s.message = "Half eaten candy bars and open soda. It's like a frat house."
+  end
+
+  simple 'fire extinguisher' do |s|
+    s.messages = [
+      "At least they try to stay safe",
+      "\"Expires May 1, 1997\"",
+      "Nevermind..."
+    ]
+  end
+end
