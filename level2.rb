@@ -121,7 +121,7 @@ def_level do
           message "Bother my beauty no longer, for I have work to do."
         end
 
-        "Romero is just browsing social media."
+        message "Romero is just browsing social media."
       end
     end
 
