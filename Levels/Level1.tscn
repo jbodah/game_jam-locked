@@ -5,19 +5,19 @@
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=23]
 [ext_resource path="res://Core/Core.tscn" type="PackedScene" id=24]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 26.2486
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 4.13663
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 radius = 7.30419
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=4]
 radius = 3.23084
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "ZoomIn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("BossCamera:zoom")
@@ -68,7 +68,7 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "New Anim"
 
 [node name="Level1" type="Node2D"]
@@ -92,13 +92,13 @@ scale = Vector2( 0.320767, 0.320767 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/Computer1"]
 position = Vector2( 250.316, 280.014 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StickyNote" type="Area2D" parent="level"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/StickyNote"]
 position = Vector2( -78.7055, -19.3928 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="TrashCan" type="Area2D" parent="level"]
 
@@ -115,7 +115,7 @@ polygon = PoolVector2Array( 82.4451, 34.5178, 86.868, 31.7279, 89.8167, 32.9754,
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/CrumpledPaper"]
 position = Vector2( -49.8999, 42.5283 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Calendar" type="Area2D" parent="level"]
 
@@ -146,7 +146,7 @@ polygon = PoolVector2Array( 4.5896, -25.7404, 30.22, -13.7191, 35.21, -16.7811, 
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/CoffeeMug"]
 position = Vector2( -77.7985, -5.67044 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Bookshelf" type="Area2D" parent="level"]
 
@@ -171,7 +171,7 @@ __meta__ = {
 }
 
 [node name="BossCameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ZoomIn = SubResource( 6 )
+anims/ZoomIn = SubResource( 5 )
 
 [node name="BossAnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/New Anim" = SubResource( 7 )
+"anims/New Anim" = SubResource( 6 )

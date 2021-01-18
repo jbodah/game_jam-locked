@@ -2,3 +2,4 @@
 set -xe
 ruby level1.rb > data/level1.cfg
 ruby level2.rb > data/level2.cfg
+ruby level5.rb > data/level5.cfg
