@@ -16,6 +16,7 @@ API.class_eval do
 end
 
 FLAG_STICKY_NOTE = 'seen_sticky_note'
+FLAG_CRUMPLED_PAPER = 'seen_crumpled_paper'
 
 def_level do
   boss_chat '_intro' do
@@ -122,7 +123,9 @@ def_level do
               ]
             end
 
-            on_choice 'Why do you think people forget their passwords?' do
+            on_choice 'Why do you think people forget their passwords?' do |c|
+              c.not_if_flag = FLAG_CRUMPLED_PAPER
+
               messages [
                 "Well, it 's simple.",
                 'Take a real shitty year, combine that with a party and some wine.',
@@ -144,6 +147,7 @@ def_level do
             on_choice 'Boss, how old are you?' do |c|
               c.if_flag = FLAG_STICKY_NOTE
 
+              play_animation 'boss_angry'
               message "Hey, that's not something you should be asking your boss on your first day! How rude!"
 
               choose do
@@ -154,12 +158,14 @@ def_level do
                 on_choice "Sorry, you're right, I won't ask again." do
                   message 'Get back to work then!'
                 end
-
-                on_choice "Boss, why'd print your own dating profile? (only unlocks after finding the crumpled paper)" do
-                  play_animation 'boss_angry'
-                  message "Kid... This is your first day, so I'll take it easy on you.\nBut there are certain things you simply DON'T ask your Boss about.\nJust get my freaking computer working!"
-                end
               end
+            end
+
+            on_choice "Boss, why'd print your own dating profile?" do |c|
+              c.if_flag = FLAG_CRUMPLED_PAPER
+
+              play_animation 'boss_angry'
+              message "Kid... This is your first day, so I'll take it easy on you.\nBut there are certain things you simply DON'T ask your Boss about.\nJust get my freaking computer working!"
             end
           end
         end
@@ -194,6 +200,7 @@ def_level do
 
   multi_visit do |m|
     m.name = 'crumpled paper'
+    m.set_flag = FLAG_CRUMPLED_PAPER
 
     messages [
       "A crumpled piece of paper. Maybe I should unwrap it.\nOh it's... the boss profile from a dating app. The picture is obviously photoshopped.",
