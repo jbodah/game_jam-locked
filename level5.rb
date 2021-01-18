@@ -207,7 +207,7 @@ def_level do
   sequence 'potted plant with a note' do
     message "There is a sticky note hidden in this plant."
     sticky_note do |s|
-      s.message = "For safety reasons, I'm going to write this down and hide.\nThe password to computer here is:\nA thing my cats love that you can find in this room.\nKira"
+      s.message = "SECRET! DON'T READ!\nThe password to computer here is:\nA thing my cats love that you can find in this room.\n~ Kira"
     end
   end
 
