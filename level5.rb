@@ -35,84 +35,96 @@ def_level do
     b.flag = FLAG_STEVE_COMPUTER_UNLOCKED
 
     multi_visit do
-      messages [
-        "Yo dude, you're a tech wizard! Thanks to you, the cat videos are back.",
-        "Also, if you ever need to search something on the internet, feel free to use this computer."
-      ]
+      camera_zoom do |z|
+        z.id = "_intro"
+        z.camera = "steve"
+        z.speed = 1
+
+        messages [
+          "Yo dude, you're a tech wizard! Thanks to you, the cat videos are back.",
+          "Also, if you ever need to search something on the internet, feel free to use this computer."
+        ]
+      end
 
       message "Sup bro, just chilling? If you ever need to Goojle something, feel free to use the computer."
     end
 
-    sequence do
-      message 'Sup bro?'
+    camera_zoom do |z|
+      z.id = "_intro"
+      z.camera = "steve"
+      z.speed = 1
 
-      choose do
-        on_choice 'Just chilling.' do
-          message 'Yo, nice! Me too.'
-        end
+      sequence do
+        message 'Sup bro?'
 
-        on_choice 'Do you remember the password to the computer here?' do
-          messages [
-            "Dude, unlike the others, I actually didn't forget anything.\nBecause they never told me any password to begin with! I'm the office boy dude!",
-            "A sad marginalized worker. That's why I revolt everyday by pooping during company time.",
-            "Plus, the computer here is lacking, most websites are blocked, all you can do is search stuff on Goojle and watch cat videos.\nWhich is not that bad, but I wish I could play something."
-          ]
-        end
+        choose do
+          on_choice 'Just chilling.' do
+            message 'Yo, nice! Me too.'
+          end
 
-        on_choice "Hey, the coffee machine isn't broken." do |c|
-          c.if_flag = FLAG_COFFEE_MACHINE_INSPECTED
+          on_choice 'Do you remember the password to the computer here?' do
+            messages [
+              "Dude, unlike the others, I actually didn't forget anything.\nBecause they never told me any password to begin with! I'm the office boy dude!",
+              "A sad marginalized worker. That's why I revolt everyday by pooping during company time.",
+              "Plus, the computer here is lacking, most websites are blocked, all you can do is search stuff on Goojle and watch cat videos.\nWhich is not that bad, but I wish I could play something."
+            ]
+          end
 
-          message "No dude, it's a schrodinger coffee machine."
+          on_choice "Hey, the coffee machine isn't broken." do |c|
+            c.if_flag = FLAG_COFFEE_MACHINE_INSPECTED
 
-          choose do
-            on_choice "Schro-what?" do
-              message "You know, the guy who put the cat in a box to maybe die."
+            message "No dude, it's a schrodinger coffee machine."
+
+            choose do
+              on_choice "Schro-what?" do
+                message "You know, the guy who put the cat in a box to maybe die."
+              end
+              on_choice "I feel a dumb explanation incoming." do
+                message "No dude"
+              end
             end
-            on_choice "I feel a dumb explanation incoming." do
-              message "No dude"
+
+            messages [
+              "You see, I told everyone the coffee machine was broken, and that I would fix it.\nAnd I did. But nobody came here to check if it was fixed.",
+              "So, as of now, for everyone in this office except the two of us, the coffee machine is both broken and fixed, at the same time.\nAnd there's no way to know which one is true!",
+            ]
+
+            choose do
+              on_choice "There is, actually, they just need to come here and check." do
+                message "But until then, I chill."
+              end
+
+              on_choice "I'm not sure if this is dumb or genius." do
+                message "Thanks, I put a lot of effort into being lazy."
+              end
             end
           end
 
-          messages [
-            "You see, I told everyone the coffee machine was broken, and that I would fix it.\nAnd I did. But nobody came here to check if it was fixed.",
-            "So, as of now, for everyone in this office except the two of us, the coffee machine is both broken and fixed, at the same time.\nAnd there's no way to know which one is true!",
-          ]
+          on_choice "Do you know anything about the weed on the cabinet?" do |c|
+            c.if_flag = FLAG_OPENED_BAG_IN_CABINET
 
-          choose do
-            on_choice "There is, actually, they just need to come here and check." do
-              message "But until then, I chill."
+            messages [
+              "You found my stash bro! I can share if you need, but just please don't tell anyone. That bag used to contain catnip, so I just traded a herb for the other. Perfect hiding spot, right?",
+            ]
+
+            choose do
+              on_choice "You put weed in the catnip bag? That's dangerous for the cat!" do
+                messages [
+                  "Yo, da cats be sniffin that sweet kush bro!!!",
+                  "I'm sorry, weed is a big part of my personality."
+                ]
+              end
+
+              on_choice "Yo, da cats be sniffin that sweet kush, am I right?" do
+                message "Yo, bro, you bet ya! Pussy gettin high on that djamba!"
+              end
             end
 
-            on_choice "I'm not sure if this is dumb or genius." do
-              message "Thanks, I put a lot of effort into being lazy."
-            end
+            messages [
+              "Nah, for real, it's fine. Kira got a bunch of catnip in his office already, no one has touched that bag in like a year.",
+              "But anyway, if you ever really need to chill, come to me!"
+            ]
           end
-        end
-
-        on_choice "Do you know anything about the weed on the cabinet?" do |c|
-          c.if_flag = FLAG_OPENED_BAG_IN_CABINET
-
-          messages [
-            "You found my stash bro! I can share if you need, but just please don't tell anyone. That bag used to contain catnip, so I just traded a herb for the other. Perfect hiding spot, right?",
-          ]
-
-          choose do
-            on_choice "You put weed in the catnip bag? That's dangerous for the cat!" do
-              messages [
-                "Yo, da cats be sniffin that sweet kush bro!!!",
-                "I'm sorry, weed is a big part of my personality."
-              ]
-            end
-
-            on_choice "Yo, da cats be sniffin that sweet kush, am I right?" do
-              message "Yo, bro, you bet ya! Pussy gettin high on that djamba!"
-            end
-          end
-
-          messages [
-            "Nah, for real, it's fine. Kira got a bunch of catnip in his office already, no one has touched that bag in like a year.",
-            "But anyway, if you ever really need to chill, come to me!"
-          ]
         end
       end
     end
