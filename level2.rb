@@ -110,7 +110,6 @@ def_level do
 
         simple do |s|
           s.message = "Finally! You may not have the looks I do, but at least you're pretty clever.\nNot as much as me, of course, but still pretty clever."
-          s.sound_open = "romero_chuckle"
         end
       end
 
@@ -131,7 +130,9 @@ def_level do
       z.speed = 1
 
       multi_visit do
-        sequence do
+        sequence do |s|
+          s.sound_open = "romero_chuckle"
+
           messages [
             'Oh mere mortal, struck by such sight you stand in shock, thinking your eyes deceive you.',
             "But fear not! I guarantee you this beautiful face isn't the one of a demon or incubus.\nJust a public relations specialist.",
