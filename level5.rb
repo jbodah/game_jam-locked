@@ -249,7 +249,7 @@ def_level do
     message = "Candy... Soda... Chips...\nWho eats this stuff at work?!"
 
     choose do
-      on_choice "Insert a dollar?" do
+      on_choice "Insert a dollar" do
         choose do
           on_choice "Candy" do
             messages [
