@@ -23,61 +23,61 @@ def_level do
       s.sound_open = 'mumble'
       s.messages = [
         'Oh, there you are!',
-        'Welcome to Howard Phillips Advertising Agency, we’re so happy to have a new member in our family, yada, yada, you’re late on the first day kid, you know that’s no good, right?'
+        "Welcome to Howard Phillips Advertising Agency, we're so happy to have a new member in our family, yada, yada, you're late on the first day kid, you know that's no good, right?"
       ]
     end
 
     choose do
       on_choice 'Sorry I missed the bus...' do
-        message 'Yeah, yeah, yeah, it doesn’t matter. Now listen here.'
+        message "Yeah, yeah, yeah, it doesn't matter. Now listen here."
       end
 
       on_choice 'Sorry, my name is...' do
-        message 'Yeah, yeah, yeah, it doesn’t matter. Now listen here.'
+        message "Yeah, yeah, yeah, it doesn't matter. Now listen here."
       end
     end
 
     messages [
-      'You’re our new IT guy. That means your job is to make sure all the tech here is working as it should, right?',
-      'Well, guess what kid, you’re in for a ride. Because there isn’t a single computer in this office working right now!'
+      "You're our new IT guy. That means your job is to make sure all the tech here is working as it should, right?",
+      "Well, guess what kid, you're in for a ride. Because there isn't a single computer in this office working right now!"
     ]
 
     choice do
       on_choice 'Are they all broken?' do
         play_animation 'boss_angry'
-        message "No, no, that’s not it!\nThey are all in good condition, but something real strange happened."
+        message "No, no, that's not it!\nThey are all in good condition, but something real strange happened."
       end
 
       on_choice 'Have you tried turning it off and on again?' do
         play_animation 'boss_angry'
-        message "No, no, that’s not it!\nThey are all in good condition, but something real strange happened."
+        message "No, no, that's not it!\nThey are all in good condition, but something real strange happened."
       end
     end
 
-    message 'Thing is, since the new year, no one seems to remember their passwords anymore! And a locked PC is good for nothing. Damn, we haven’t been able to get any work done this week!'
+    message "Thing is, since the new year, no one seems to remember their passwords anymore! And a locked PC is good for nothing. Damn, we haven't been able to get any work done this week!"
 
     choice do
       on_choice 'Like a collective amnesia?' do
         message 'Yeah, sure, call it any fancy word you like.'
       end
 
-      on_choice 'Must have been a crazy new year’s party here at the office.' do
-        message 'Well, must have been. Can’t say for sure... I don’t remember it...'
+      on_choice "Must have been a crazy new year's party here at the office." do
+        message "Well, must have been. Can't say for sure... I don't remember it..."
       end
     end
 
     messages [
-      'All I care about is that every computer in this office is unlocked by the end of the day, that’s your first job.',
-      'Oh, and we can’t afford to lose any data on those computers, so be careful when you’re doing your hacking magic bullshit, alright?'
+      "All I care about is that every computer in this office is unlocked by the end of the day, that's your first job.",
+      "Oh, and we can't afford to lose any data on those computers, so be careful when you're doing your hacking magic bullshit, alright?"
     ]
 
     choice do
-      on_choice 'Well, actually, it would be easier to try to find each person’s password.' do
-        message 'Great, then do that! I didn’t know I was hiring a psychoanalyst too.'
+      on_choice "Well, actually, it would be easier to try to find each person's password." do
+        message "Great, then do that! I didn't know I was hiring a psychoanalyst too."
       end
 
-      on_choice '... I’ll do my MAGIC' do
-        message 'Alright, but before you mess anything up around the office, let’s test your competence.'
+      on_choice "... I'll do my MAGIC" do
+        message "Alright, but before you mess anything up around the office, let's test your competence."
       end
     end
 
@@ -117,7 +117,7 @@ def_level do
               messages [
                 'I told you kid, it just disappeared from my mind.',
                 'Although I remember something...',
-                'I wrote down the password… Well, maybe not the password, but a question or something to make me remember it',
+                'I wrote down the password... Well, maybe not the password, but a question or something to make me remember it',
                 'Try to find that.'
               ]
             end
@@ -126,17 +126,17 @@ def_level do
               messages [
                 "Well, it 's simple.",
                 'Take a real shitty year, combine that with a party and some wine.',
-                'What’s the result of the equation?',
-                'I’m surprised I remembered to put my pants on this morning.'
+                "What's the result of the equation?",
+                "I'm surprised I remembered to put my pants on this morning."
               ]
             end
 
-            on_choice 'Boss, what’s your favorite food?' do |c|
+            on_choice "Boss, what's your favorite food?" do |c|
               c.if_flag = FLAG_STICKY_NOTE
 
               messages [
-                'Oh, so you’re the toady type, uh? First day and you already want to flatter me with food?',
-                'Well, I don’t mind that. I really like pizza, any pizza.',
+                "Oh, so you're the toady type, uh? First day and you already want to flatter me with food?",
+                "Well, I don't mind that. I really like pizza, any pizza.",
                 'Just not with pineapple.'
               ]
             end
@@ -144,19 +144,20 @@ def_level do
             on_choice 'Boss, how old are you?' do |c|
               c.if_flag = FLAG_STICKY_NOTE
 
-              message 'Hey, that’s not something you should be asking your boss on your first day! How rude!'
+              message "Hey, that's not something you should be asking your boss on your first day! How rude!"
 
               choose do
-                on_choice 'It’s for the password.' do
-                  message 'Hmpf. I’m 52. I know I don’t look like it, but that’s the truth.'
+                on_choice "It's for the password." do
+                  message "Hmpf. I'm 52. I know I don't look like it, but that's the truth."
                 end
 
-                on_choice 'Sorry, you’re right, I won’t ask again.' do
+                on_choice "Sorry, you're right, I won't ask again." do
                   message 'Get back to work then!'
                 end
 
-                on_choice 'Boss, why’d print your own dating profile? (only unlocks after finding the crumpled paper)' do
-                  message "Kid... This is your first day, so I’ll take it easy on you.\nBut there are certain things you simply DON’T ask your Boss about.\nJust get my freaking computer working!"
+                on_choice "Boss, why'd print your own dating profile? (only unlocks after finding the crumpled paper)" do
+                  play_animation 'boss_angry'
+                  message "Kid... This is your first day, so I'll take it easy on you.\nBut there are certain things you simply DON'T ask your Boss about.\nJust get my freaking computer working!"
                 end
               end
             end

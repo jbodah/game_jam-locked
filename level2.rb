@@ -17,24 +17,24 @@ def_level do
 
     sequence do
       simple do |s|
-        s.message = 'Oh, are you the IT guy? I was worried you wouldn’t come.'
+        s.message = "Oh, are you the IT guy? I was worried you wouldn't come."
         s.sound_open = 'cartoon_voice'
       end
 
       choose do
-        on_choice 'It’s me, the IT hero, to save your day!' do
+        on_choice "It's me, the IT hero, to save your day!" do
           message 'Oh no, you sound just like Romero.'
         end
 
-        on_choice 'Yeah, it’s me, nice to meet you.' do
+        on_choice "Yeah, it's me, nice to meet you." do
           message 'Nice to meet you too!'
         end
       end
 
       messages [
-        'Well, my name is Julia, I’m the sales representative in this agency.',
-        'And that guy over there is Romero... He’s a bit... Unique.',
-        'Anyway, I’m so glad you’re here, I have a bunch of work and I really need to use my computer.',
+        "Well, my name is Julia, I'm the sales representative in this agency.",
+        "And that guy over there is Romero... He's a bit... Unique.",
+        "Anyway, I'm so glad you're here, I have a bunch of work and I really need to use my computer.",
         'Talk to me if you need anything.'
       ]
     end
@@ -49,12 +49,12 @@ def_level do
         z.speed = 1
 
         messages [
-          "Oh, you’re my hero! Thanks a lot.",
+          "Oh, you're my hero! Thanks a lot.",
           "Now please, get the hell out of here, I have work to do."
         ]
       end
 
-      message "Julia doesn’t respond, she just keeps typing on the computer."
+      message "Julia doesn't respond, she just keeps typing on the computer."
     end
 
     camera_zoom do |z|
@@ -71,24 +71,24 @@ def_level do
 
           on_choice 'Do you remember anything about your password, Julia?'  do
             messages [
-              'Not exactly, I remember a few things, but it’s all a bit fuzzy...',
-              "My password was a word plus a single number at the end.\nAnd there was something pink involved... Sorry, that’s everything I know."
+              "Not exactly, I remember a few things, but it's all a bit fuzzy...",
+              "My password was a word plus a single number at the end.\nAnd there was something pink involved... Sorry, that's everything I know."
             ]
           end
 
-          on_choice %(So, you’re Romero’s girlfriend, right?) do |c|
+          on_choice %(So, you're Romero's girlfriend, right?) do |c|
             simple do |s|
               s.set_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
-              s.message = "Oh, that’s a common misconception here, but no I’m not.\nI mean, we used to date, but he didn’t want anything serious."
+              s.message = "Oh, that's a common misconception here, but no I'm not.\nI mean, we used to date, but he didn't want anything serious."
             end
 
             choice do
               resp = proc do
                 messages [
-                  "Weird right? Even a bit creepy.\nBut he never did anything to me, so I guess it’s fine.",
-                  "I just don’t want any drama, we share an office after all.\nPlus, as long as he doesn’t interfere with my work, he can have any platonic obsession he wants.",
-                  'Soon I’ll be promoted and get the hell out of this damn agency!',
-                  'Whoops, don’t tell that to the boss.'
+                  "Weird right? Even a bit creepy.\nBut he never did anything to me, so I guess it's fine.",
+                  "I just don't want any drama, we share an office after all.\nPlus, as long as he doesn't interfere with my work, he can have any platonic obsession he wants.",
+                  "Soon I'll be promoted and get the hell out of this damn agency!",
+                  "Whoops, don't tell that to the boss."
                 ]
               end
               on_choice 'Then why does he have so many pictures of you?', &resp
@@ -109,7 +109,7 @@ def_level do
         z.speed = 1
 
         simple do |s|
-          s.message = "Finally! You may not have the looks I do, but at least you’re pretty clever.\nNot as much as me, of course, but still pretty clever."
+          s.message = "Finally! You may not have the looks I do, but at least you're pretty clever.\nNot as much as me, of course, but still pretty clever."
           s.sound_open = "romero_chuckle"
         end
       end
@@ -134,13 +134,13 @@ def_level do
         sequence do
           messages [
             'Oh mere mortal, struck by such sight you stand in shock, thinking your eyes deceive you.',
-            "But fear not! I guarantee you this beautiful face isn’t the one of a demon or incubus.\nJust a public relations specialist.",
+            "But fear not! I guarantee you this beautiful face isn't the one of a demon or incubus.\nJust a public relations specialist.",
             'Romero\'s the name.'
           ]
 
           choice do
             on_choice "Oh... Alright, I guess. I'm here to unlock your computer." do
-              message "Do it quickly, will you? I'm not used to waiting for other people.\nIt’s usually the other way around."
+              message "Do it quickly, will you? I'm not used to waiting for other people.\nIt's usually the other way around."
             end
 
             on_choice "What the fuck are you talking about?" do
@@ -157,7 +157,7 @@ def_level do
 
           choice do
             on_choice "I sure have, goodbye." do
-              message "Oh, it’s so tiring being beautiful."
+              message "Oh, it's so tiring being beautiful."
             end
 
             on_choice "Romero, do you remember anything about your password?" do
@@ -180,13 +180,13 @@ def_level do
 
             on_choice "Why do you have so many pictures of Julia on your wall?" do
               messages [
-                "Is that not clear enough?\nBecause I love her with every fiber of my body!\nShe's my most precious possession, she’s my guiding light!",
+                "Is that not clear enough?\nBecause I love her with every fiber of my body!\nShe's my most precious possession, she's my guiding light!",
                 "She gives hope and strength to face this cruel existence!\nJulia is... the son."
               ]
 
               choice do
                 on_choice "You mean \"the sun\"?" do
-                  message "Oh, yeah, yeah, that’s it."
+                  message "Oh, yeah, yeah, that's it."
                 end
 
                 on_choice "(remain silent)" do
@@ -195,16 +195,16 @@ def_level do
               end
             end
 
-            on_choice "Julia told me you two aren’t even dating anymore." do |c|
+            on_choice "Julia told me you two aren't even dating anymore." do |c|
               c.if_flag = FLAG_TALKED_TO_JULIA_ABOUT_ROMERO
 
               messages [
                 "She what? Damn Julia!",
-                "Ok, you’re the IT guy, I don't need to uphold this facade.\nKid, let me teach you one thing.\nDo you know what really attracts women?",
-                "A man’s romantic and unconditional love...\nFor another woman."
+                "Ok, you're the IT guy, I don't need to uphold this facade.\nKid, let me teach you one thing.\nDo you know what really attracts women?",
+                "A man's romantic and unconditional love...\nFor another woman."
               ]
 
-              final = "Now get to work! And don’t tell anyone about our conversation."
+              final = "Now get to work! And don't tell anyone about our conversation."
               choice do
                 on_choice "You're a jerk." do
                   messages [
@@ -213,7 +213,7 @@ def_level do
                   ]
                 end
 
-                on_choice "That’s bullshit, you know that?" do
+                on_choice "That's bullshit, you know that?" do
                   messages [
                     "It is not! I read it in a book.",
                     final
