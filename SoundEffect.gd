@@ -12,12 +12,15 @@ func _ready():
 	for child in children:
 		var button = Button.new()
 		button.text = Path.last(child.get_path())
-		button.connect("pressed", self, button.text)
+		button.connect("pressed", self, "play", [button.text])
 		grid.add_child(button)
 
 func play(name):
 	print("play sound: %s" % name)
-	call(name)
+	if has_method(name):
+		call(name)
+	else:
+		get_node(name).play()
 
 func rummage():
 	play_for($rummage, rand_range(0, 2), 2)
@@ -28,29 +31,14 @@ func modem():
 func cartoon_voice():
 	play_for($cartoon_voice, 0, 0.7)
 	
-func mumble():
-	$mumble.play()
-
-func fanfare():
-	$fanfare.play()
-
-func success():
-	$success.play()
-
-func fail():
-	$fail.play()
-
 func typing():
 	play_for($typing, 0, 1)
-
-func romero_chuckle():
-	$romero_chuckle.play()
-	
-func chaching():
-	$chaching.play()
 	
 func steve_hey():
 	play_for($steve_hey, 0, 2)
+	
+func coffee():
+	play_for($coffee, 1, 1.5)
 
 func play_for(node, start, duration):
 	node.play(start)

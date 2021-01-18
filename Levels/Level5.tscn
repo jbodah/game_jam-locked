@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/lvl5.png" type="Texture" id=4]
 [ext_resource path="res://Characters/Steve.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 6.07771
 height = 9.54863
 
@@ -178,12 +178,12 @@ scale = Vector2( 0.903233, 0.903233 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/PottedPlantWithANote"]
 position = Vector2( 20.1274, 69.4966 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="UpperCabinet" type="Area2D" parent="level"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/UpperCabinet"]
-polygon = PoolVector2Array( -158.208, -42.1824, -132.384, -55.8539, -132.004, -43.5116, -158.208, -31.1693 )
+polygon = PoolVector2Array( -197.94, -16.6939, -198.208, -35.4912, -139.937, -62.613, -131.881, -59.9277, -131.881, -42.7416, -190.152, -11.3232 )
 
 [node name="Calendar" type="Area2D" parent="level"]
 
@@ -228,7 +228,7 @@ polygon = PoolVector2Array( 5.96385, 7.60445, 13.1793, 4.18658, 11.0907, 0.57884
 [node name="BottomCabinet" type="Area2D" parent="level"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/BottomCabinet"]
-polygon = PoolVector2Array( -183.766, 16.6428, -158.511, 2.97133, -158.322, 23.6684, -185.095, 36.9601 )
+polygon = PoolVector2Array( -197.403, 13.1132, -186.393, 16.3356, -128.39, -13.203, -127.853, 10.6964, -185.05, 39.1609, -197.671, 33.2532 )
 
 [node name="StevesComputer" type="Area2D" parent="level"]
 

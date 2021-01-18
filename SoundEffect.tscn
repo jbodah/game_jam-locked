@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SoundEffect.gd" type="Script" id=1]
 [ext_resource path="res://placeholder_assets/14124__adcbicycle__5.wav" type="AudioStream" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/romero_chuckle.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/201159__kiddpark__cash-register.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/steve_hey.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/coffee1.wav" type="AudioStream" id=13]
 
 [node name="SoundEffect" type="Control"]
 visible = false
@@ -55,3 +56,6 @@ stream = ExtResource( 11 )
 [node name="steve_hey" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = 22.0
+
+[node name="coffee" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )

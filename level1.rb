@@ -247,6 +247,7 @@ def_level do
 
   simple do |s|
     s.name = 'coffee mug'
+    s.sound_open = 'coffee'
     s.message = "World's best Boss. Sure..."
   end
 end
