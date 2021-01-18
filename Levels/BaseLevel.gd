@@ -3,11 +3,10 @@ extends Node2D
 signal done
 
 const LevelConfig = preload("res://LevelConfig.gd")
-const FlagStore = preload("res://FlagStore.gd")
 const NextLevel = preload("res://Modules/NextLevel.tscn")
 
 var _specs
-var flag_provider = FlagStore.new()
+var flag_provider = FlagStore
 
 func _ready():
 	$Core.initialize(self)

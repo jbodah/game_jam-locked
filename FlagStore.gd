@@ -1,3 +1,5 @@
+extends Node2D
+
 var flags = {}
 
 func get_flag(name):

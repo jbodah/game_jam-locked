@@ -59,6 +59,7 @@ config/icon="res://icon.png"
 PageManager="*res://Modules/SearchEngine/PageManager.gd"
 SoundEffect="*res://SoundEffect.tscn"
 Music="*res://Music.tscn"
+FlagStore="*res://FlagStore.gd"
 
 [debug]
 
