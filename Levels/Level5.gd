@@ -21,6 +21,5 @@ func on_correct_password_entered(spec):
 	match spec.id:
 		"steve_s_computer":
 			flag_provider.set_flag("steve_computer_unlocked")
-			var child_spec = find_child_spec("steve")
-			play_spec(child_spec)
-			play_spec(find_child_spec("_next_level"))
+			play_spec(find_child_spec("steve"))
+			play_spec(find_child_spec("steve_s_computer"))

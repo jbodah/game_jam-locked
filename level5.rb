@@ -130,10 +130,17 @@ def_level do
     end
   end
 
-  password "Steve's computer" do |p|
-    p.actual_password = 'catnip'
-    p.pass_message = 'Welcome HowardPhilipsBreakPC'
-    p.fail_message = "Hmm... that didn't seem right"
+  branch "Steve's computer" do |b|
+    b.flag = FLAG_STEVE_COMPUTER_UNLOCKED
+
+    search_engine
+
+    password do |p|
+      p.id = "steve_s_computer"
+      p.actual_password = 'catnip'
+      p.pass_message = 'Welcome HowardPhilipsBreakPC'
+      p.fail_message = "Hmm... that didn't seem right"
+    end
   end
 
   sequence 'upper cabinet' do
