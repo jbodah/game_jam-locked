@@ -15,7 +15,7 @@ func _ready():
 	for child in children:
 		var button = Button.new()
 		button.text = Path.last(child.get_path())
-		button.connect("pressed", self, button.text)
+		button.connect("pressed", self, "play", [button.text])
 		grid.add_child(button)
 
 func play(name):

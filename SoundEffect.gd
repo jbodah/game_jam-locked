@@ -4,6 +4,7 @@ const Path = preload("res://Util/Path.gd")
 
 func _ready():
 	if get_tree().current_scene == self:
+		Music.play("level1")
 		show()
 	randomize()
 	var children = get_children()
