@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Core/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Resources/font.tres" type="DynamicFont" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.133333, 0.12549, 0.12549, 1 )
@@ -23,6 +24,18 @@ custom_fonts/font = SubResource( 2 )
 text = "hello world"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelectButton" type="Button" parent="."]
+margin_left = 889.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 50.0
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 3 )
+text = "Level Select"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -8,6 +8,9 @@ var can_transition = true
 
 onready var hover = $HoverLabel
 
+func _ready():
+	$LevelSelectButton.connect("pressed", self, "on_level_select_button_pressed")
+
 func _process(_delta):
 	if state == "explore":
 		hover.rect_position.x = get_viewport().get_mouse_position().x - 30
@@ -28,3 +31,5 @@ func add_hover(name):
 func remove_hover(name):
 	Stack.evict(stack, name)
 
+func on_level_select_button_pressed():
+	get_tree().change_scene("res://BootLoader.tscn")
