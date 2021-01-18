@@ -160,7 +160,7 @@ def_level do
       end
 
       on_choice "Don't open it." do
-        message "No, dumb player, what do you accomlish by not opening it?"
+        message "No, dumb player, what do you accomplish by not opening it?"
 
         choose do
           on_choice "Open it." do
