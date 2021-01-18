@@ -54,4 +54,5 @@ func make_button(text):
 	button.size_flags_horizontal = button.SIZE_EXPAND_FILL
 	button.size_flags_vertical = button.SIZE_EXPAND_FILL
 	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	button.text = text
 	return button
