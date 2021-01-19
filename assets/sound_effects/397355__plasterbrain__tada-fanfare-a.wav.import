@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/397355__plasterbrain__tada-fanfare-a.wav-9d39de9290c64767dacd87039e09fd14.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/397355__plasterbrain__tada-fanfare-a.wav"
+dest_files=[ "res://.import/397355__plasterbrain__tada-fanfare-a.wav-9d39de9290c64767dacd87039e09fd14.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/203512__blueneon__56k-modem.ogg-1be7cc323389d112a0164b467d329de4.oggstr"
+
+[deps]
+
+source_file="res://assets/sound_effects/original/203512__blueneon__56k-modem.ogg"
+dest_files=[ "res://.import/203512__blueneon__56k-modem.ogg-1be7cc323389d112a0164b467d329de4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/romero_chuckle.wav-d986002900d1a5b2ee7b134933fb55e2.sample"
+path="res://.import/mumble_2.wav-d2a1fb991080e5b11edb27f501e5758b.sample"
 
 [deps]
 
-source_file="res://assets/romero_chuckle.wav"
-dest_files=[ "res://.import/romero_chuckle.wav-d986002900d1a5b2ee7b134933fb55e2.sample" ]
+source_file="res://assets/sound_effects/mumble_2.wav"
+dest_files=[ "res://.import/mumble_2.wav-d2a1fb991080e5b11edb27f501e5758b.sample" ]
 
 [params]
 

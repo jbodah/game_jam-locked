@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/483598__raclure__wrong.wav-658503ed4dcab60aa7d584cf792ae21f.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/483598__raclure__wrong.wav"
+dest_files=[ "res://.import/483598__raclure__wrong.wav-658503ed4dcab60aa7d584cf792ae21f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

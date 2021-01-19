@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/steve_hey.wav-31ddec2586a2a0785d005be20eb0aead.sample"
+path="res://.import/steve_hey.wav-938f663478b80718c0754a4358c14d4b.sample"
 
 [deps]
 
-source_file="res://assets/steve_hey.wav"
-dest_files=[ "res://.import/steve_hey.wav-31ddec2586a2a0785d005be20eb0aead.sample" ]
+source_file="res://assets/sound_effects/steve_hey.wav"
+dest_files=[ "res://.import/steve_hey.wav-938f663478b80718c0754a4358c14d4b.sample" ]
 
 [params]
 

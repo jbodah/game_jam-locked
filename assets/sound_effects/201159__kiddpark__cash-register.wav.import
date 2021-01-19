@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/201159__kiddpark__cash-register.wav-01d09f21702cddfd240771f7b7f16e8e.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/201159__kiddpark__cash-register.wav"
+dest_files=[ "res://.import/201159__kiddpark__cash-register.wav-01d09f21702cddfd240771f7b7f16e8e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

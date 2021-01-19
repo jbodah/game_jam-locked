@@ -1,18 +1,18 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SoundEffect.gd" type="Script" id=1]
-[ext_resource path="res://placeholder_assets/14124__adcbicycle__5.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/203512__blueneon__56k-modem.ogg" type="AudioStream" id=3]
-[ext_resource path="res://assets/164689__adam-n__phone-voice-cartoon.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/483598__raclure__wrong.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/397355__plasterbrain__tada-fanfare-a.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/537244__georgehopkins__mechanical-keyboard-typing.wav" type="AudioStream" id=7]
-[ext_resource path="res://assets/442943__qubodup__level-up.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/mumble.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/romero_chuckle.wav" type="AudioStream" id=10]
-[ext_resource path="res://assets/201159__kiddpark__cash-register.wav" type="AudioStream" id=11]
-[ext_resource path="res://assets/steve_hey.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/coffee1.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sound_effects/344719__jamitch2__trash-sorting-small_1.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sound_effects/203512__blueneon__56k-modem_2.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sound_effects/537244__georgehopkins__mechanical-keyboard-typing_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sound_effects/483598__raclure__wrong.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sound_effects/397355__plasterbrain__tada-fanfare-a.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sound_effects/mumble_2.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sound_effects/442943__qubodup__level-up.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sound_effects/romero_chuckle_4.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sound_effects/steve_hey_2.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sound_effects/201159__kiddpark__cash-register.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sound_effects/coffee1_2.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sound_effects/164689__adam-n__phone-voice-cartoon_3.wav" type="AudioStream" id=13]
 
 [node name="SoundEffect" type="Control"]
 visible = false
@@ -28,8 +28,8 @@ stream = ExtResource( 2 )
 stream = ExtResource( 3 )
 
 [node name="cartoon_voice" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-volume_db = -7.0
+stream = ExtResource( 13 )
+volume_db = 6.0
 
 [node name="fanfare" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -42,24 +42,24 @@ stream = ExtResource( 5 )
 volume_db = 8.0
 
 [node name="typing" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 4 )
 volume_db = 4.0
 
 [node name="mumble" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-volume_db = 9.0
+stream = ExtResource( 7 )
+volume_db = 2.0
 
 [node name="romero_chuckle" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-volume_db = 22.0
+stream = ExtResource( 9 )
+volume_db = 3.0
 
 [node name="chaching" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 
 [node name="steve_hey" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
-volume_db = 23.0
+stream = ExtResource( 10 )
+volume_db = 2.0
 
 [node name="coffee" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-volume_db = 20.0
+stream = ExtResource( 12 )
+volume_db = 2.0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/164689__adam-n__phone-voice-cartoon_2.wav-07b350d6cfdf68cf6429d8054947f3da.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/164689__adam-n__phone-voice-cartoon_2.wav"
+dest_files=[ "res://.import/164689__adam-n__phone-voice-cartoon_2.wav-07b350d6cfdf68cf6429d8054947f3da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/coffee1.wav-82a6c93f8f9a1a142d77e55e47d06acf.sample"
+path="res://.import/mumble.wav-3b79c9db0359b5235572070387c3b1d5.sample"
 
 [deps]
 
-source_file="res://assets/coffee1.wav"
-dest_files=[ "res://.import/coffee1.wav-82a6c93f8f9a1a142d77e55e47d06acf.sample" ]
+source_file="res://assets/sound_effects/mumble.wav"
+dest_files=[ "res://.import/mumble.wav-3b79c9db0359b5235572070387c3b1d5.sample" ]
 
 [params]
 

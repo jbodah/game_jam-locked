@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/537244__georgehopkins__mechanical-keyboard-typing_2.wav-0c94b645bc2e2fa4382eb7a0eac4f53c.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/537244__georgehopkins__mechanical-keyboard-typing_2.wav"
+dest_files=[ "res://.import/537244__georgehopkins__mechanical-keyboard-typing_2.wav-0c94b645bc2e2fa4382eb7a0eac4f53c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
