@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/lvl5.png" type="Texture" id=4]
 [ext_resource path="res://Characters/Steve.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 6.07771
 height = 9.54863
 
@@ -178,7 +178,7 @@ scale = Vector2( 0.903233, 0.903233 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level/PottedPlantWithANote"]
 position = Vector2( 20.1274, 69.4966 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="UpperCabinet" type="Area2D" parent="level"]
 

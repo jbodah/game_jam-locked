@@ -132,7 +132,7 @@ def_level do
     end
   end
 
-  branch "Steve's computer" do |b|
+  branch "Break room computer" do |b|
     b.flag = FLAG_STEVE_COMPUTER_UNLOCKED
 
     search_engine
