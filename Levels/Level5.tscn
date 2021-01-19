@@ -171,8 +171,8 @@ scale = Vector2( 2.21427, 2.21427 )
 texture = ExtResource( 4 )
 
 [node name="Steve" parent="level" instance=ExtResource( 5 )]
-position = Vector2( -93.249, 12.5324 )
-scale = Vector2( 0.903233, 0.903233 )
+position = Vector2( -94.5917, 12.2639 )
+scale = Vector2( 0.95, 0.95 )
 
 [node name="PottedPlantWithANote" type="Area2D" parent="level"]
 
@@ -270,10 +270,26 @@ polygon = PoolVector2Array( -44.4008, -89.3014, -19.5263, -104.112, -4.71556, -9
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Sofa"]
 polygon = PoolVector2Array( 64.148, 70.7942, 64.148, 79.6558, 82.1397, 89.0544, 130.207, 65.155, 130.207, 50.1172, 122.957, 46.8948, 111.41, 46.3577, 103.085, 49.8487, 99.0572, 55.7564, 75.6949, 66.4977, 64.4165, 67.0348 )
 
+[node name="Soda1" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Soda1"]
+polygon = PoolVector2Array( 19.6368, 0.0939789, 22.5799, -0.190842, 22.6749, 4.55618, 19.5418, 5.50558, 18.9722, 4.3663 )
+
+[node name="Soda2" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Soda2"]
+polygon = PoolVector2Array( -60.4931, 8.82851, -57.5499, 8.44875, -57.1702, 13.7654, -59.4487, 15.0946, -61.1577, 12.9109 )
+
+[node name="Coffee" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Coffee"]
+polygon = PoolVector2Array( -160.731, -8.35576, -151.902, -13.9572, -148.294, -11.6787, -151.332, -7.40636, -159.117, -3.13403, -161.206, -5.31766 )
+
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ZoomIn = SubResource( 2 )
 
 [node name="AlphaMask" type="ColorRect" parent="."]
+visible = false
 margin_left = -20.0
 margin_top = -15.0
 margin_right = 1061.0

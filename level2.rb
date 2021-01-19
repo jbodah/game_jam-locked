@@ -369,4 +369,16 @@ def_level do
       end
     end
   end
+
+  close 'coffee' do |c|
+    c.id = "coffee1"
+    c.sound_open = 'coffee'
+    c.node = "Coffee1"
+  end
+
+  close 'coffee' do |c|
+    c.id = "coffee2"
+    c.sound_open = 'coffee'
+    c.node = "Coffee2"
+  end
 end

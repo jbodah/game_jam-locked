@@ -1,32 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/Character/Julia_head.png" type="Texture" id=1]
-[ext_resource path="res://assets/Character/Julia_torso.png" type="Texture" id=2]
-[ext_resource path="res://assets/Character/Julia_legs.png" type="Texture" id=3]
+[ext_resource path="res://assets/Character/Full/02_Julia.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15.6325, 29.7254 )
+extents = Vector2( 13.2539, 27.347 )
 
 [node name="Julia" type="Area2D"]
-
-[node name="head" type="Sprite" parent="."]
-position = Vector2( 4.7748, 7.41967 )
-scale = Vector2( 1.10304, 1.10304 )
-z_index = 3
-texture = ExtResource( 1 )
-
-[node name="torso" type="Sprite" parent="."]
-position = Vector2( 3.70068, 22.8926 )
-scale = Vector2( 1.10304, 1.10304 )
-z_index = 2
-texture = ExtResource( 2 )
-
-[node name="legs" type="Sprite" parent="."]
-position = Vector2( 0.0484772, 43.6047 )
-scale = Vector2( 1.10304, 1.10304 )
-z_index = 2
-texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.63516, 27.6491 )
 shape = SubResource( 1 )
+
+[node name="02_Julia" type="Sprite" parent="."]
+position = Vector2( 1.65919, 27.9511 )
+z_index = 1
+texture = ExtResource( 1 )

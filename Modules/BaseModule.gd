@@ -19,7 +19,7 @@ func delay_input():
 	ignore_input = true
 	yield(get_tree().create_timer(0.1), "timeout")
 	ignore_input = false
-
+	
 func just_clicked():
 	return !ignore_input && Input.is_action_just_pressed("click")
 

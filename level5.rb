@@ -308,4 +308,20 @@ def_level do
       "Nevermind..."
     ]
   end
+
+  close 'coffee' do |c|
+    c.sound_open = 'coffee'
+  end
+
+  close 'soda' do |s|
+    s.id = 'soda1'
+    s.node = 'Soda1'
+    s.sound_open = 'coffee'
+  end
+
+  close 'soda' do |s|
+    s.id = 'soda2'
+    s.node = 'Soda2'
+    s.sound_open = 'coffee'
+  end
 end
