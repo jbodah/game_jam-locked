@@ -3,6 +3,7 @@ extends Node2D
 const Title = preload("res://Title.tscn")
 const Level1 = preload("res://Levels/Level1.tscn")
 const Level2 = preload("res://Levels/Level2.tscn")
+const Level3 = preload("res://Levels/Level3.tscn")
 const Level5 = preload("res://Levels/Level5.tscn")
 
 var child
@@ -13,7 +14,10 @@ var current = {
 		next = {
 			builder = Level5,
 			next = {
-				builder = Level2
+				builder = Level2,
+				next = {
+					builder = Level3
+				}
 			}
 		}
 	}
