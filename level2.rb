@@ -237,14 +237,14 @@ def_level do
 
   password do |p|
     p.name = "Romero's computer"
-    p.actual_password = '0128'
+    p.actual_password = '1228'
     p.pass_message = 'Welcome SexyGuy123'
     p.fail_message = "Hmm... that didn't seem right"
   end
 
-  calendar do |c|
+  level_2_calendar do |c|
     c.name = "Romero's calendar"
-    c.message = "Two dates are on the calendar\n01/17 - Julia's Bday (a lot of <3 here)\n01/28 - My birthday (a ;) face)"
+    c.message = "Two dates are on the calendar\n12/17 - Julia's Bday (a lot of <3 here)\n12/28 - My birthday (a ;) face)"
   end
 
   sticky_note do |s|

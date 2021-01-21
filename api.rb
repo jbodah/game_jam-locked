@@ -48,6 +48,7 @@ module API
     sticky_note
     multi_visit
     calendar
+    level_2_calendar
     search_engine
     next_level
     play_animation

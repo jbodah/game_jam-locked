@@ -12,7 +12,8 @@ const TYPE_LOOKUP = {
 	next_level = preload("res://Modules/NextLevel.tscn"),
 	play_animation = preload("res://Modules/PlayAnimation.tscn"),
 	branch = preload("res://Modules/Branch.tscn"),
-	close = preload("res://Modules/Close.tscn")
+	close = preload("res://Modules/Close.tscn"),
+	level_2_calendar = preload("res://Modules/Level2Calendar.tscn"),
 }
 
 static func compile_spec(spec):
