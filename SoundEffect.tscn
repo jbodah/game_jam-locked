@@ -29,7 +29,7 @@ stream = ExtResource( 3 )
 
 [node name="cartoon_voice" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = 6.0
+volume_db = 4.0
 
 [node name="fanfare" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -43,21 +43,21 @@ volume_db = 8.0
 
 [node name="typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 4.0
+volume_db = 6.0
 
 [node name="mumble" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 
 [node name="romero_chuckle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = 3.0
+volume_db = 2.0
 
 [node name="chaching" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 
 [node name="steve_hey" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = 2.0
+volume_db = 1.0
 
 [node name="coffee" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
