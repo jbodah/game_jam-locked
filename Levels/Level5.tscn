@@ -230,9 +230,9 @@ polygon = PoolVector2Array( 5.96385, 7.60445, 13.1793, 4.18658, 11.0907, 0.57884
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/BottomCabinet"]
 polygon = PoolVector2Array( -197.403, 13.1132, -186.393, 16.3356, -128.39, -13.203, -127.853, 10.6964, -185.05, 39.1609, -197.671, 33.2532 )
 
-[node name="StevesComputer" type="Area2D" parent="level"]
+[node name="BreakRoomComputer" type="Area2D" parent="level"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/StevesComputer"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/BreakRoomComputer"]
 polygon = PoolVector2Array( -4.56367, 72.9332, 7.0191, 67.2368, 7.58875, 78.2499, 11.1965, 86.7946, 3.03157, 93.4404, -4.56367, 81.6678 )
 
 [node name="Pizza" type="Area2D" parent="level"]
