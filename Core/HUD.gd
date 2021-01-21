@@ -13,7 +13,10 @@ func _ready():
 
 func _process(_delta):
 	if state == "explore":
-		hover.rect_position.x = get_viewport().get_mouse_position().x - 30
+		if get_viewport().get_mouse_position().x > get_viewport().size.x/2:
+			hover.rect_position.x = get_viewport().get_mouse_position().x - 180
+		else:
+			hover.rect_position.x = get_viewport().get_mouse_position().x - 30
 		hover.rect_position.y = get_viewport().get_mouse_position().y + 20
 		if stack.size() == 0:
 			hover.hide()
