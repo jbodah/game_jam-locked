@@ -19,7 +19,6 @@ func _level_key():
 	return "level2"
 	
 func on_correct_password_entered(spec):
-	print(spec)
 	match spec.id:
 		"romero_s_computer":
 			flag_provider.set_flag("romero_computer_unlocked")

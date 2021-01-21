@@ -235,11 +235,18 @@ def_level do
     end
   end
 
-  password do |p|
-    p.name = "Romero's computer"
-    p.actual_password = '1228'
-    p.pass_message = 'Welcome SexyGuy123'
-    p.fail_message = "Hmm... that didn't seem right"
+  branch "Romero's computer" do |b|
+    b.flag = FLAG_ROMERO_COMPUTER_UNLOCKED
+
+    search_engine
+
+    password do |p|
+      p.id = "romero_s_computer"
+      p.node = "RomerosComputer"
+      p.actual_password = '1228'
+      p.pass_message = 'Welcome SexyGuy123'
+      p.fail_message = "Hmm... that didn't seem right"
+    end
   end
 
   level_2_calendar do |c|
@@ -292,11 +299,17 @@ def_level do
     s.message = "Romero's portrait. His teeth are so white it hurts to look at."
   end
 
-  password do |p|
-    p.name = "Julia's computer"
-    p.actual_password = 'macbeth7'
-    p.pass_message = 'Welcome Juju3'
-    p.fail_message = "Hmm... that didn't seem right"
+  branch "Julia's computer" do |b|
+    b.flag = FLAG_JULIA_COMPUTER_UNLOCKED
+
+    search_engine
+
+    password do |p|
+      p.id = "julia_s_computer"
+      p.actual_password = 'macbeth7'
+      p.pass_message = 'Welcome Juju3'
+      p.fail_message = "Hmm... that didn't seem right"
+    end
   end
 
   calendar do |c|

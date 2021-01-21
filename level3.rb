@@ -131,10 +131,11 @@ def_level do
       choice do
         on_choice 'Sure.', &sketch_book
 
-        on_choice 'Well, maybe I should ask her first.' do |c|
-          c.set_flag = FLAG_WAITED_ON_NOTEBOOK
-
-          message "Yeah, better be polite, it's my first day after all."
+        on_choice 'Well, maybe I should ask her first.' do
+          simple do |s|
+            s.set_flag = FLAG_WAITED_ON_NOTEBOOK
+            s.message = "Yeah, better be polite, it's my first day after all."
+          end
         end
       end
     end
@@ -147,7 +148,7 @@ def_level do
     branch do |b|
       b.flag = FLAG_UNLOCKED_VINCENT_COMPUTER
 
-      mutli_visit do
+      multi_visit do
         message "Magnifique! Splendid work darling, splendid!\nNow if you excuse me, I have a real job to resume. Ciao."
 
         message "Yes, you can watch as my art unfolds on the screen, take a seat and enjoy the show."

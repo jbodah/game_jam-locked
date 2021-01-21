@@ -78,13 +78,14 @@ __meta__ = {
 position = Vector2( 497.25, 789.559 )
 scale = Vector2( 2.37321, 2.37321 )
 texture = ExtResource( 2 )
+flip_h = true
 
 [node name="Label" type="Label" parent="."]
-margin_left = 375.362
-margin_top = 705.75
-margin_right = 589.362
-margin_bottom = 920.75
-rect_rotation = -10.9704
+margin_left = 415.795
+margin_top = 670.885
+margin_right = 629.795
+margin_bottom = 885.885
+rect_rotation = 10.2159
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ja Rule was here"

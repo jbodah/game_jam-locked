@@ -6,6 +6,10 @@ FLAG_STEVE_COMPUTER_UNLOCKED = 'steve_computer_unlocked'
 FLAG_COFFEE_MACHINE_INSPECTED = 'coffee_machine_inspected'
 
 def_level do
+  next_level do |n|
+    n.id = "_next_level"
+  end
+
   camera_zoom do |z|
     z.id = "_intro"
     z.camera = "steve"

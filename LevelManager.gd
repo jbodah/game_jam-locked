@@ -11,9 +11,9 @@ var current = {
 	next = {
 		builder = Level1,
 		next = {
-			builder = Level2,
+			builder = Level5,
 			next = {
-				builder = Level5
+				builder = Level2
 			}
 		}
 	}

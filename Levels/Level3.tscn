@@ -92,7 +92,7 @@ texture = ExtResource( 1 )
 [node name="MathTable" type="Area2D" parent="level"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/MathTable"]
-polygon = PoolVector2Array( -130.288, -10.8016, -124.222, -14.7152, -123.439, -1.21323, -130.484, 2.11334 )
+polygon = PoolVector2Array( -131.11, -11.3397, -123.087, -15.6447, -123.439, -1.21323, -130.484, 2.11334 )
 
 [node name="FlowerPot" type="Area2D" parent="level"]
 
@@ -124,13 +124,89 @@ polygon = PoolVector2Array( -95.1339, -7.46524, -84.2736, -3.7473, -85.1542, 6.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Painting"]
 polygon = PoolVector2Array( -86.0347, -59.6924, -65.6839, -69.5743, -64.999, -44.9185, -86.2304, -34.9388 )
 
-[node name="MathTable8" type="Area2D" parent="level"]
+[node name="Bookshelf2" type="Area2D" parent="level"]
 
-[node name="MathTable9" type="Area2D" parent="level"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Bookshelf2"]
+polygon = PoolVector2Array( 121.24, -30.2816, 149.418, -19.1278, 149.027, -11.6919, 121.24, -23.2371 )
 
-[node name="MathTable10" type="Area2D" parent="level"]
+[node name="MichelesComputer" type="Area2D" parent="level"]
 
-[node name="MathTable11" type="Area2D" parent="level"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/MichelesComputer"]
+polygon = PoolVector2Array( 123.784, -0.733795, 134.938, 3.76686, 135.329, 14.9207, 128.872, 23.7263, 116.544, 16.8775, 123.197, 9.4416 )
+
+[node name="PenHolder" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/PenHolder"]
+polygon = PoolVector2Array( 142.374, 16.8775, 145.896, 16.0947, 146.092, 22.1609, 141.982, 22.7479 )
+
+[node name="Calendar" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Calendar"]
+polygon = PoolVector2Array( -14.2883, -54.9765, -2.54749, -60.2599, -1.96045, -34.8214, -14.484, -29.7337 )
+
+[node name="PicturesOnTheWall" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/PicturesOnTheWall"]
+polygon = PoolVector2Array( -147.782, -14.1575, -136.041, -19.8322, -136.041, -5.54755, -147.782, -0.0684891 )
+
+[node name="DrawingBoard" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/DrawingBoard"]
+polygon = PoolVector2Array( 50.4429, -70.5135, 79.0123, -56.2289, 78.2295, -26.6811, 49.2688, -40.3787 )
+
+[node name="Sketchbook" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Sketchbook"]
+polygon = PoolVector2Array( 33.6143, 51.3956, 42.0286, 46.8949, 46.5292, 50.2215, 38.702, 55.3092, 38.702, 55.3092 )
+
+[node name="Sketches" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Sketches"]
+polygon = PoolVector2Array( 46.2161, 59.575, 51.8909, 52.5305, 62.4576, 59.575, 63.6317, 62.7059, 57.3699, 65.0541 )
+
+[node name="PaintCans" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/PaintCans"]
+polygon = PoolVector2Array( 94.745, 23.3741, 102.181, 26.3093, 101.398, 32.1797, 92.9839, 28.4618 )
+
+[node name="CopyMachine" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/CopyMachine"]
+polygon = PoolVector2Array( -15.2276, -17.9146, -10.9226, -24.7634, 5.12318, -32.1993, 14.7115, -26.5245, 19.4079, -18.6973, 19.6036, 5.56714, -0.551544, 14.5685, -7.98743, 9.48076, -10.5313, 0.0880737, -16.206, -2.84714, -15.619, -13.6096 )
+
+[node name="Painting2" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Painting2"]
+polygon = PoolVector2Array( 144.291, -10.9483, 158.38, -4.88221, 158.185, 18.4038, 143.313, 12.729 )
+
+[node name="ArtSupplies" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/ArtSupplies"]
+polygon = PoolVector2Array( 74.042, -5.07789, 81.8692, -7.0347, 81.6735, 5.48887, 75.9988, 5.48887 )
+
+[node name="Ruler" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Ruler"]
+polygon = PoolVector2Array( 107.895, 12.5334, 112.982, 9.59817, 115.331, 11.7507, 109.46, 15.0772 )
+
+[node name="Manga" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Manga"]
+polygon = PoolVector2Array( 141.943, -25.0373, 149.966, -20.341, 155.837, -23.2762, 146.835, -29.1466 )
+
+[node name="TeaCup" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/TeaCup"]
+polygon = PoolVector2Array( 115.135, 7.25, 117.483, 5.68456, 120.418, 6.66296, 119.244, 10.5766, 116.7, 11.7507, 115.135, 9.2068 )
+
+[node name="StickyNoteShreds" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/StickyNoteShreds"]
+polygon = PoolVector2Array( -109.702, 50.1041, -106.376, 46.7775, -98.5485, 47.3646, -96.2003, 53.0393, -104.81, 54.8004 )
+
+[node name="MathTable20" type="Area2D" parent="level"]
+
+[node name="MathTable21" type="Area2D" parent="level"]
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ZoomIn = SubResource( 1 )

@@ -41,7 +41,7 @@ func on_outside_gui_input(_event):
 
 func check_password(text):
 	delay_input()
-	if text.to_lower() == spec.actual_password.to_lower():
+	if sanitize(text).to_lower() == spec.actual_password.to_lower():
 		$Background.color = Color("198b13")
 		SoundEffect.play("success")
 		state = "password_pass"
@@ -52,3 +52,7 @@ func check_password(text):
 		state = "password_fail"
 		result.text = spec.fail_message
 
+func sanitize(text: String):
+	var regex = RegEx.new()
+	regex.compile("[^A-Za-z0-9]")
+	return regex.sub(text, "")
