@@ -329,15 +329,16 @@ def_level do
         "There's a numerology chart inside."
       ]
 
-      sticky_note do |n|
-        n.message = "(a pop up image, it's a chart that links each zodiac sign to a \"lucky\" number, Capricorn is 7)"
+      level_2_zodiac do |n|
+        n.message = "Aries - 4 / Taurus - 5 / Gemini - 10 / Cancer - 8 / Leo - 3 / Virgo - 6 / Libra - 11 / Scorpius - 12 / Sagittarius - 1 / Capricornus - 7 / Aquarius  - 9 / Pisces  - 2"
       end
     end
 
     sequence do
       message "There's a numerology chart inside."
-      sticky_note do |n|
-        n.message = "(a pop up image, it's a chart that links each zodiac sign to a \"lucky\" number, Capricorn is 7)"
+
+      level_2_zodiac do |n|
+        n.message = "Aries - 4 / Taurus - 5 / Gemini - 10 / Cancer - 8 / Leo - 3 / Virgo - 6 / Libra - 11 / Scorpius - 12 / Sagittarius - 1 / Capricornus - 7 / Aquarius  - 9 / Pisces  - 2"
       end
     end
   end

@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/lvl3.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Level3.gd" type="Script" id=2]
+[ext_resource path="res://Core/Core.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+tracks/0/type = "value"
+tracks/0/path = NodePath("VincentCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VincentCamera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 162.896, 287.969 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AlphaMask:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.196078, 0.188235, 0.188235, 0 ), Color( 0.196078, 0.188235, 0.188235, 0.631373 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AlphaMask:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MicheleCamera:zoom")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("MicheleCamera:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 162.896, 287.969 ), Vector2( 162.896, 287.969 ) ]
+}
+
+[node name="Level3" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Core" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.396851, 0 )
+
+[node name="level" type="Sprite" parent="."]
+position = Vector2( 514.167, 299.459 )
+scale = Vector2( 3.03864, 3.03864 )
+texture = ExtResource( 1 )
+
+[node name="MathTable" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/MathTable"]
+polygon = PoolVector2Array( -130.288, -10.8016, -124.222, -14.7152, -123.439, -1.21323, -130.484, 2.11334 )
+
+[node name="FlowerPot" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/FlowerPot"]
+polygon = PoolVector2Array( -86.2598, 46.9242, -61.017, 29.9, -52.2113, 41.2495, -57.1033, 54.7515, -82.1505, 65.7096, -85.6727, 55.5342 )
+
+[node name="Bookshelf" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Bookshelf"]
+polygon = PoolVector2Array( -79.8023, -22.1511, -52.407, -36.0444, -51.82, -20.5856, -78.2369, -7.67069 )
+
+[node name="DrawingTablet" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/DrawingTablet"]
+polygon = PoolVector2Array( -146.725, 15.6153, -132.832, 7.39672, -128.135, 17.7678, -141.637, 25.595 )
+
+[node name="CoffeeMug" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/CoffeeMug"]
+polygon = PoolVector2Array( -117.96, 7.00536, -114.633, 5.6356, -113.068, 9.15785, -115.025, 11.8974, -118.156, 11.7017 )
+
+[node name="VincentsComputer" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/VincentsComputer"]
+polygon = PoolVector2Array( -95.1339, -7.46524, -84.2736, -3.7473, -85.1542, 6.03674, -89.3613, 16.5057, -100.417, 10.8309, -95.1339, 5.15617 )
+
+[node name="Painting" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Painting"]
+polygon = PoolVector2Array( -86.0347, -59.6924, -65.6839, -69.5743, -64.999, -44.9185, -86.2304, -34.9388 )
+
+[node name="MathTable8" type="Area2D" parent="level"]
+
+[node name="MathTable9" type="Area2D" parent="level"]
+
+[node name="MathTable10" type="Area2D" parent="level"]
+
+[node name="MathTable11" type="Area2D" parent="level"]
+
+[node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ZoomIn = SubResource( 1 )
+
+[node name="AlphaMask" type="ColorRect" parent="."]
+visible = false
+margin_left = -20.0
+margin_top = -15.0
+margin_right = 1061.0
+margin_bottom = 619.0
+mouse_filter = 2
+color = Color( 0.196078, 0.188235, 0.188235, 0 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VincentCamera" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="MicheleCamera" type="Camera2D" parent="."]
+position = Vector2( 162.896, 287.969 )
+anchor_mode = 0
+zoom = Vector2( 0.3, 0.3 )

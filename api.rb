@@ -46,9 +46,11 @@ module API
     choice
     password
     sticky_note
+    green_sticky_note
     multi_visit
     calendar
     level_2_calendar
+    level_2_zodiac
     search_engine
     next_level
     play_animation
