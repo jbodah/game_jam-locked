@@ -12,16 +12,16 @@ __meta__ = {
 
 [node name="level1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -4.039
+volume_db = -3.5
 
 [node name="level2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -4.039
+volume_db = -3.5
 
 [node name="level5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -4.039
+volume_db = -3.5
 
 [node name="level3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -4.039
+volume_db = -3.5

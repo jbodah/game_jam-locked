@@ -47,7 +47,6 @@ volume_db = 4.0
 
 [node name="mumble" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = 2.0
 
 [node name="romero_chuckle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )

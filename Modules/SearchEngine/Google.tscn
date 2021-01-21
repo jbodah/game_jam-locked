@@ -373,13 +373,14 @@ __meta__ = {
 }
 
 [node name="Header" type="Label" parent="Page"]
-margin_left = 430.299
-margin_top = 51.1681
-margin_right = 589.299
-margin_bottom = 90.1681
+margin_left = 4.0
+margin_top = 51.0
+margin_right = 1021.0
+margin_bottom = 90.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "This is a test"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
