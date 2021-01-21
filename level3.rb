@@ -30,11 +30,17 @@ def_level do
     end
   end
 
-  password "Vincent's computer" do |p|
-    p.node = "VincentsComputer"
-    p.actual_password = 'pink9'
-    p.pass_message = 'Welcome vitruvian1'
-    p.fail_message = "Hmm... that didn't seem right"
+  branch "Vincent's computer" do |b|
+    b.flag = FLAG_UNLOCKED_VINCENT_COMPUTER
+
+    search_engine
+
+    password do |p|
+      p.id = "vincent_s_computer"
+      p.actual_password = 'pink9'
+      p.pass_message = 'Welcome vitruvian1'
+      p.fail_message = "Hmm... that didn't seem right"
+    end
   end
 
   simple 'math table' do |s|
@@ -66,10 +72,22 @@ def_level do
     s.message = "A painting of a naked man T posing. Ok maybe it's not exactly that I guess it has to do with anatomy."
   end
 
-  password "Michele's computer" do |p|
-    p.actual_password = '16180'
-    p.pass_message = 'Welcome BetterThanU'
-    p.fail_message = "Hmm... that didn't seem right"
+  simple "paint cans" do |s|
+    s.sound_open = "coffee"
+    s.message = "Uhh... woops"
+  end
+
+  branch "Michele's computer" do |b|
+    b.flag = FLAG_UNLOCKED_MICHELE_COMPUTER
+
+    search_engine
+
+    password do |p|
+      p.id = "michele_s_computer"
+      p.actual_password = '16180'
+      p.pass_message = 'Welcome BetterThanU'
+      p.fail_message = "Hmm... that didn't seem right"
+    end
   end
 
   simple 'bookshelf' do |s|
