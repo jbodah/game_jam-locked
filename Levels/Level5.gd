@@ -18,8 +18,10 @@ func on_play_animation(name):
 		"burn": $FireAnimationPlayer.play("Burn")
 	
 func on_correct_password_entered(spec):
+	print(spec)
 	match spec.id:
-		"steve_s_computer":
+		"break_room_computer":
 			flag_provider.set_flag("steve_computer_unlocked")
 			play_spec(find_child_spec("steve"))
-			play_spec(find_child_spec("steve_s_computer"))
+			play_spec(find_child_spec("break_room_computer"))
+			play_spec(find_child_spec("_next_level"))

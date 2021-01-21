@@ -142,7 +142,7 @@ def_level do
     search_engine
 
     password do |p|
-      p.id = "steve_s_computer"
+      p.id = "break_room_computer"
       p.actual_password = 'catnip'
       p.pass_message = 'Welcome HowardPhilipsBreakPC'
       p.fail_message = "Hmm... that didn't seem right"
