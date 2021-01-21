@@ -240,6 +240,7 @@ def_level do
     s.name = 'picture on the wall'
     s.message = "The Boss surfing in Hawaii. He almost looks cool.\nAlmost."
   end
+
   simple do |s|
     s.name = 'trophy rack'
     s.message = "A bunch of generic trophies and medals, but there's nothing written in any of them"
