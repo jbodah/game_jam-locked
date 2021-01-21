@@ -204,10 +204,6 @@ polygon = PoolVector2Array( 115.135, 7.25, 117.483, 5.68456, 120.418, 6.66296, 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/StickyNoteShreds"]
 polygon = PoolVector2Array( -109.702, 50.1041, -106.376, 46.7775, -98.5485, 47.3646, -96.2003, 53.0393, -104.81, 54.8004 )
 
-[node name="MathTable20" type="Area2D" parent="level"]
-
-[node name="MathTable21" type="Area2D" parent="level"]
-
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ZoomIn = SubResource( 1 )
 
