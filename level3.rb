@@ -136,7 +136,7 @@ def_level do
         ]
 
         green_sticky_note do |s|
-          s.message = "Hey Michele\nI really enjoyed it last night, I hope we can do this again.\nAnd by the way, I left a surprise for you at your computer.\nAlissa :)\nPS: Your password is so predictable! 5 digits of your special number? That's too easy!"
+          s.message = "Had fun last night, I left a surprise on your computer.\nPS: Your password is so predictable! 5 digits of your special number? Too easy!"
         end
       end
     end
