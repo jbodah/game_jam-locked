@@ -8,6 +8,10 @@ FLAG_UNLOCKED_VINCENT_COMPUTER = "unlocked_vincents_computer"
 FLAG_VINCENT_STANDING_AROUND = "vincent_standing_around"
 
 def_level do
+  next_level do |n|
+    n.id = "_next_level"
+  end
+
   camera_zoom do |c|
     c.camera = "vincent"
     c.id = "_intro"
