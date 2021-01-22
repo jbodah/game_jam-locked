@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Modules/Choice.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI interfaces/text box.png" type="Texture" id=2]
 [ext_resource path="res://Resources/font.tres" type="DynamicFont" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [node name="Choice" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,45 +29,78 @@ position = Vector2( 524.788, 462.714 )
 scale = Vector2( 4.05804, 4.05804 )
 texture = ExtResource( 2 )
 
-[node name="Label0" type="Label" parent="BaseMessage"]
+[node name="Label0" type="Button" parent="BaseMessage"]
 margin_left = 178.5
-margin_top = 410.0
+margin_top = 406.0
 margin_right = 863.5
-margin_bottom = 438.0
-mouse_filter = 0
+margin_bottom = 434.0
 mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
 text = "* A"
+align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label1" type="Label" parent="BaseMessage"]
-margin_left = 179.0
-margin_top = 440.5
-margin_right = 864.0
-margin_bottom = 468.5
-mouse_filter = 0
+[node name="Label1" type="Button" parent="BaseMessage"]
+margin_left = 178.5
+margin_top = 439.0
+margin_right = 863.5
+margin_bottom = 467.0
 mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
 text = "* B"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label2" type="Label" parent="BaseMessage"]
-margin_left = 179.0
-margin_top = 471.5
-margin_right = 864.0
-margin_bottom = 499.5
-mouse_filter = 0
+[node name="Label2" type="Button" parent="BaseMessage"]
+margin_left = 178.5
+margin_top = 472.0
+margin_right = 863.5
+margin_bottom = 500.0
 mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
 text = "* C"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label3" type="Label" parent="BaseMessage"]
-margin_left = 179.0
-margin_top = 503.0
-margin_right = 864.0
-margin_bottom = 531.0
-mouse_filter = 0
+[node name="Label3" type="Button" parent="BaseMessage"]
+margin_left = 178.5
+margin_top = 505.0
+margin_right = 863.5
+margin_bottom = 533.0
 mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 2 )
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 0, 1, 0, 1 )
 text = "* D"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}

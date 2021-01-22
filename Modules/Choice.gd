@@ -8,9 +8,7 @@ var available_choices = []
 func _ready():
 	for idx in range(4):
 		var node = get_node("BaseMessage/Label%s" % idx)
-		node.connect("gui_input", self, "on_choice_made", [idx])
-		node.connect("mouse_entered", self, "on_choice_mouse_entered", [idx])
-		node.connect("mouse_exited", self, "on_choice_mouse_exited", [idx])
+		node.connect("pressed", self, "on_choice_made", [idx])
 		node.hide()
 		node.text = ""
 
@@ -44,16 +42,7 @@ func is_available(choice):
 		
 	return should_show && !should_hide
 
-func on_choice_made(event, idx):
-	if LeftClick.is_left_click(event):
-		$BaseMessage.hide()
-		var subsection_idx = available_choices[idx].subsection_idx
-		spawn_child(spec.subsections[subsection_idx])
-
-func on_choice_mouse_entered(idx):
-	var node = get_node("BaseMessage/Label%s" % idx)
-	node.add_color_override("font_color", Color.green)
-
-func on_choice_mouse_exited(idx):
-	var node = get_node("BaseMessage/Label%s" % idx)
-	node.add_color_override("font_color", Color.white)
+func on_choice_made(idx):
+	$BaseMessage.hide()
+	var subsection_idx = available_choices[idx].subsection_idx
+	spawn_child(spec.subsections[subsection_idx])
