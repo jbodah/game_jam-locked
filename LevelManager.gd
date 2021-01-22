@@ -1,6 +1,7 @@
 extends Node2D
 
 const Title = preload("res://Title.tscn")
+const Credits = preload("res://Credits.tscn")
 const Level1 = preload("res://Levels/Level1.tscn")
 const Level2 = preload("res://Levels/Level2.tscn")
 const Level3 = preload("res://Levels/Level3.tscn")
@@ -13,7 +14,8 @@ var queue = [
 	Level1,
 	Level5,
 	Level2,
-	Level3
+	Level3,
+	Credits
 ]
 
 func _init():
