@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/UI interfaces/Title/titleback.png" type="Texture" id=1]
-[ext_resource path="res://Resources/font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 49
+font_data = ExtResource( 2 )
 
 [node name="Credits" type="Node2D"]
 
@@ -14,11 +18,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 248.0
+margin_left = 208.0
 margin_top = 248.0
-margin_right = 774.0
-margin_bottom = 303.0
-custom_fonts/font = ExtResource( 5 )
+margin_right = 854.0
+margin_bottom = 316.0
+custom_fonts/font = SubResource( 1 )
 text = "You win! Thanks for playing!"
 __meta__ = {
 "_edit_use_anchors_": false
