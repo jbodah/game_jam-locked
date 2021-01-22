@@ -20,7 +20,7 @@ func get_page(page_id):
 	return rv
 
 func index_search_term(search_term, page_id):
-	print("indexing search term; page_id=%s search_term=%s" % [page_id, search_term])
+	#print("indexing search term; page_id=%s search_term=%s" % [page_id, search_term])
 	var value = search_index.get(search_term, [])
 	value.push_back(page_id)
 	search_index[search_term] = value

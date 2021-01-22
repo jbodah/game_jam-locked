@@ -18,15 +18,16 @@ def_level do
 
       choose do
         on_choice "Nice to meet you Vincent, I'm here to unlock the computer." do
-          close
+          message "Suit yourself my dear, if you need anything you can talk to me.\nAnd please, be fast. Gosh it's been ages since I had to rely on pen and paper, so primitive."
         end
 
         on_choice "Wow, this room is so tacky." do
-          message "Hmpf... Sure IT guy, you know all about style, don't you? Anyway."
+          messages [
+            "Hmpf... Sure IT guy, you know all about style, don't you? Anyway.",
+            "Suit yourself my dear, if you need anything you can talk to me.\nAnd please, be fast. Gosh it's been ages since I had to rely on pen and paper, so primitive."
+          ]
         end
       end
-
-      message "Suit yourself my dear, if you need anything you can talk to me.\nAnd please, be fast. Gosh it's been ages since I had to rely on pen and paper, so primitive."
     end
   end
 
@@ -43,8 +44,10 @@ def_level do
     end
   end
 
-  simple 'math table' do |s|
-    s.message = "TODO: A mathematical table of the number nine, something like this"
+  level_3_math_table 'math table'
+
+  level_3_shredded_sticky 'shredded sticky note' do |s|
+    s.node = "StickyNoteShreds"
   end
 
   simple 'flower pot' do |s|
@@ -52,6 +55,7 @@ def_level do
   end
 
   simple 'bookshelf' do |s|
+    s.node = "Bookshelf"
     s.message = 'Art reference books, anatomy studies and... Kinky romance novels.'
   end
 
@@ -69,6 +73,7 @@ def_level do
   end
 
   simple "painting" do |s|
+    s.node = "Painting"
     s.message = "A painting of a naked man T posing. Ok maybe it's not exactly that I guess it has to do with anatomy."
   end
 
@@ -91,6 +96,7 @@ def_level do
   end
 
   simple 'bookshelf' do |s|
+    s.id = "bookshelf2"
     s.node = 'Bookshelf2'
     s.message = "Most of the books here are about art, but there are some sci-fi novels too."
   end
@@ -109,6 +115,7 @@ def_level do
   end
 
   simple "painting" do |s|
+    s.id = "painting2"
     s.node = "Painting2"
     s.message = "A reproduction of a classical painting by a famous artist. It features naked women, angels and a beautiful sunset."
   end
@@ -251,7 +258,7 @@ def_level do
                 message "Ah, you get it too! You're smart, dear."
               end
 
-              on_choice "<Make a snoring sound." do
+              on_choice "<Make a snoring sound.>" do
                 message "Hm, I seem to be wasting my time."
               end
             end
@@ -262,7 +269,7 @@ def_level do
   end
 
   camera_zoom 'Michele' do |z|
-    z.id = 'michele'
+    z.camera = 'michele'
     z.speed = 1
 
     branch do |b|
@@ -282,14 +289,13 @@ def_level do
 
           choose do
             on_choice "Geez! Calm down, I'm just the IT guy." do
-              close
+              message "Oh... I see, sorry. I didn't mean to be rude but sharing a room with that blockhead puts me on defensive."
             end
 
             on_choice "Ah... I'm here to unlock your computer." do
-              close
+              message "Oh... I see, sorry. I didn't mean to be rude but sharing a room with that blockhead puts me on defensive."
             end
 
-            message "Oh... I see, sorry. I didn't mean to be rude but sharing a room with that blockhead puts me on defensive."
 
             choose do
               on_choice "You and Vincent don't get along very well it seems." do

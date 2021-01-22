@@ -16,6 +16,8 @@ const TYPE_LOOKUP = {
 	level_2_calendar = preload("res://Modules/Level2Calendar.tscn"),
 	level_2_zodiac = preload("res://Modules/Level2Zodiac.tscn"),
 	green_sticky_note = preload("res://Modules/GreenStickyNote.tscn"),
+	level_3_shredded_sticky = preload("res://Modules/Level3ShreddedSticky.tscn"),
+	level_3_math_table = preload("res://Modules/Level3MathTable.tscn"),
 }
 
 static func compile_spec(spec):

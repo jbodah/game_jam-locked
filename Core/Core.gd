@@ -26,8 +26,7 @@ func initialize(the_level):
 				queue.push_back(el_children[i])
 
 func index_specs(specs):
-	for i in specs.size():
-		var spec = specs[i]
+	for spec in specs:
 		if spec.id[0] == "_":
 			continue
 		if !spec.has("node"):

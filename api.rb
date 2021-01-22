@@ -51,6 +51,8 @@ module API
     calendar
     level_2_calendar
     level_2_zodiac
+    level_3_shredded_sticky
+    level_3_math_table
     search_engine
     next_level
     play_animation

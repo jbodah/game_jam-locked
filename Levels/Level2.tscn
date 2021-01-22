@@ -91,16 +91,16 @@ script = ExtResource( 23 )
 position = Vector2( 0.396851, 0 )
 
 [node name="level" type="Sprite" parent="."]
-position = Vector2( 509.566, 299.916 )
+position = Vector2( 508.766, 299.916 )
 scale = Vector2( 3.15548, 3.15548 )
 texture = ExtResource( 1 )
 
 [node name="Julia" parent="level" instance=ExtResource( 25 )]
-position = Vector2( 39.7066, -5.72948 )
+position = Vector2( 39.7066, -3.3765 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="Romero" parent="level" instance=ExtResource( 2 )]
-position = Vector2( -47.568, 7.59486 )
+position = Vector2( -48.1702, 7.59486 )
 
 [node name="RomerosComputer" type="Area2D" parent="level"]
 
@@ -190,14 +190,10 @@ position = Vector2( 120.719, -35.7093 )
 polygon = PoolVector2Array( -69.7702, 7.65128, -68.0381, 5.65263, -65.1067, 7.11831, -66.3059, 10.4494, -67.5051, 12.5813, -69.9035, 11.2489 )
 
 [node name="JuliaCamera" type="Camera2D" parent="."]
-position = Vector2( 355.364, 184.508 )
 anchor_mode = 0
-zoom = Vector2( 0.51, 0.51 )
 
 [node name="RomeroCamera" type="Camera2D" parent="."]
-position = Vector2( 142.575, 224.241 )
 anchor_mode = 0
-zoom = Vector2( 0.51, 0.51 )
 
 [node name="AlphaMask" type="ColorRect" parent="."]
 visible = false
@@ -206,7 +202,7 @@ margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
 mouse_filter = 2
-color = Color( 0.196078, 0.188235, 0.188235, 0.441961 )
+color = Color( 0.196078, 0.188235, 0.188235, 0 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
