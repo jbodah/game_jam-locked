@@ -1,19 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Modules/Choice.gd" type="Script" id=1]
-[ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/UI interfaces/text box.png" type="Texture" id=2]
 [ext_resource path="res://Resources/font.tres" type="DynamicFont" id=3]
-
-[sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 20.0
-content_margin_right = 20.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color( 0.133333, 0.12549, 0.12549, 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 20
-font_data = ExtResource( 2 )
 
 [node name="Choice" type="Node2D"]
 script = ExtResource( 1 )
@@ -25,19 +14,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelBG" type="Label" parent="BaseMessage"]
-margin_left = 159.0
-margin_top = 390.0
-margin_right = 890.0
-margin_bottom = 545.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-autowrap = true
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="text box" type="Sprite" parent="BaseMessage"]
+position = Vector2( 524.788, 462.714 )
+scale = Vector2( 4.05804, 4.05804 )
+texture = ExtResource( 2 )
 
 [node name="Label0" type="Label" parent="BaseMessage"]
 margin_left = 178.5

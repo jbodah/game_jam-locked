@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Modules/Messages/SimpleMessage.gd" type="Script" id=1]
 [ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/UI interfaces/text box.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 20.0
 content_margin_right = 20.0
 content_margin_top = 20.0
 content_margin_bottom = 20.0
-bg_color = Color( 0.133333, 0.12549, 0.12549, 1 )
+bg_color = Color( 0.133333, 0.12549, 0.12549, 0 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
@@ -24,6 +25,11 @@ margin_bottom = 611.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="text box" type="Sprite" parent="BaseMessage"]
+position = Vector2( 524.788, 462.714 )
+scale = Vector2( 4.05804, 4.05804 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="BaseMessage"]
 margin_left = 159.0
