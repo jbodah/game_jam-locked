@@ -1,7 +1,8 @@
 require './api'
 include API
 
-FLAG_WAITED_ON_NOTEBOOK = "waited_on_notebook"
+FLAG_WAITED_FOR_PERMISSION = "waited_on_sketchbook_permission"
+FLAG_MICHELE_SKETCHBOOK_PERMISSION = "sketchbook_permission_granted"
 FLAG_UNLOCKED_MICHELE_COMPUTER = "unlocked_micheles_computer"
 FLAG_SPOKE_TO_MICHELE = "spoke_to_michele"
 FLAG_UNLOCKED_VINCENT_COMPUTER = "unlocked_vincents_computer"
@@ -161,7 +162,7 @@ def_level do
     end
 
     branch do |b|
-      b.flag = FLAG_SPOKE_TO_MICHELE
+      b.flag = FLAG_MICHELE_SKETCHBOOK_PERMISSION
 
       sequence(&sketch_book)
 
@@ -170,7 +171,7 @@ def_level do
 
         on_choice 'Well, maybe I should ask her first.' do
           simple do |s|
-            s.set_flag = FLAG_WAITED_ON_NOTEBOOK
+            s.set_flag = FLAG_WAITED_FOR_PERMISSION
             s.message = "Yeah, better be polite, it's my first day after all."
           end
         end
@@ -281,6 +282,7 @@ def_level do
   end
 
   camera_zoom 'Michele' do |z|
+    z.set_flag = FLAG_SPOKE_TO_MICHELE
     z.camera = 'michele'
     z.speed = 1
 
@@ -307,16 +309,15 @@ def_level do
             on_choice "Ah... I'm here to unlock your computer." do
               message "Oh... I see, sorry. I didn't mean to be rude but sharing a room with that blockhead puts me on defensive."
             end
+          end
 
+          choose do
+            on_choice "You and Vincent don't get along very well it seems." do
+              message "No, he's a huge moron who thinks he's better than everyone!\nAnd he's not even a great artist, I'm much better, but he's good at licking the boots of the directors and clients. Ack, makes me sick."
+            end
 
-            choose do
-              on_choice "You and Vincent don't get along very well it seems." do
-                message "No, he's a huge moron who thinks he's better than everyone!\nAnd he's not even a great artist, I'm much better, but he's good at licking the boots of the directors and clients. Ack, makes me sick."
-              end
-
-              on_choice "Ok, I'll just do my job." do
-                message "Well, feel free to talk to me if you need something."
-              end
+            on_choice "Ok, I'll just do my job." do
+              message "Well, feel free to talk to me if you need something."
             end
           end
         end
@@ -337,7 +338,7 @@ def_level do
             end
 
             on_choice "Can I take a look at your sketchbook?" do |c|
-              c.if_flag = FLAG_WAITED_ON_NOTEBOOK
+              c.if_flag = FLAG_WAITED_FOR_PERMISSION
 
               message "Hm that's kind of personal, how does that help?"
 
@@ -351,7 +352,10 @@ def_level do
                 end
               end
 
-              message "Go ahead, you can look. And thanks for asking. Vincent always takes my stuff without asking and that really bothers me! So yeah, glad you asked."
+              simple do |s|
+                s.set_flag = FLAG_MICHELE_SKETCHBOOK_PERMISSION
+                s.message = "Go ahead, you can look. And thanks for asking. Vincent always takes my stuff without asking and that really bothers me! So yeah, glad you asked."
+              end
             end
 
             on_choice "Why are there so many spirals in your office?" do
