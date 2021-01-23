@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/hint/hint_0004_3.png" type="Texture" id=1]
 [ext_resource path="res://assets/hint/hint_0000_Layer-1-copy.png" type="Texture" id=2]
@@ -10,6 +10,14 @@
 [ext_resource path="res://Hint.gd" type="Script" id=8]
 [ext_resource path="res://assets/hint/hint_0002_1.png" type="Texture" id=9]
 [ext_resource path="res://assets/hint/hint_0001_0.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 24.9844
@@ -23,17 +31,25 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Hint" type="Area2D"]
+[node name="Hint" type="Node2D"]
 position = Vector2( 940.216, 442.36 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="NullHint" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 0.707092 )
+scale = Vector2( 4.13889, 4.13889 )
+frames = SubResource( 3 )
+speed_scale = 3.0
+
+[node name="Hint" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hint"]
 shape = SubResource( 2 )
 
-[node name="Hint" type="AnimatedSprite" parent="."]
+[node name="HintReady" type="AnimatedSprite" parent="Hint"]
 position = Vector2( 0, 0.707092 )
 scale = Vector2( 4.13889, 4.13889 )
 frames = SubResource( 1 )
 speed_scale = 3.0
 script = ExtResource( 8 )
 
-[node name="Timer" type="Timer" parent="Hint"]
+[node name="Timer" type="Timer" parent="Hint/HintReady"]

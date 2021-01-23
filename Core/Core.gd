@@ -11,9 +11,9 @@ var child
 onready var event_bus = $EventBus
 
 func hide_hint_for(n_sec):
-	$HUD/Hint.hide()
+	$HUD/Hint/Hint.hide()
 	yield(get_tree().create_timer(n_sec), "timeout")
-	$HUD/Hint.show()
+	$HUD/Hint/Hint.show()
 
 func initialize(the_level):
 	level = the_level
