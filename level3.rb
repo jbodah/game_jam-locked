@@ -133,7 +133,7 @@ def_level do
   end
 
   simple 'manga' do |s|
-    s.message = 'A japanese comic book called "Cooper Square Race".'
+    s.message = 'A japanese comic book called "Copper Square Race".'
   end
 
   sequence 'sketchbook' do
