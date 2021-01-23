@@ -230,6 +230,7 @@ polygon = PoolVector2Array( -88.4832, -74.0066, -83.7361, -82.1715, -76.3307, -8
 position = Vector2( 53.1598, 30.6224 )
 scale = Vector2( 1.00806, 0.911498 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Tv"]

@@ -23,5 +23,4 @@ func on_correct_password_entered(spec):
 		"break_room_computer":
 			flag_provider.set_flag("steve_computer_unlocked")
 			play_spec(find_child_spec("steve"))
-			play_spec(find_child_spec("break_room_computer"))
 			play_spec(find_child_spec("_next_level"))
