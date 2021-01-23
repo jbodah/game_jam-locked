@@ -213,6 +213,11 @@ position = Vector2( -29.5478, -13.1638 )
 [node name="Michele" parent="level" instance=ExtResource( 5 )]
 position = Vector2( 46.6765, -10.3711 )
 
+[node name="Painting3" type="Area2D" parent="level"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Painting3"]
+polygon = PoolVector2Array( 144.088, -10.531, 157.252, -5.26551, 157.252, 18.4293, 144.088, 13.1638 )
+
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ZoomIn = SubResource( 1 )
 

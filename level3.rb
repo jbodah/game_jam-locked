@@ -23,6 +23,7 @@ def_level do
   end
 
   simple 'painting' do |s|
+    s.id = "painting3"
     s.node = "Painting3"
     s.message = "I see some people... getting... pooped on by flying skunks?!"
   end
