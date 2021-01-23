@@ -5,7 +5,7 @@ signal done
 const LevelConfig = preload("res://LevelConfig.gd")
 const NextLevel = preload("res://Modules/NextLevel.tscn")
 
-const HINT_COOLDOWN = 10 #60 * 3
+const HINT_COOLDOWN = 60 * 3
 
 var _specs
 var flag_provider = FlagStore
