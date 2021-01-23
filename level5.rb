@@ -6,6 +6,14 @@ FLAG_STEVE_COMPUTER_UNLOCKED = 'steve_computer_unlocked'
 FLAG_COFFEE_MACHINE_INSPECTED = 'coffee_machine_inspected'
 
 def_level do
+  hints '_hint' do
+    message 'Maybe I should look for sticky notes.'
+
+    message 'Steve can probably help me here, I should talk to him again.'
+
+    message 'What kind of herb do cats like?'
+  end
+
   next_level do |n|
     n.id = "_next_level"
   end

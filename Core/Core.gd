@@ -10,10 +10,15 @@ var child
 
 onready var event_bus = $EventBus
 
+func hide_hint_for(n_sec):
+	$HUD/Hint.hide()
+	yield(get_tree().create_timer(n_sec), "timeout")
+	$HUD/Hint.show()
+
 func initialize(the_level):
 	level = the_level
 	index_specs(level.specs())
-	var queue = [level.object_root_node()]
+	var queue = [level.object_root_node(), $HUD/Hint]
 	while queue.size() > 0:
 		var el = queue.pop_front()
 		if el is Area2D:
@@ -27,14 +32,18 @@ func initialize(the_level):
 
 func index_specs(specs):
 	for spec in specs:
-		if spec.id[0] == "_":
+		if spec.id == "_hint":
+			spec.node = "Hint"
+			spec.name = "hint"
+		elif spec.id[0] == "_":
 			continue
-		if !spec.has("node"):
+		elif !spec.has("node"):
 			print("Section '%s' is missing 'node' property" % spec.id)
 			continue
-		if level.object_root_node().get_node(spec.node) == null:
+		elif level.object_root_node().get_node(spec.node) == null:
 			print("Couldn't find node: '%s'" % spec.node)
 			continue
+			
 		if !specs_by_node.has(spec.node):
 			specs_by_node[spec.node] = spec
 		if !specs_by_node[spec.node].has("onclick"):

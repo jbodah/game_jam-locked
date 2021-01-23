@@ -6,6 +6,14 @@ FLAG_JULIA_COMPUTER_UNLOCKED = "julia_computer_unlocked"
 FLAG_ROMERO_COMPUTER_UNLOCKED = "romero_computer_unlocked"
 
 def_level do
+  hints '_hint' do
+    message "Is there someone that Romero loves more than Julia?"
+
+    message "Apparently Julia is Capricornus, maybe her password has to do with astrology."
+
+    message "Romero's password is a date; Julia's password has 7 letters and 1 number."
+  end
+
   next_level do |n|
     n.id = "_next_level"
   end

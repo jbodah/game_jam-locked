@@ -230,7 +230,6 @@ polygon = PoolVector2Array( -88.4832, -74.0066, -83.7361, -82.1715, -76.3307, -8
 position = Vector2( 53.1598, 30.6224 )
 scale = Vector2( 1.00806, 0.911498 )
 frames = SubResource( 2 )
-frame = 1
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level/Tv"]
@@ -311,16 +310,14 @@ margin_top = -15.0
 margin_right = 1061.0
 margin_bottom = 619.0
 mouse_filter = 2
-color = Color( 0.196078, 0.188235, 0.188235, 0.631373 )
+color = Color( 0.196078, 0.188235, 0.188235, 0 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="SteveCamera" type="Camera2D" parent="."]
-position = Vector2( 162.896, 287.969 )
 anchor_mode = 0
-zoom = Vector2( 0.3, 0.3 )
 
 [node name="Fiyah" type="Sprite" parent="."]
 visible = false

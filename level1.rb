@@ -19,6 +19,14 @@ FLAG_STICKY_NOTE = 'seen_sticky_note'
 FLAG_CRUMPLED_PAPER = 'seen_crumpled_paper'
 
 def_level do
+  hints '_hint' do
+    message 'The Boss probably can help me if I talk to him again'
+
+    message 'People usually write down safe questions for their passwords... I should look for that, maybe in a paper or sticky note.'
+
+    message "The Boss' favorite food (pizza) + the Boss' age (52)"
+  end
+
   boss_chat '_intro' do
     simple do |s|
       s.sound_open = 'mumble'

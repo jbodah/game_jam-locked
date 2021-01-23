@@ -18,6 +18,7 @@ const TYPE_LOOKUP = {
 	green_sticky_note = preload("res://Modules/GreenStickyNote.tscn"),
 	level_3_shredded_sticky = preload("res://Modules/Level3ShreddedSticky.tscn"),
 	level_3_math_table = preload("res://Modules/Level3MathTable.tscn"),
+	hints = preload("res://Modules/Composition/Hints.tscn")
 }
 
 static func compile_spec(spec):

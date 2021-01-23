@@ -58,6 +58,7 @@ module API
     play_animation
     branch
     close
+    hints
   ).each do |sym|
     class_eval <<~EOF
       def #{sym}(name = nil, &blk)

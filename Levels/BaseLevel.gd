@@ -5,6 +5,8 @@ signal done
 const LevelConfig = preload("res://LevelConfig.gd")
 const NextLevel = preload("res://Modules/NextLevel.tscn")
 
+const HINT_COOLDOWN = 60 * 3
+
 var _specs
 var flag_provider = FlagStore
 
@@ -13,6 +15,8 @@ func _ready():
 	$Core.event_bus.connect("correct_password_entered", self, "on_correct_password_entered")
 	$Core.event_bus.connect("next_level", self, "on_next_level")
 	$Core.event_bus.connect("play_animation", self, "on_play_animation")
+	$Core.event_bus.connect("hint_shown", self, "on_hint_shown")
+	$Core.hide_hint_for(HINT_COOLDOWN)
 	if !Music.is_playing:
 		Music.play(_level_key())
 	maybe_play_intro()
@@ -61,3 +65,7 @@ func on_next_level():
 
 func on_play_animation(_name):
 	pass
+
+func on_hint_shown(was_last_hint):
+	if !was_last_hint:
+		$Core.hide_hint_for(HINT_COOLDOWN)

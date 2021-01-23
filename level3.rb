@@ -8,6 +8,14 @@ FLAG_UNLOCKED_VINCENT_COMPUTER = "unlocked_vincents_computer"
 FLAG_VINCENT_STANDING_AROUND = "vincent_standing_around"
 
 def_level do
+  hints '_hint' do
+    message 'I should talk to Michele, maybe she has something helpful to say.'
+
+    message "Vincent left a note on the floor, the words don't seem to make sense but maybe I should try reading it from another perspective."
+
+    message "Vincent's password is a color and a number, Michele's password is a 5 digit number."
+  end
+
   next_level do |n|
     n.id = "_next_level"
   end

@@ -1,18 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Core/HUD.gd" type="Script" id=2]
 [ext_resource path="res://Resources/font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/hint/hint_0004_3.png" type="Texture" id=4]
-[ext_resource path="res://assets/hint/hint_0000_Layer-1-copy.png" type="Texture" id=5]
-[ext_resource path="res://assets/hint/hint_0003_2.png" type="Texture" id=6]
-[ext_resource path="res://assets/hint/hint_0005_4.png" type="Texture" id=7]
-[ext_resource path="res://assets/hint/hint_0006_5.png" type="Texture" id=8]
-[ext_resource path="res://assets/hint/hint_0007_6.png" type="Texture" id=9]
-[ext_resource path="res://assets/hint/hint_0008_Layer-1.png" type="Texture" id=10]
-[ext_resource path="res://Core/Hint.gd" type="Script" id=11]
-[ext_resource path="res://assets/hint/hint_0002_1.png" type="Texture" id=12]
-[ext_resource path="res://assets/hint/hint_0001_0.png" type="Texture" id=13]
+[ext_resource path="res://Hint.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.133333, 0.12549, 0.12549, 1 )
@@ -22,16 +13,12 @@ extra_spacing_top = 3
 extra_spacing_bottom = 3
 font_data = ExtResource( 1 )
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
+
+[node name="Hint" type="Area2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 960, 472 )
+scale = Vector2( 2, 2 )
 
 [node name="HoverLabel" type="Label" parent="."]
 visible = false
@@ -56,27 +43,6 @@ margin_bottom = 593.0
 mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 3 )
 text = "Level Select"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Hint" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 960, 512 )
-scale = Vector2( 4.13889, 4.13889 )
-frames = SubResource( 3 )
-speed_scale = 3.0
-script = ExtResource( 11 )
-
-[node name="Timer" type="Timer" parent="Hint"]
-
-[node name="Control" type="Control" parent="Hint"]
-margin_left = -7.73155
-margin_top = -9.66443
-margin_right = 56.2684
-margin_bottom = 70.3356
-mouse_filter = 1
-mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
