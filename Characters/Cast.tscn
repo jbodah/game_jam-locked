@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Characters/Woman1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Romero.tscn" type="PackedScene" id=2]
@@ -6,23 +6,33 @@
 [ext_resource path="res://Characters/Woman2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Characters/Julia.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Characters/Steve.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Characters/Michele.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Characters/Vincent.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Danny" parent="." instance=ExtResource( 3 )]
-position = Vector2( 180.669, 8.94885 )
+position = Vector2( 101.835, 9.3693 )
 
 [node name="Julia" parent="." instance=ExtResource( 5 )]
-position = Vector2( 142.478, 8.94885 )
+position = Vector2( 63.644, 9.3693 )
 
 [node name="Romero" parent="." instance=ExtResource( 2 )]
-position = Vector2( 102.045, 8.94885 )
+position = Vector2( 26.995, 9.3693 )
 
 [node name="Woman1" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 61.0177, 8.94885 )
 
 [node name="Woman2" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 18.5036, 8.94885 )
 
 [node name="Steve" parent="." instance=ExtResource( 6 )]
-position = Vector2( 222.233, 8.62174 )
+position = Vector2( 143.399, 9.04219 )
+
+[node name="Michele" type="Area2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 176.697, 8.33338 )
+
+[node name="Vincent" type="Area2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 210.738, 6.17682 )

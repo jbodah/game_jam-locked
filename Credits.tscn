@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/UI interfaces/Title/titleback.png" type="Texture" id=1]
 [ext_resource path="res://assets/noto-sans/NotoSans-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Characters/Cast.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 49
@@ -19,11 +20,15 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 margin_left = 208.0
-margin_top = 248.0
+margin_top = 152.0
 margin_right = 854.0
-margin_bottom = 316.0
+margin_bottom = 220.0
 custom_fonts/font = SubResource( 1 )
 text = "You win! Thanks for playing!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 48, 272 )
+scale = Vector2( 4, 4 )
