@@ -50,7 +50,7 @@ def_level do
 
     password do |p|
       p.id = "vincent_s_computer"
-      p.actual_password = 'pink9'
+      p.passwords = ['pink9']
       p.pass_message = 'Welcome vitruvian1'
       p.fail_message = "Hmm... that didn't seem right"
     end
@@ -101,7 +101,7 @@ def_level do
 
     password do |p|
       p.id = "michele_s_computer"
-      p.actual_password = '16180'
+      p.passwords = ['16180']
       p.pass_message = 'Welcome BetterThanU'
       p.fail_message = "Hmm... that didn't seem right"
     end

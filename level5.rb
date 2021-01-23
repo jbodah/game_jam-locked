@@ -151,7 +151,7 @@ def_level do
 
     password do |p|
       p.id = "break_room_computer"
-      p.actual_password = 'catnip'
+      p.passwords = ['catnip']
       p.pass_message = 'Welcome HowardPhilipsBreakPC'
       p.fail_message = "Hmm... that didn't seem right"
     end

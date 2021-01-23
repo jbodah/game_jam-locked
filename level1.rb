@@ -183,7 +183,7 @@ def_level do
 
   password do |p|
     p.name = "The Boss' computer"
-    p.actual_password = 'pizza52'
+    p.passwords = ['pizza52']
     p.pass_message = 'Welcome DannyDaBoss'
     p.fail_message = "Hmm... that didn't seem right"
     p.node = 'Computer1'

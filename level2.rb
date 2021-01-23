@@ -251,7 +251,7 @@ def_level do
     password do |p|
       p.id = "romero_s_computer"
       p.node = "RomerosComputer"
-      p.actual_password = '1228'
+      p.passwords = ['0128', '128']
       p.pass_message = 'Welcome SexyGuy123'
       p.fail_message = "Hmm... that didn't seem right"
     end
@@ -259,7 +259,7 @@ def_level do
 
   level_2_calendar do |c|
     c.name = "Romero's calendar"
-    c.message = "Two dates are on the calendar\n12/17 - Julia's Bday (a lot of <3 here)\n12/28 - My birthday (a ;) face)"
+    c.message = "Two dates are on the calendar\n01/17 - Julia's Bday (a lot of <3 here)\n01/28 - My birthday (a ;) face)"
   end
 
   sticky_note do |s|
@@ -314,7 +314,7 @@ def_level do
 
     password do |p|
       p.id = "julia_s_computer"
-      p.actual_password = 'macbeth7'
+      p.passwords = ['macbeth7']
       p.pass_message = 'Welcome Juju3'
       p.fail_message = "Hmm... that didn't seem right"
     end

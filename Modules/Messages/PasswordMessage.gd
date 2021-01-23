@@ -41,7 +41,7 @@ func on_outside_gui_input(_event):
 
 func check_password(text):
 	delay_input()
-	if sanitize(text).to_lower() == spec.actual_password.to_lower():
+	if is_password_match(text, spec.passwords):
 		$Background.color = Color("198b13")
 		SoundEffect.play("success")
 		state = "password_pass"
@@ -56,3 +56,10 @@ func sanitize(text: String):
 	var regex = RegEx.new()
 	regex.compile("[^A-Za-z0-9]")
 	return regex.sub(text, "")
+
+func is_password_match(text, passwords):
+	text = sanitize(text).to_lower()
+	for password in passwords:
+		if password.to_lower() == text:
+			return true
+	return false
