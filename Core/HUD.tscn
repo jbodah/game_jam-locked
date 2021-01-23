@@ -17,8 +17,7 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Hint" type="Area2D" parent="." instance=ExtResource( 4 )]
-position = Vector2( 960, 472 )
-scale = Vector2( 2, 2 )
+position = Vector2( 960, 512 )
 
 [node name="HoverLabel" type="Label" parent="."]
 visible = false
