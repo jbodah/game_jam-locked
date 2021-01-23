@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SoundEffect.gd" type="Script" id=1]
 [ext_resource path="res://assets/sound_effects/344719__jamitch2__trash-sorting-small_1.wav" type="AudioStream" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/sound_effects/201159__kiddpark__cash-register.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/sound_effects/coffee1_2.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/sound_effects/164689__adam-n__phone-voice-cartoon_3.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sound_effects/39316__the-bizniss__scanner-4.1.wav" type="AudioStream" id=14]
 
 [node name="SoundEffect" type="Control"]
 visible = false
@@ -62,3 +63,7 @@ volume_db = 1.0
 [node name="coffee" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = 2.0
+
+[node name="scanner" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -3.0

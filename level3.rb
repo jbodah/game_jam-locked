@@ -9,6 +9,24 @@ FLAG_UNLOCKED_VINCENT_COMPUTER = "unlocked_vincents_computer"
 FLAG_VINCENT_STANDING_AROUND = "vincent_standing_around"
 
 def_level do
+  close 'copy machine' do |c|
+    c.sound_open = 'scanner'
+  end
+
+  calendar do |c|
+    c.name = 'calendar'
+    c.message = '<Nothing on the calendar>'
+  end
+
+  simple 'sketches' do |s|
+    s.message = "It's... a bunch of scribbles?"
+  end
+
+  simple 'painting' do |s|
+    s.node = "Painting3"
+    s.message = "I see some people... getting... pooped on by flying skunks?!"
+  end
+
   hints '_hint' do
     message 'I should talk to Michele, maybe she has something helpful to say.'
 
