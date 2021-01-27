@@ -411,10 +411,10 @@ __meta__ = {
 }
 
 [node name="QuitButton" type="Button" parent="BrowserControls"]
-margin_left = 963.909
-margin_top = 19.4926
-margin_right = 983.909
-margin_bottom = 39.4926
+margin_left = 28.8329
+margin_top = 64.901
+margin_right = 48.8329
+margin_bottom = 84.901
 mouse_default_cursor_shape = 2
 text = "X"
 __meta__ = {
