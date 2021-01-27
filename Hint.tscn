@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/hint/hint_0002_1.png" type="Texture" id=9]
 [ext_resource path="res://assets/hint/hint_0001_0.png" type="Texture" id=10]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": false,
@@ -23,7 +23,7 @@ animations = [ {
 radius = 24.9844
 height = 27.0561
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": false,
@@ -37,7 +37,7 @@ position = Vector2( 940.216, 442.36 )
 [node name="NullHint" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 0.707092 )
 scale = Vector2( 4.13889, 4.13889 )
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 speed_scale = 3.0
 
 [node name="Hint" type="Area2D" parent="."]
@@ -48,7 +48,7 @@ shape = SubResource( 2 )
 [node name="HintReady" type="AnimatedSprite" parent="Hint"]
 position = Vector2( 0, 0.707092 )
 scale = Vector2( 4.13889, 4.13889 )
-frames = SubResource( 1 )
+frames = SubResource( 3 )
 speed_scale = 3.0
 script = ExtResource( 8 )
 

@@ -20,3 +20,5 @@ __meta__ = {
 
 [node name="EventBus" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
