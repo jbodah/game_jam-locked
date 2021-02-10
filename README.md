@@ -6,7 +6,7 @@ The YarnEditor interface is here: https://yarnspinnertool.github.io/YarnEditor/.
 
 ### Anatomy of Yarn and How We'll Use It
 
-[docs/1.png](docs/1.png)
+![docs/1.png](docs/1.png)
 
 The dialogue tree is made up of a bunch of trees (technically they are all one tree, but the root node is implicit - anything without a parent node is considered to be the child of the root node).
 For the sake of simplicity, I will treat these as multiple trees going forward and when I say "root node" I mean any node that doesn't have a parent.
