@@ -40,7 +40,7 @@ I will cover a few of the more interesting ones here. In addition, nodes have pr
 
 The global properties are:
 
-* `set_flag:SOME_FLAG_NAME` this will set the given flag when this node is shown to the player
+* `set_flag:SOME_FLAG_NAME` this will set the given flag when this node is shown to the player. Note that _no_ flags are ever set automatically (even computers unlocking)
 * `sound_open:some_sound_name` this will play the given sound when the node is shown to the player
 
 ### Node type reference
@@ -90,3 +90,7 @@ The global properties are:
 
 `close`
 * This node auto closes. It is used for things like drinking coffee without showing text and just playing the sound
+
+### Example
+
+There is an example JSON file at [example_yarn.json](example_yarn.json). If you are looking for examples for how nodes are used, you can also look at the level files like [level1.rb](level1.rb)

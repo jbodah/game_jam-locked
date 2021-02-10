@@ -1,0 +1,242 @@
+[
+	{
+		"title": "hints",
+		"tags": "type:hints",
+		"body": "[[hint1]] \n[[hint2]]",
+		"position": {
+			"x": 9,
+			"y": -475
+		},
+		"colorID": 0
+	},
+	{
+		"title": "_intro",
+		"tags": "type:camera_zoom camera:steve",
+		"body": "[[steve sequence]]",
+		"position": {
+			"x": 372,
+			"y": -454
+		},
+		"colorID": 0
+	},
+	{
+		"title": "hint1",
+		"tags": "type:simple",
+		"body": "Maybe I should look for sticky notes.",
+		"position": {
+			"x": -357,
+			"y": -206
+		},
+		"colorID": 0
+	},
+	{
+		"title": "hint2",
+		"tags": "type:simple",
+		"body": "Steve can probably help me here, I should talk to him again.",
+		"position": {
+			"x": -60,
+			"y": -170
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve sequence",
+		"tags": "type:sequence sound_open:steve_hey",
+		"body": "What's up dude, you new here?\n[[steve choice 1]]",
+		"position": {
+			"x": 373,
+			"y": -146
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve choice 1",
+		"tags": "type:choose",
+		"body": "[[Yeah, I'm the new IT guy.|steve r1]]\n[[Sorry, I'm Timothy from human resources. You're fired by the way.|steve r2]]",
+		"position": {
+			"x": 373,
+			"y": 126
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve r1",
+		"tags": "",
+		"body": "Cool, so you're here to unlock the computers.",
+		"position": {
+			"x": 101,
+			"y": 403
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve r2",
+		"tags": "",
+		"body": "What? Oh, I swear that shit ain't mine, I m-mean I don't even smoke!\n\nWait... You're just messing with me.\nDude! Not cool, dude.\nDid you at least record it? No? Major bummer.\n\nName's Steve, I'm the most vital person in this whole agency. Without me, no one can work properly.\n\nAnd by that I mean I'm the office boy and I bring people coffee.\nBut right now the coffee machine is broken, so I'm just chilling.",
+		"position": {
+			"x": 474,
+			"y": 397
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve",
+		"tags": "type:branch",
+		"body": "[[if STEVE_COMPUTER_UNLOCKED|steve.computer_unlocked]]\n[[else|steve.computer_not_unlocked]]",
+		"position": {
+			"x": 1273,
+			"y": -500
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve.computer_unlocked",
+		"tags": "type:multi_visit",
+		"body": "[[first_visit|steve computer unlocked first visit]]\n[[else|steve computer unlocked rest visits]]",
+		"position": {
+			"x": 1095,
+			"y": -171
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve.computer_not_unlocked",
+		"tags": "type:sequence",
+		"body": "Sup bro?\n[[steve choice 2]]",
+		"position": {
+			"x": 1650,
+			"y": -160
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve computer unlocked first visit",
+		"tags": "type:camera_zoom camera:steve",
+		"body": "Yo dude, you're a tech wizard! Thanks to you, the cat videos are back.\n\nAlso, if you ever need to search something on the internet, feel free to use this computer.",
+		"position": {
+			"x": 822,
+			"y": 93
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve computer unlocked rest visits",
+		"tags": "",
+		"body": "Sup bro, just chilling? If you ever need to Goojle something, feel free to use the computer.",
+		"position": {
+			"x": 1255,
+			"y": 100
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve choice 2",
+		"tags": "type:choose",
+		"body": "[[just chilling]]\n[[do you remember]]\n[[coffee not broken]]",
+		"position": {
+			"x": 1642,
+			"y": 121
+		},
+		"colorID": 0
+	},
+	{
+		"title": "just chilling",
+		"tags": "type:choice",
+		"body": "Just chilling.\n[[just chilling resp]]",
+		"position": {
+			"x": 1051,
+			"y": 468
+		},
+		"colorID": 0
+	},
+	{
+		"title": "coffee machine",
+		"tags": "set_flag:COFFEE_MACHINE_INSPECTED",
+		"body": "Just a regular coffee machine. Despite what Steve has said, it seems to be working fine.",
+		"position": {
+			"x": 2213,
+			"y": -437
+		},
+		"colorID": 0
+	},
+	{
+		"title": "just chilling resp",
+		"tags": "",
+		"body": "Yo, nice! Me too.",
+		"position": {
+			"x": 1048,
+			"y": 754
+		},
+		"colorID": 0
+	},
+	{
+		"title": "do you remember",
+		"tags": "type:choice",
+		"body": "Do you remember the password to the computer here?\n[[remember response]]",
+		"position": {
+			"x": 1424,
+			"y": 525
+		},
+		"colorID": 0
+	},
+	{
+		"title": "remember response",
+		"tags": "",
+		"body": "Nah",
+		"position": {
+			"x": 1417,
+			"y": 805
+		},
+		"colorID": 0
+	},
+	{
+		"title": "coffee not broken",
+		"tags": "type:choice if:COFFEE_MACHINE_INSPECTED",
+		"body": "Hey, the coffee machine isn't broken.\n[[not inspected response]]",
+		"position": {
+			"x": 1899,
+			"y": 511
+		},
+		"colorID": 0
+	},
+	{
+		"title": "not inspected response",
+		"tags": "",
+		"body": "Dude, I sweat it was. Do you know where the boss is?\n[[steve.choosewhereboss]]",
+		"position": {
+			"x": 1905,
+			"y": 815
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve.choosewhereboss",
+		"tags": "type:choose",
+		"body": "[[steve.whereboss.yes]]\n[[steve.whereboss.no]]",
+		"position": {
+			"x": 1910,
+			"y": 1121
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve.whereboss.yes",
+		"tags": "",
+		"body": "Rad",
+		"position": {
+			"x": 1543,
+			"y": 1421
+		},
+		"colorID": 0
+	},
+	{
+		"title": "steve.whereboss.no",
+		"tags": "",
+		"body": "Bummer",
+		"position": {
+			"x": 2106,
+			"y": 1461
+		},
+		"colorID": 0
+	}
+]
