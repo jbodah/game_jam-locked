@@ -26,6 +26,7 @@ func start_phase():
 	var prev = child
 	child = current.instance()
 	child.connect("done", self, "on_phase_done")
+	child.connect("enter_debug", self, "on_enter_debug")
 	if prev:
 		child.connect("ready", self, "remove_child", [prev])
 	add_child(child)
@@ -36,3 +37,6 @@ func on_phase_done():
 		start_phase()
 	else:
 		get_tree().quit()
+
+func on_enter_debug():
+	get_tree().change_scene("res://BootLoader.tscn")

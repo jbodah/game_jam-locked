@@ -1,6 +1,7 @@
 extends Node2D
 
 signal done
+signal enter_debug
 
 const LeftClick = preload("res://Util/LeftClick.gd")
 
@@ -49,6 +50,8 @@ func on_text_entered(text):
 	if text.to_lower() == password.to_lower():
 		print("done title")
 		emit_signal("done")
+	elif text.to_lower() == "admin_debug":
+		emit_signal("enter_debug")
 	else:
 		$LineEdit.add_color_override("font_color", Color.red)
 		yield(get_tree().create_timer(0.1), "timeout")

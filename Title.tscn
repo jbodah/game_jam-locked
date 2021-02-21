@@ -21,7 +21,7 @@ animations = [ {
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Shake"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sticky:position")
@@ -36,7 +36,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -1.51108, 0 ), Vector2( 1.51108, 0 ), Vector2( -2.32473, 0 ), Vector2( 2.7897, 0 ), Vector2( 1.14441e-05, 0 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=5]
 radius = 52.6011
 
 [node name="Title" type="Node2D"]
@@ -99,7 +99,7 @@ position = Vector2( 1.14441e-05, 0 )
 texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
-anims/Shake = SubResource( 5 )
+anims/Shake = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="Node2D"]
 wait_time = 5.0
@@ -109,4 +109,4 @@ autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickyNote"]
 position = Vector2( 202, 343 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
